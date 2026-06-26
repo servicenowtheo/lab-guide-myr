@@ -1,108 +1,111 @@
 ## Challenge: End-to-End Order Lifecycle
 
-**Duration: ~10 minutes**
-**All personas used — work as admin, impersonating as needed**
+**Duration:** ~10 minutes | **Difficulty:** Putting it all together
 
-> **Objective:** Trace ORD0002154 — Dorothy Martinez's MRD Baseline AML order — from its original submission through every operational touchpoint to its current state in lab processing. This challenge ties together everything from Exercises 1–5 into a single connected lifecycle view.
+You've now worked through five guided exercises — navigating workspaces, triaging priority orders, managing tasks, investigating cases, and analyzing team workload. In this challenge, you'll tie it all together by tracing a single order through its full lifecycle, end to end, using everything you've learned.
 
----
-
-### The Challenge
-
-ORD0002154 is Dorothy Martinez's anchor order — the MRD Baseline that starts her 12-month monitoring series. Unlike the stalled orders you reviewed in Exercises 2–4, this one is *working*. The specimen is in the lab, sequencing is in progress, and Dr. Chen has a results review appointment booked for July 10. Your challenge: reconstruct the full lifecycle of this order using what you've learned.
+No step-by-step hand-holding this time. You know where the tools are. Go find them.
 
 ---
 
-### Step 1 — Navigate to ORD0002154
+### Your Mission
 
-1. Log in as **admin** (no impersonation needed — you're taking the supervisor's view).
-2. Navigate to **Order Management > Orders**.
-3. Search for **ORD0002154**.
-4. Open the order record.
-
-![ORD0002154 Dorothy Martinez — MRD Baseline AML order showing lab processing status](.gitbook/assets/MYRIAD-OMS/challenge-step1-ord0002154.png)
+You are an operations lead at Myriad Genetics reviewing the highest-priority order in the system. Your goal is to build a complete picture of that order — its summary, its linked tasks, any related cases — and then document what you found in a brief ops report.
 
 ---
 
-### Step 2 — Reconstruct the Timeline
+### Step 1 — Find the Critical Order
 
-Using the order record, answer the following questions:
+Navigate to the **Customer Orders** list and locate **ORD0002156**, the Priority 1–Critical order for *EndoPredict Dx — Breast cancer recurrence risk stratification*. Use whatever method feels fastest to you — scrolling, sorting, filtering, or searching.
 
-| Question | Where to find it |
-|----------|-----------------|
-| When was the order submitted? | **Opened** field on the order header |
-| Who submitted it and from which facility? | **Ordering Provider** and **Facility** fields |
-| How did the specimen get to the lab? | **Collection Method** field + Appointments tab on the Patient 360 record |
-| What is the insurance status? | **Eligibility Status** and **Insurance Member ID** fields |
-| What tasks exist on this order? | **Order Tasks** related list |
-| When are results expected? | Appointments tab on Patient 360 — July 10, 2026 results review |
+> **Note:** There are 41 orders in the system. Only one is Priority 1–Critical. If you're having trouble, think back to how you sorted and filtered the list in Exercise 2.
 
 ---
 
-### Step 3 — Navigate Dorothy's Patient 360
+### Step 2 — Open and Review the Order Record
 
-1. On ORD0002154, select the **Patient** field link — **Dorothy Martinez**.
-2. On her Patient 360 record, locate:
-   - **All three active orders** (ORD0002149, ORD0002154, ORD0002155) — visible in the related list or appointments tab
-   - **The blood draw appointment** on March 22, 2026 — this is when the sample for ORD0002154 was collected
-   - **The upcoming results review** on July 10, 2026 with Dr. Chen
-
-3. Note the **MRD Monitoring series** link on ORD0002154 — if the custom schema is loaded, the MRD-AML-DMZ-2024-001 series record connects this baseline to her future T1, T2, and T3 timepoints.
+Open the order record and orient yourself. Before you use any AI tools, take 30 seconds to read the details on your own. Note the priority, the state, the assigned group, and any other fields that stand out.
 
 ---
 
-### Step 4 — Compare: Healthy Order vs. Stalled Order
+### Step 3 — Summarize with Now Assist
 
-Return to the Orders list. Open ORD0002156 (Patricia Williams) alongside ORD0002154 (Dorothy Martinez) and compare:
+Use **Now Assist Summarize** to generate an AI-powered summary of the order. Read what it produces and compare it to what you observed manually.
 
-| Dimension | ORD0002154 (Dorothy) | ORD0002156 (Patricia) |
-|-----------|---------------------|-----------------------|
-| Submission method | Portal | Portal |
-| Days open | ~24 days | ~40 days |
-| Current status | Lab Processing | New |
-| Eligibility | Verified | Pending |
-| Open tasks | Progressing | 23 open tasks |
-| CSM cases | 0 | 6 open cases |
-| Needs attention | No | Yes |
-| Collection type | Blood draw | Tissue biopsy |
-
-> **The observation:** Both orders were submitted via portal. The primary difference is specimen type. Blood draw orders are operationally simpler — collection is standardized, eligibility verification is faster, and there are fewer documentation dependencies. Tissue biopsy orders require pathology coordination, fixation time tracking, and higher prior authorization scrutiny. ORD0002156's 6 exceptions are structurally typical for a first-time biopsy order from a new provider.
+Ask yourself: *Did the summary surface anything I missed? Did it confirm what I already saw?*
 
 ---
 
-### Step 5 — ✅ Challenge Complete
+### Step 4 — Investigate Linked Order Tasks
 
-You have successfully:
+Navigate to the **Order Tasks** list. Your goal is to find any tasks that are associated with ORD0002156. There are 358 tasks in the queue — you'll need to filter or search to narrow down to the ones linked to this specific order.
 
-- Traced ORD0002154 from submission through lab processing using only the order record and Patient 360.
-- Reconstructed the key operational events: portal submission → blood draw → specimen receipt → lab processing → results review scheduled.
-- Contrasted a healthy order lifecycle against a stalled one — and identified the structural drivers of the difference (specimen type, documentation completeness, eligibility turnaround).
+> **Note:** Think back to Exercise 3. How did you navigate from an order to its related tasks — or how might you filter the task list to show only tasks for a specific order?
 
 ---
 
-### Bonus: MRD Series Forward View
+### Step 5 — Assess the Task Landscape
 
-If time permits, navigate to the MRD Series record for Dorothy Martinez and answer:
+For the tasks you found, review their **states** and **assignees**. Ask yourself:
 
-1. When is her **T1** monitoring timepoint due? *(October 1, 2026)*
-2. What event triggers the T1 order? *(The T0 results review on July 10 — if MRD is negative, Dr. Chen confirms the monitoring schedule and the T1 order is placed)*
-3. How many total orders will Dorothy's AML monitoring series generate over 12 months? *(4 — Baseline + T1 + T2 + T3)*
+- How many tasks are linked to this order?
+- Are any stuck in a particular state?
+- Are they spread across multiple people, or concentrated on one?
 
-> **The platform value:** ServiceNow doesn't just manage the current order — it holds the longitudinal relationship. The MRD series record is the operational contract between Myriad and the Huntsman oncology team for the next 12 months of Dorothy's care.
+You don't need to document exact numbers yet — just build a mental picture.
+
+---
+
+### Step 6 — Find Related Cases
+
+Navigate to the **Cases** list. Look for any cases that might be related to this order or its workflow. Case **CS0001168** (*Report delivery failure*) is one known case in the system.
+
+Open the case record and review its details. Check the **Recommendations panel** to see if Now Assist suggests any actions.
+
+> **Note:** Think back to Exercise 4. Where did you find suggested actions on a case record?
 
 ---
 
-### 🏆 Congratulations
+### Step 7 — Write Your Ops Report
 
-You've completed the Myriad Genetics OMS Lab. You've experienced ServiceNow as:
+Return to the order record for **ORD0002156**. Open the **Activity** stream and write a brief ops report in the **Work Notes** field. Summarize what you found across your investigation — the order status, task status, any related cases, and your overall assessment.
 
-- A **provider portal** for order submission and status visibility
-- A **pipeline oversight workspace** for queue management and attention flagging
-- An **intake operations platform** for task-level exception resolution
-- A **customer service layer** for provider communication and insurance escalation management
-- An **analytics engine** for operational visibility and supervisory review
-- A **longitudinal patient management platform** through MRD series tracking
+This doesn't need to be formal. Write 2–4 sentences as if you're briefing a colleague who's picking up the next shift. For example:
 
-The operational patterns you've seen — order intake exceptions, biopsy vs. blood draw complexity, insurance prior auth, specimen logistics — are not unique to Myriad. They are the universal challenges of any diagnostic lab, specialty pharmacy, or healthcare services organization processing high-complexity, high-value orders at scale.
+*"Reviewed ORD0002156 (P1-Critical, EndoPredict Dx). [X] tasks linked — [your observation about their states]. Found related case CS0001168 for report delivery failure. [Your recommendation or flag for follow-up.]"*
+
+> **Note:** Remember — **Work Notes** are internal. Customers won't see them. This is your team communication channel.
 
 ---
+
+### Step 8 — Bonus: Analyze Order Tasks by State
+
+Head back to the **Order Tasks** list (the full list of 358 tasks, not filtered). Use the **Group by** feature to group all tasks by **State**.
+
+- How many distinct states do you see?
+- Which state has the most tasks?
+- Does the distribution suggest any bottlenecks?
+
+> **Note:** This is the same analytical technique you used in Exercise 5 for team workload — just applied to a different dimension of the data.
+
+---
+
+## 🎉 Congratulations!
+
+You just completed an end-to-end order lifecycle investigation on the ServiceNow Configurable Workspace — with no step-by-step instructions. That means you actually *learned* this, not just followed along.
+
+Here's what you demonstrated in the last 10 minutes:
+
+| Capability | Where You Used It |
+|---|---|
+| **Workspace Navigation** | Moving fluidly between Orders, Tasks, Cases, and Analytics |
+| **List Management** | Filtering, sorting, and searching across 41 orders and 358 tasks |
+| **Record Investigation** | Reading order and case detail records to extract key information |
+| **Now Assist — Summarize** | Generating an AI summary of a complex order |
+| **Now Assist — Recommendations** | Reviewing AI-suggested actions on a case |
+| **Activity Stream & Work Notes** | Documenting your findings for team visibility |
+| **Analytics & Group By** | Analyzing task distribution to spot operational patterns |
+
+These are the same tools and workflows that Myriad Genetics operations teams will use daily to manage diagnostic test orders, coordinate lab tasks, and resolve customer issues — all from a single pane of glass.
+
+**You're no longer a beginner. You're dangerous.** 🚀

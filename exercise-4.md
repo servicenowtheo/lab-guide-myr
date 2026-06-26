@@ -1,125 +1,160 @@
 ## Exercise 4: Order Support Services
 
-**Persona: Julie Castillo — Order Support Services**
-**Duration: ~15 minutes**
-
-> **Objective:** Work Julie Castillo's case queue in the Customer Service workspace. You will open the six exception cases on ORD0002156 (Patricia Williams), understand what each case represents operationally, and see how external communications — provider calls, insurance appeals, sample re-collection — are managed alongside the core order workflow.
-
----
-
-### Scene
-
-Julie Castillo handles everything that goes wrong after an order is placed — and on ORD0002156, a lot has gone wrong. Aetna denied coverage, the tissue sample was rejected (incorrect fixation time), the physician's signature expired before the order was submitted, and the courier missed the initial pickup window. Each exception is its own escalation track. Julie's job is to keep all six moving in parallel while keeping Dr. Mitchell and the Huntsman team informed.
+**Persona:** Julie Castillo — Order Support Services
+**Duration:** ~15 minutes
+**Objective:** Impersonate Julie Castillo, navigate to the Cases list, open case CS0001168 (a report delivery failure tied to a secure portal issue), review the case details and Activity feed, and use Now Assist AI to generate suggested actions from the Recommendations panel.
 
 ---
 
-### Step 1 — Impersonate Julie Castillo
-
-1. Select your **user avatar** → **Impersonate another user**.
-2. Type `julie` → select **Julie Castillo** → **Impersonate user**.
+**Scene:** Julie Castillo handles everything that goes wrong *after* an order has been placed — delivery failures, missing results, portal access issues, and other post-order problems. Case **CS0001168** is a high-priority ticket: a provider couldn't access their test results through Myriad's secure portal. The case is linked to order **ORD0002072**. This is the kind of escalation Julie sees regularly. She typically resolves it by coordinating with the portal team, but first she needs to review the case details and see what the system recommends.
 
 ---
 
-### Step 2 — Navigate to Customer Service Cases
+### Step 1: Impersonate Julie Castillo
 
-1. In the filter navigator, type `Cases` or navigate to **Customer Service > Cases**.
-2. The Cases list opens — showing cases assigned to Julie's group.
+You need to tell ServiceNow that you want to work as Julie Castillo. This is called **impersonating** a user.
 
-![CSM Cases list showing 6 open cases on ORD0002156 — Patricia Williams EndoPredict Dx](.gitbook/assets/MYRIAD-OMS/ex4-step2-csm-case-list.png)
+1. Look at the **very top-right corner** of the ServiceNow screen. You will see a small **avatar icon** (it may look like a person's silhouette or initials).
+2. **Click** that avatar icon. A dropdown menu will appear.
+3. In the dropdown, look for the option labeled **"Impersonate user"** and **click** it.
+4. A dialog box (a small pop-up window) will appear with a search field. **Click** into the search field and type: **Julie Castillo**
+5. As you type, a list of matching names will appear below the search field. When you see **Julie Castillo**, **click** her name to select it.
+6. **Click** the **"Impersonate user"** button in the dialog box to confirm.
 
----
+The page will briefly reload. You are now working as Julie Castillo. You may notice the avatar or name in the top-right corner has changed to reflect Julie's identity.
 
-### Step 3 — Filter Cases to ORD0002156
-
-1. In the Cases list, search or filter for **Order = ORD0002156** (or search for patient name **Patricia Williams**).
-2. You should see all six cases:
-
-| Case | Short Description | Priority |
-|------|------------------|----------|
-| CS0001022 | Patient consent not documented | High |
-| CS0001023 | Insurance denial — appeal pending | Critical |
-| CS0001024 | Sample rejected — re-collection needed | Critical |
-| CS0001025 | Physician signature expired | High |
-| CS0001026 | Courier pickup missed | Medium |
-| CS0001027 | Benefits verification discrepancy | High |
+> **Note:** Impersonation is a lab/training feature. It lets you experience the system exactly as that person would see it — including their permissions, assigned cases, and workspace layout. You are not changing any real account settings.
 
 ---
 
-### Step 4 — Open CS0001023 (Insurance Denial — Appeal)
+### Step 2: Open the Configurable Workspace
 
-1. Select **CS0001023** to open the case.
-2. Review the case details:
+Now you need to navigate to the CSM/FSM Configurable Workspace — this is the main screen where Julie does her work.
 
-| Field | Value |
-|-------|-------|
-| **Short Description** | Insurance denial — EndoPredict Dx CPT 81521 — appeal pending |
-| **Account** | Myriad Genetics |
-| **Patient** | Patricia Williams |
-| **Insurance** | Aetna Select Network (HMO) |
-| **Priority** | Critical |
-| **State** | Open |
+1. Look at the **dark-colored left sidebar**. This is the vertical navigation bar that runs along the left edge of your screen. At the top of this sidebar, you will see a row of tabs or labels: **All | Favorites | History | Workspaces | Admin**.
+2. **Click** the tab labeled **"Workspaces"**.
+3. A list of available workspaces will appear. Look for **"CSM/FSM Configurable Workspace"** (or a similarly named workspace your instructor has specified).
+4. **Click** it to open the workspace.
 
-3. Read through the **Activity** feed — this is where the appeal correspondence, authorization codes, and call log notes would be recorded during a live case.
+The screen will change to the workspace view. This is Julie's home base — a purpose-built interface for managing customer service cases.
 
-![CS0001023 — Insurance denial case for Patricia Williams' EndoPredict order](.gitbook/assets/MYRIAD-OMS/ex4-step4-cs0001023-denial.png)
-
-> **Context:** Aetna HMO plans typically require step therapy and prior authorization for molecular diagnostic tests. CPT 81521 (EndoPredict) has an authorization requirement under most Aetna HMO commercial plans. The appeal team needs the treating physician's clinical notes and the NCCN guideline reference supporting medical necessity.
+> **Note:** A **workspace** in ServiceNow is different from the standard platform interface. It is a streamlined, modern-looking environment designed for agents who work on cases all day. Everything Julie needs — case lists, case details, and AI tools — lives inside this workspace.
 
 ---
 
-### Step 5 — Open CS0001024 (Sample Rejected)
+### Step 3: Navigate to the Cases List
 
-1. Navigate back → select **CS0001024**.
-2. Review the case:
+You need to find the list of all cases so you can locate CS0001168.
 
-| Field | Value |
-|-------|-------|
-| **Short Description** | Sample rejected — FFPE block fixation time out of spec |
-| **Priority** | Critical |
-| **State** | Open |
+1. In the **dark left sidebar**, look for a section called **"Default lists"** or simply **"Lists"**. Below it, you should see a grouping or menu item labeled **"Cases"**.
+2. **Click** on **"Cases"** to expand it (if it is collapsed). You will see sub-options appear beneath it.
+3. **Click** on **"All"**. This tells the system to show you *every* case, with no filters applied.
 
-3. Read the case description:
-   - The FFPE tumor block from Patricia's April 5 biopsy was rejected by the lab — fixation time was recorded as 5 hours, below the 6–72 hour minimum required for accurate RNA extraction.
-   - Re-collection requires a new biopsy. Dr. Mitchell has been notified. The Huntsman pathology team is reviewing archived tissue blocks for an eligible specimen.
+The main area of the screen (the large center/right portion) will now display a **list view** — a table of all cases. Each row is one case. The columns across the top of the table include:
 
-> **Why this matters:** Sample rejection is one of the top three reasons genomic orders fail to result. Re-collection delays can add 3–6 weeks to the order timeline — in Patricia's case, that delay directly affects her treatment planning window.
+| Column | What it shows |
+|---|---|
+| **Number** | The unique case ID (e.g., CS0001168) |
+| **Short description** | A brief summary of the issue |
+| **Priority** | How urgent the case is (e.g., 2-High) |
+| **State** | Where the case is in its lifecycle (e.g., New, In Progress) |
 
----
+You may also see additional columns such as Channel, Account, Contact, and others.
 
-### Step 6 — Open CS0001025 (Physician Signature Expired)
-
-1. Navigate back → select **CS0001025**.
-2. Review:
-   - The original order was submitted on May 15 but Dr. Mitchell's wet signature on the paper TRF expired after 30 days (June 15).
-   - Re-signature is required. The TRF has been re-sent to Huntsman via fax.
+> **Note:** This list view is like a spreadsheet of all cases in the system. You can scroll down to see more cases, or use the search/filter tools at the top to narrow the list. For now, you will visually scan for the case you need.
 
 ---
 
-### Step 7 — Review the Remaining Cases
+### Step 4: Locate Case CS0001168
 
-1. Briefly open **CS0001022** (consent), **CS0001026** (courier), and **CS0001027** (benefits) to complete the picture.
-2. For each, note the state and most recent activity entry.
+Now scan the list to find Julie's case.
 
-![Overview of all 6 CSM cases on ORD0002156 showing state and priority spread](.gitbook/assets/MYRIAD-OMS/ex4-step7-all-cases-overview.png)
+1. Look through the **Number** column for the value **CS0001168**. You can scroll down through the list if needed.
+2. As you scan, confirm the matching details in the other columns:
+   - **Short description:** `Report delivery failure — secure portal issue (ORD0002072)`
+   - **Priority:** `2-High`
+   - **State:** `New`
+   - **Channel:** `Web`
 
-> **The pattern:** Every case on ORD0002156 is a real-world operational failure mode in genomic diagnostics — insurance, sample quality, documentation, logistics, and benefits. On average, complex biopsy orders generate 2–4 exception cases. Six cases on a single order is a clear signal that this order's intake process broke down at multiple handoff points.
-
----
-
-### Step 8 — End Impersonation
-
-1. Select your **user avatar** → **End impersonation**.
+> **Note:** If the list is long and you are having difficulty finding the case, you can use the **search bar** at the top of the list. Click into it and type **CS0001168**, then press **Enter** on your keyboard. The list will filter to show only matching results.
 
 ---
 
-### ✅ Exercise 4 Checkpoint
+### Step 5: Open the Case Record
 
-From Julie Castillo's case queue you observed:
+1. Once you have located **CS0001168** in the list, **click** directly on the case number **"CS0001168"** (it will appear as a blue, clickable hyperlink).
 
-- CSM cases are the **external-facing exception layer** — they capture the back-and-forth with providers, insurers, and couriers that the internal task queue doesn't surface.
-- ORD0002156 has **six concurrent exception types** — insurance denial, sample rejection, expired signature, missing consent, missed courier, and benefits discrepancy — all requiring parallel resolution.
-- The **Activity feed** on each case is the audit trail: every call, note, authorization code, and status update is captured in sequence.
+The workspace will change from the list view to a **case record detail view**. This view is divided into multiple sections, arranged in a **split-pane layout** (meaning the screen is divided into panels sitting side by side):
 
-**What happens next:** John Kim's analytics view in Exercise 5 will show what this exception pattern looks like at scale — across 40+ orders and 6+ months of order history.
+| Panel position | What it contains |
+|---|---|
+| **Left panel** | The case form — fields like Contact, Consumer, Account, and other lookup fields |
+| **Center panel** | Communication tabs (**Comments**, **Work notes**, **Email**) and the **Activity stream** below them |
+| **Right panel** | The **Recommendations** panel — including Now Assist AI suggestions |
+
+At the **top of the case record**, you will also see a row of action buttons: **Create** (with a dropdown arrow), **Manage case** (with a dropdown arrow), and **Save**.
+
+📷 *Refer to screenshot:* **s-cs0001168-detail.png** — This shows exactly what your screen should look like with CS0001168 open: the form fields on the left, the activity and communication area in the center, and the Recommendations panel on the right.
 
 ---
+
+### Step 6: Review the Case Form Fields (Left Panel)
+
+Take a moment to review the key information on the left panel of the case record. This is the **case form** — a structured collection of fields that capture all the important details about this issue.
+
+1. Look at the **left panel** of the screen. You will see labeled fields such as:
+   - **Contact** — The person who reported the problem (a lookup field — it references a specific person in the system).
+   - **Consumer** — The end consumer or patient associated with this case (another lookup field).
+   - **Account** — The organization or provider group involved.
+   - **Priority** — Confirm it shows **2-High**.
+   - **State** — Confirm it shows **New**.
+
+2. You do not need to change anything. Simply **read through the fields** to understand the case context.
+
+> **Note:** **Lookup fields** are special fields that link to other records in ServiceNow. Instead of typing free text, they reference a specific person, account, or item in the system's database. You may notice a small magnifying glass icon 🔍 next to these fields — that icon lets you search for and select a record. For now, just observe the values already filled in.
+
+---
+
+### Step 7: Review the Short Description
+
+At the top of the case form (or prominently displayed near the case number), find the **Short description** field. It reads:
+
+**`Report delivery failure — secure portal issue (ORD0002072)`**
+
+This tells Julie (and anyone else looking at this case) exactly what happened: a report could not be delivered because of a problem with the secure portal, and the issue is connected to order number ORD0002072.
+
+---
+
+### Step 8: Review the Activity Feed (Center Panel)
+
+Now look at the **center panel** of the screen. This is where all communication and case history lives.
+
+1. At the top of the center panel, you will see **tabs** labeled:
+   - **Comments** — For customer-visible notes
+   - **Work notes** — For internal-only notes (visible to agents, not to the customer)
+   - **Email** — For email correspondence tied to this case
+
+2. Below these tabs is the **Activity stream**. This is a chronological feed (like a timeline) showing every action that has been taken on this case. Each entry has a timestamp and a description of what happened.
+
+3. Look for the following activity entry:
+   > **"System Administrator changed state and added 3 updates"** — *5 hours ago*
+
+   This tells you that approximately 5 hours ago, a System Administrator made changes to this case — they changed the case's state and added 3 updates (these could be comments, work notes, or field changes).
+
+4. **Scroll** through the Activity stream to see if there are any additional entries. Read them to build a complete picture of the case's history.
+
+> **Note:** The Activity stream is one of the most important sections of any case. It is the single source of truth for *everything* that has happened — who did what, when, and what they said. Julie would check this first whenever she picks up a case to understand the full history before taking action.
+
+---
+
+### Step 9: Locate the Recommendations Panel (Right Panel)
+
+Now turn your attention to the **right panel** of the screen. This is the **Recommendations panel**.
+
+1. Look at the far-right side of the screen. You will see a panel with a tab labeled:
+   - **Suggested actions (1)**
+
+   The number in parentheses — **(1)** — tells you that the system has **one** recommendation ready for you to explore.
+
+2. Below the tab label, you will see text that reads something like:
+   > *

@@ -1,148 +1,144 @@
 ## Exercise 3: Order Intake & Task Resolution
 
-**Persona: Sarah Rice — Order Intake Specialist**
-**Duration: ~15 minutes**
-
-> **Objective:** Work Sarah Rice's task queue. You will navigate the Order Tasks list, identify the most urgent exceptions on Patricia Williams' stalled EndoPredict order (ORD0002156), and understand how intake specialists move orders through the verification and processing pipeline.
-
----
-
-### Scene
-
-Sarah Rice starts each shift by triaging her task queue — sorted by age, priority, and order status. ORD0002156 (Patricia Williams, EndoPredict Dx) has been sitting at **New** status for 40 days with six unresolved task exceptions. It's Sarah's most urgent order today. The patient's oncologist — Dr. Sarah Mitchell — has called twice asking for a status update.
+**Persona:** Sarah Rice — Order Intake Specialist
+**Duration:** ~15 minutes
+**Objective:** Impersonate Sarah Rice, navigate to the Order Tasks list, locate a critical insurance verification task, open the record, review its form fields and activity stream, and explore the task tabs.
 
 ---
 
-### Step 1 — Impersonate Sarah Rice
-
-1. Select your **user avatar** → **Impersonate another user**.
-2. Type `sarah.rice` → select **Sarah Rice** → **Impersonate user**.
+**The Scene:** It's the start of Sarah Rice's shift. Before anything else, she triages her task queue — scanning for the highest-priority items that need immediate attention. Today, one task rises to the top: **OMTASK000001092 — Insurance Eligibility Verification — BCBS Federal**. This task is Priority 1-Critical and is currently blocked: the referring physician hasn't yet sent the medical necessity letter that BCBS Federal requires before they'll confirm coverage for MRD (Minimal Residual Disease) testing. Sarah needs to open the task, review the latest updates, and understand exactly where things stand so she can follow up.
 
 ---
 
-### Step 2 — Navigate to Order Tasks
+### Step 1: Impersonate Sarah Rice
 
-1. In the filter navigator, type `Order Tasks` (or navigate via **Order Management > Order Tasks**).
-2. The Order Tasks list opens — filtered to tasks assigned to Sarah Rice's group or directly to her.
+Before you can see Sarah's task queue, you need to tell ServiceNow that you want to work as Sarah Rice. This is called **impersonating** a user.
 
-![Order Tasks list showing Sarah Rice's task queue with aging and priority indicators](.gitbook/assets/MYRIAD-OMS/ex3-step2-task-queue.png)
+1. Look at the **very top-right corner** of your ServiceNow screen. You will see a small **avatar icon** (it may look like a person's silhouette or your admin initials).
+2. **Click** that avatar icon. A dropdown menu will appear.
+3. In the dropdown, **click** the option labeled **Impersonate User** (or **Impersonate Another User**).
+4. A search dialog will appear. In the search field, **type** `Sarah Rice`.
+5. When her name appears in the results list below the search field, **click** on **Sarah Rice** to select her.
+6. **Click** the **Impersonate User** button (or simply click her name if it immediately switches).
 
----
+The page will briefly reload. You are now working as Sarah Rice — everything you see will reflect her role, her permissions, and her assignments.
 
-### Step 3 — Identify the Highest Priority Task
-
-1. Sort the list by **Priority** (ascending) then by **Opened** (oldest first).
-2. Locate **OMTASK000001397** — *Awaiting Information* — assigned to Sarah Rice.
-   - **Order:** ORD0002156 (Patricia Williams — EndoPredict Dx)
-   - **Age:** 12 days in current status
-   - **Priority:** 1 — Critical
-3. Select **OMTASK000001397** to open it.
-
-> **Why is this critical?** EndoPredict Dx is a prognostic test for breast cancer recurrence risk. Patricia's treatment plan decision — whether she needs chemotherapy — cannot be finalized until the result is available. Every day of delay affects patient care.
+> **Note:** Impersonation is a training/admin feature. In a real production environment, each user logs in with their own credentials and sees only their own workspace. No one needs to "impersonate" themselves.
 
 ---
 
-### Step 4 — Review the Task and Its Context
+### Step 2: Open the Configurable Workspace
 
-On the task record, examine:
+You should now be inside the **ServiceNow Configurable Workspace** — the main interface Sarah uses every day. Take a moment to orient yourself:
 
-| Field | Value |
-|-------|-------|
-| **Short Description** | Insurance eligibility verification — AET-516-PTW |
-| **State** | Awaiting Information |
-| **Order** | ORD0002156 |
-| **Patient** | Patricia Williams |
-| **Insurance Member ID** | AET-516-PTW (Aetna Select Network, HMO) |
-| **Assigned to** | Sarah Rice |
-| **Opened** | 12 days ago |
+- On the **left side** of the screen, you'll see a **dark-colored sidebar**. This is your primary navigation panel.
+- Along the **top of that sidebar**, you'll notice several tabs or links: **All**, **Favorites**, **History**, **Workspaces**, and **Admin**.
 
-1. Scroll to the **Activity** section — review any prior notes on this task.
-2. Note that this task is blocked on Aetna prior authorization — the HMO plan requires pre-approval for CPT 81521 (EndoPredict).
+If you are not already in the workspace (for example, if you see the older "classic" ServiceNow interface with a white background and a banner across the top), do the following:
 
----
+1. In the left sidebar, **click** the tab labeled **Workspaces**.
+2. From the list that appears, **click** on the workspace your lab uses (it may be labeled **CSM/FSM Configurable Workspace**, **OMS Workspace**, or similar — your instructor will confirm the exact name).
 
-### Step 5 — Navigate to ORD0002156 (Patricia Williams' Order)
+You should now see the workspace with its dark left sidebar.
 
-1. On the task, select the **Order** field link — **ORD0002156**.
-2. The full order record opens. Review the header fields:
-
-| Field | Value |
-|-------|-------|
-| **Status** | New |
-| **Patient** | Patricia Williams |
-| **Test** | EndoPredict Dx |
-| **Collection Method** | Tissue Biopsy (FFPE Tumor Block) |
-| **ICD-10** | C50.911 — Malignant neoplasm of unspecified site of right female breast |
-| **Facility** | Huntsman Cancer Institute |
-| **Needs Attention** | Yes |
-
-![ORD0002156 Patricia Williams — EndoPredict Dx order record with attention flag and task list](.gitbook/assets/MYRIAD-OMS/ex3-step5-ord0002156-detail.png)
+> **Note:** The "workspace" is ServiceNow's modern, streamlined interface designed for daily task work. Think of it like the "home base" where all of Sarah's work happens — lists, records, and activity streams are all accessible from here without leaving this view.
 
 ---
 
-### Step 6 — Review All Open Tasks on ORD0002156
+### Step 3: Navigate to Order Tasks — All
 
-1. Scroll to the **Order Tasks** related list on ORD0002156.
-2. You will see 23 tasks in total. Identify the open/attention-flagged tasks:
+Now you need to find the list of **all Order Tasks** — the master queue of work items across the OMS lab.
 
-| Task | Description | State | Age |
-|------|-------------|-------|-----|
-| OMTASK000001397 | Insurance eligibility verification | Awaiting Information | 12 days |
-| Additional tasks | Sample logistics, consent verification, physician signature | Various open states | — |
+1. In the **dark left sidebar**, look for a section called **Default lists** (you may need to scroll down slightly in the sidebar to find it).
+2. Under Default lists, you'll see a category called **Order Tasks**. **Click** on **Order Tasks** to expand it.
+3. When it expands, you'll see a sub-option labeled **All**. **Click** on **All**.
 
-3. Select a few additional tasks to understand the scope of exceptions on this order.
+The main area of your screen (the large panel to the right of the sidebar) will now display a **table** — a list of all Order Tasks in the system.
 
-> **The pattern:** ORD0002156 has accumulated exceptions across multiple task categories — eligibility, consent, sample, and signature. This is the signature presentation of an order that arrived with incomplete paperwork (tissue biopsy orders require more documentation than blood draws).
+> **Note:** "All" means every Order Task regardless of status, priority, or who it's assigned to. In a real shift, Sarah might use filtered views, but for this exercise, we're starting with the full list so you can learn how the workspace displays data.
 
----
-
-### Step 7 — View Patricia Williams' Patient 360
-
-1. On ORD0002156, select the **Patient** field link — **Patricia Williams**.
-2. On her Patient 360 record, review:
-   - **Active Conditions:** Malignant neoplasm of breast (C50.911), Estrogen receptor positive status (Z17.0)
-   - **Member Plan:** Aetna Select Network — HMO (AET-516-PTW)
-   - **Allergies:** Sulfa drugs — rash (mild)
-   - **Appointments:** Initial consult May 15, 2026 (fulfilled) — EndoPredict ordering discussed
-
-![Patient 360 for Patricia Williams — conditions, member plan, and appointment history](.gitbook/assets/MYRIAD-OMS/ex3-step7-patient360-patricia.png)
-
-3. Navigate back to ORD0002156 using the breadcrumb.
+![Order Tasks — All list showing 358 records in the workspace table](s-order-tasks-all.png)
+*You should see a view similar to this screenshot — a table of Order Tasks with 358 total records.*
 
 ---
 
-### Step 8 — Review the CSM Cases Linked to ORD0002156
+### Step 4: Understand the List Columns
 
-1. Scroll down on ORD0002156 to find the **Cases** related list (or navigate via **Order Management > Cases**).
-2. You will see 6 CSM cases linked to this order:
+Before searching for Sarah's task, take a moment to read the **column headers** across the top of the table. Each column tells you something different about every task:
 
-| Case | Issue |
-|------|-------|
-| CS0001022 | Patient consent not documented |
-| CS0001023 | Insurance denial — appeal pending |
-| CS0001024 | Sample rejected — re-collection needed |
-| CS0001025 | Physician signature expired |
-| CS0001026 | Courier pickup missed |
-| CS0001027 | Benefits verification discrepancy |
+| Column | What It Tells You |
+|---|---|
+| **Number** | The unique ID for the task (e.g., OMTASK000001092). Every task gets its own number — no two are alike. |
+| **Short description** | A brief summary of what the task involves (e.g., "Insurance Eligibility Verification — BCBS Federal"). |
+| **Priority** | How urgent the task is. **1-Critical** is the highest; it means this task demands immediate attention. |
+| **State** | Where the task is in its lifecycle — Draft, Awaiting information, In progress, etc. |
+| **Assigned to** | The person responsible for working this task right now. |
+| **Task type** | The category of work (e.g., verification, accessioning, lab prep). |
+| **Jeopardy** | A flag indicating whether the task is at risk of missing its SLA (Service Level Agreement) deadline. |
 
-> **Observation:** These cases are handled by Julie Castillo's Order Support team — not Sarah Rice. The intake specialist resolves task-level exceptions; the support team manages external communications and escalations. You'll work those cases in Exercise 4.
-
----
-
-### Step 9 — End Impersonation
-
-1. Select your **user avatar** → **End impersonation**.
+> **Note:** You can think of this list like a shared spreadsheet that the entire OMS team can see. Each row is one task; each column is one piece of information about that task.
 
 ---
 
-### ✅ Exercise 3 Checkpoint
+### Step 5: Locate OMTASK000001092
 
-From Sarah Rice's task queue you observed:
+The list contains **358 tasks** — far too many to scan manually. You need to find Sarah's specific task. Here's how:
 
-- **Order Tasks** are the operational engine of the intake workflow — each exception type (eligibility, consent, sample, signature) maps to a specific task category.
-- ORD0002156 has **23 tasks and 6 open CSM cases** — an unusually high exception count that signals a complex, documentation-heavy biopsy order.
-- The **Patient 360** record surfaces insurance, conditions, and appointments in context — Sarah doesn't need to leave the order workspace to understand the patient's clinical situation.
+1. Look at the **very first column header** in the table — it says **Number**.
+2. **Click directly on the column header text** that says **Number**. A small **search/filter field** will appear just below the header (it looks like a narrow text box embedded in the column).
+   - *If clicking the header sorts the column instead of showing a search box, look for a small **funnel icon** (🔍) next to the column name and click that instead.*
+3. In that search field, **type**: `OMTASK000001092`
+4. **Press the Enter key** on your keyboard.
 
-**What happens next:** The six CSM cases on ORD0002156 are in Julie Castillo's queue. Exercise 4 moves to the Customer Service workspace where provider inquiries, insurance appeals, and sample logistics are managed.
+The list will filter down. You should now see **one row**:
+
+| Number | Short description | Priority | State | Assigned to |
+|---|---|---|---|---|
+| OMTASK000001092 | Insurance Eligibility Verification — BCBS Federal | 1-Critical | Draft | Sarah Rice |
+
+> **Note:** Filtering by the Number column is the fastest way to find a specific task when you already know its ID. You could also filter by "Assigned to" to see all of Sarah's tasks — but for now, we're targeting one specific record.
 
 ---
+
+### Step 6: Open the Task Record
+
+Now that you can see OMTASK000001092 in the filtered list, you need to **open** it to see its full details.
+
+1. In the filtered list, find the row for **OMTASK000001092**.
+2. **Click** on the **blue, underlined text** that reads `OMTASK000001092` in the Number column. (It's a hyperlink — just like clicking a link on a webpage.)
+
+The screen will change to a **split-pane view** — the task record's detail view:
+
+- **Left pane:** The **form** — a structured set of fields containing all the task's data (Number, State, Priority, Account, Assignment group, Assigned to, and more).
+- **Right pane:** The **Activity stream** — a chronological feed of comments, work notes, and updates related to this task. You'll also see tabs for **Comments** and **Work Notes** above the stream.
+
+![OMTASK000001092 detail view — split-pane with form fields on the left and activity stream on the right](s-omtask-detail.png)
+*Your screen should look similar to this screenshot — the form on the left, the activity feed on the right.*
+
+> **Note:** The split-pane layout is one of the most important views in the workspace. You'll spend a large portion of every shift in this view — reading task details on the left while reviewing the conversation history on the right.
+
+---
+
+### Step 7: Review the Form Fields (Left Pane)
+
+Look at the **left pane** of the split view. This is the **task form** — it contains structured data about OMTASK000001092. Locate and read each of the following fields:
+
+| Field | Value You Should See | What It Means |
+|---|---|---|
+| **Number** | OMTASK000001092 | The unique task identifier. |
+| **State** | Draft | This task has been created but not yet moved into active work. Sarah will update this once she begins working it. |
+| **Priority** | 1-Critical | Highest urgency. This insurance verification is blocking downstream lab work. |
+| **Account** | *(The patient's insurance account or ordering facility — read whatever value is displayed.)* | Identifies which account or organization this task relates to. |
+| **Assignment group** | *(Read the value displayed.)* | The team responsible for this category of work. |
+| **Assigned to** | Sarah Rice | Sarah owns this task — it's in her personal queue. |
+| **Customer order** | *(Read the value displayed.)* | Links this task back to the original customer/patient order. |
+| **Order line item** | *(Read the value displayed.)* | The specific test or service within the order that this task supports. |
+| **Parent** | *(Read the value displayed, if any.)* | If this task is a subtask of a larger task, the parent task is shown here. |
+
+> **Note:** You don't need to memorize every field right now. The key takeaway is that the form gives you the **structured "who, what, and where"** of the task — who it's assigned to, what state it's in, and where it fits within the larger order.
+
+---
+
+### Step 8: Read the Activity Stream (Right Pane)
+
+Now shift your attention to the **right pane**. This

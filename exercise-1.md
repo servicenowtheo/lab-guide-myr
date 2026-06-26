@@ -1,100 +1,179 @@
 ## Exercise 1: Submit a New Genomic Test Order
 
-**Persona: Dr. Lydia Chen — Ordering Oncologist, Huntsman Cancer Institute**
-**Duration: ~10 minutes**
-
-> **Objective:** Experience the order submission workflow as a provider. You will navigate to the Order Management module, review a newly submitted order for patient Rachel Kim, and understand what happens immediately after an order enters the Myriad system.
-
----
-
-### Scene
-
-Rachel Kim is a 34-year-old patient of Dr. Lydia Chen with a documented family history of BRCA1-positive breast cancer. During today's appointment, Dr. Chen ordered the **MyRisk 25-Gene Hereditary Cancer Panel** to assess Rachel's inherited cancer risk. The order has just been submitted through the provider portal and is now visible in the intake queue.
+**Persona:** Dr. Lydia Chen — Ordering Oncologist
+**Duration:** ~10 minutes
+**Objective:** Navigate the CSM/FSM Configurable Workspace, impersonate Dr. Lydia Chen, locate a genomic test order in the Customer Orders list, open the record, and understand the key order fields.
 
 ---
 
-### Step 1 — Impersonate Dr. Lydia Chen
-
-1. From the home page, select your **user avatar** in the top-right corner.
-2. Select **Impersonate another user**.
-3. In the search field, type `lydia` and select **Dr. Lydia Chen** from the list.
-4. Select **Impersonate user**.
-
-> You are now operating as Dr. Lydia Chen. The experience will reflect her role-based access — provider portal navigation, patient records she has ordered for, and her order history.
-
-![Order Management workspace showing new orders in the intake pipeline](.gitbook/assets/MYRIAD-OMS/ex1-step1-order-list.png)
+**Scene:** Dr. Lydia Chen recently placed a MyRisk 25-Gene Hereditary Cancer Panel order for a patient with a BRCA1 family history. The order has just arrived in the Myriad Genetics OMS system. Your job is to view it from her perspective and confirm the order details.
 
 ---
 
-### Step 2 — Navigate to Order Management
+### Step 1: Open the Configurable Workspace
 
-1. In the top navigation bar, select **All** (the search icon or hamburger menu).
-2. In the filter navigator, type `Order Management`.
-3. Select **Order Management > Orders** from the results.
+Navigate to the Configurable Workspace using the URL provided by your instructor. You will see:
+- A **dark-colored left sidebar** running top-to-bottom with a few small icons
+- A large main area showing a greeting and metrics dashboard
+- A **top navigation bar** across the very top of the screen
 
-> The Orders list displays all orders visible to Dr. Chen — filtered by her provider relationship to the patients.
+![](.gitbook/assets/MYRIAD-OMS/s-ws-home.png)
 
----
-
-### Step 3 — Locate Rachel Kim's New Order
-
-1. In the Orders list, locate **ORD0002157** — *MyRisk 25-Gene Hereditary Cancer Panel — BRCA1 family history*.
-2. Note the following fields on the list view:
-   - **Order Status:** New
-   - **Patient:** Rachel Kim
-   - **Opened:** Today's date
-   - **Eligibility Status:** Pending
-3. Select **ORD0002157** to open the order record.
-
-![ORD0002157 order record for Rachel Kim — MyRisk 25-Gene Hereditary Cancer Panel](.gitbook/assets/MYRIAD-OMS/ex1-step3-ord0002157-detail.png)
+> **Note:** This is the CSM/FSM Configurable Workspace — designed for agents and reps who work records day-to-day. The modern panel-based layout is different from the classic ServiceNow back-end interface.
 
 ---
 
-### Step 4 — Review the Order Record
+### Step 2: Orient Yourself — The Left Sidebar
 
-Examine the key fields on the order form:
+The **dark left sidebar** has three icons from top to bottom:
 
-| Field | Value | Significance |
-|-------|-------|-------------|
-| **Patient** | Rachel Kim | Links to the Patient 360 record — MRN, demographics, prior orders |
-| **Ordering Provider** | Dr. Lydia Chen | Required for signature validation and results delivery |
-| **Facility** | Huntsman Cancer Institute | Determines collection kit routing and courier schedule |
-| **ICD-10 Code** | Z15.01 | Genetic susceptibility to malignant neoplasm of breast — required for insurance auth |
-| **Collection Method** | Blood Draw | Determines kit type dispatched to facility |
-| **Eligibility Status** | Pending | Insurance verification not yet initiated — Sarah Rice's queue |
-| **Insurance Member ID** | UHC-312-RCK | UnitedHealthcare Choice Plus — will drive prior auth workflow |
+| Icon | Looks Like | What It Does |
+|---|---|---|
+| **Home** | A small house | Returns you to the Workspace landing page |
+| **Lists** | Three horizontal lines (☰) | Opens the full list of record categories |
+| **Cases** | A briefcase/folder | Quick shortcut to the Cases list |
+
+> **Tip:** Hovering over any sidebar icon shows a tooltip with its name.
 
 ---
 
-### Step 5 — View Rachel Kim's Patient Record
+### Step 3: Orient Yourself — The Top Navigation Bar
 
-1. On the order form, select the **Patient** field link — **Rachel Kim**.
-2. The Patient 360 record opens. Review:
-   - **Date of Birth** and **MRN** (RCK-2024-0312)
-   - **Active Conditions** tab — *Genetic susceptibility to malignant neoplasm of breast (Z15.01), Family history of malignant neoplasm of breast (Z80.3)*
-   - **Appointments** tab — upcoming blood draw scheduled for July 14, 2026
-
-3. Navigate back to the order using your browser back button.
-
-![Patient 360 view for Rachel Kim showing conditions and upcoming appointments](.gitbook/assets/MYRIAD-OMS/ex1-step5-patient360-rachel.png)
+The top navigation bar contains from left to right:
+1. **All** — Shows all available menus and modules
+2. **Favorites** — Bookmark frequently-used records or lists
+3. **History** — Recently visited records and pages
+4. **Workspaces** — Switch to a different workspace
+5. **Admin** — Administrative options
+6. **"Search or ask Now Assist"** — Global search bar
+7. **Avatar icon** — Circular photo at the **far top-right corner** — your user menu
 
 ---
 
-### Step 6 — End Impersonation
+### Step 4: Open the Avatar Menu
 
-1. Select your **user avatar** in the top-right corner.
-2. Select **End impersonation** to return to the admin session.
+Locate the **avatar** — the circular photo icon at the **top-right corner** of the screen.
+
+**Click the avatar.**
+
+A dropdown menu appears with several options including:
+- Profile
+- **Impersonate user**
+- Preferences
+- Log out
+
+![](.gitbook/assets/MYRIAD-OMS/s-avatar-menu.png)
+
+> **Note:** "Impersonate user" lets you view the system as another person — no password needed. This is how we'll switch perspective to Dr. Lydia Chen.
+
+---
+
+### Step 5: Impersonate Dr. Lydia Chen
+
+**Click "Impersonate user"** in the avatar dropdown.
+
+A dialog box appears with a search field:
+
+1. **Type** `lydia` in the search field
+2. Look for **"Lydia Chen"** in the results
+3. **Click "Lydia Chen"** to select her
+4. The **"Impersonate user"** button at the bottom becomes active (turns blue/enabled)
+
+![](.gitbook/assets/MYRIAD-OMS/s-impersonate-lydia-ready.png)
+
+5. **Click "Impersonate user"** to confirm
+
+The page reloads. You are now operating as Dr. Lydia Chen. The avatar in the top-right now reflects her profile.
+
+> **Note:** All records, lists, and permissions now reflect Lydia's role. To return to your own login at any time: **Avatar → End impersonation**.
+
+---
+
+### Step 6: Navigate to the Customer Orders List
+
+Look at the **dark left sidebar** and **click the hamburger icon** (☰ — the three horizontal lines, second icon from top).
+
+A flyout panel slides out showing **Default lists** with record categories. Look for:
+
+**Default lists → Customer Orders → All**
+
+**Click "All"** under Customer Orders.
+
+The main area now shows a table of Customer Orders with columns:
+**Number | Account | Contract type | Contact | Consumer | Order type | State**
+
+![](.gitbook/assets/MYRIAD-OMS/s-orders-list-page1.png)
+
+> **Note:** This is the orders queue — 41 orders total. Each row is one order. You can click any column header to sort. The search/filter bar above the list lets you narrow results.
+
+---
+
+### Step 7: Locate ORD0002157
+
+In the Customer Orders list, look for the row with Number **ORD0002157**.
+
+> **Tip:** If you don't see it immediately, use the search bar above the list — type `ORD0002157` and press **Enter**.
+
+**Click the blue "ORD0002157" link** in the Number column.
+
+The record opens in a new tab. The tab bar now shows: **List | ORD0002157**
+
+---
+
+### Step 8: Explore the Split-Pane Record View
+
+The order opens in a **split-pane layout**:
+
+- **Left pane (Form):** Fields and details — Number, Short description, State, Priority, Account, and tabs (Catalog, Line items, Involved Parties, Contacts)
+- **Right pane:** Work notes | Comments tabs at top, then the **Activity stream** below showing all changes and notes on this record
+
+![](.gitbook/assets/MYRIAD-OMS/s-ord0002156-record.png)
+
+> **Note:** The screenshot shows a reference order (ORD0002156) in the same layout. Your ORD0002157 view will be identical in structure.
+
+---
+
+### Step 9: Review the Key Order Fields
+
+In the left form pane, locate these fields:
+
+| Field | Value | What It Means |
+|---|---|---|
+| **Number** | ORD0002157 | Unique order ID — use this to find the record later |
+| **Short description** | MyRisk 25-Gene Panel — BRCA1 family history | The test ordered — 25-gene hereditary cancer panel |
+| **Account** | Myriad Genetics | The laboratory processing this order |
+| **Order type** | Product | Classification in the order system |
+| **State** | Draft | Not yet active — pending review and intake |
+| **Priority** | 2 - High | How urgently this order needs attention |
+
+---
+
+### Step 10: View the Activity Stream
+
+On the **right pane**, click the **Activity** section header to expand it (if not already open).
+
+The Activity stream shows a timestamp log of every change and note added to this order. Even at this early stage, you can see the creation event — who created it, when, and what fields were set.
+
+> **Note:** As the order progresses through intake → eligibility → processing → results, each step is logged here. This is how Myriad operations teams stay informed without sending emails.
+
+---
+
+### Step 11: End Impersonation
+
+You have reviewed ORD0002157 from Dr. Lydia Chen's perspective.
+
+**Click the avatar icon → "End impersonation"** to return to the admin session.
 
 ---
 
 ### ✅ Exercise 1 Checkpoint
 
-You have experienced the order submission entry point from the provider's perspective. Key observations:
+You have successfully:
+- Navigated the CSM/FSM Configurable Workspace
+- Used the impersonation feature to take a provider's perspective
+- Located a new order (ORD0002157) in the Customer Orders list
+- Examined the split-pane record view with form fields and Activity stream
 
-- Orders arrive in **New** status with insurance eligibility pending.
-- The Patient 360 record links clinical context (conditions, appointments) directly to the order.
-- The ordering provider, facility, ICD-10, and collection method are all captured at submission — these fields drive downstream routing, kit dispatch, and insurance authorization workflows.
-
-**What happens next:** ORD0002157 is now in Lisa Morgan's oversight queue. An intake task is automatically assigned to Sarah Rice's team for eligibility verification. You'll see both in Exercise 2 and 3.
+**What happens next:** ORD0002157 is now in the intake queue. Lisa Morgan's oversight role is to monitor all open orders and escalate the most critical ones — that's Exercise 2.
 
 ---

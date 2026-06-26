@@ -1,140 +1,177 @@
 ## Exercise 5: Analytics & AI Insights
 
-**Persona: John Kim — Supervisor / Analytics Lead**
-**Duration: ~15 minutes**
+**Persona:** John Kim — Supervisor / Analytics Lead
+**Duration:** ~15 minutes
 
-> **Objective:** Step into John Kim's supervisory view. You will explore the Order Management analytics — order volume by status, turnaround time trends, team task performance, and exception rates by order type. These are the metrics that drive weekly operational reviews at Myriad.
-
----
-
-### Scene
-
-John Kim runs the weekly operations review for the Order Management team. Every Monday morning he pulls four numbers: orders-in vs. orders-resulted (the throughput ratio), average age of the Awaiting Information bucket (the stall indicator), exception case rate by test type (the quality signal), and task completion rate by team member (the capacity view). ServiceNow surfaces all four in a single workspace — no spreadsheet pulls, no cross-system queries.
+**Objective:** Impersonate John Kim, explore the full Customer Orders queue, navigate to Order Tasks and use the **Group by** feature to analyze team workload distribution and task states, then use Now Assist's global search to ask a natural language question about your data.
 
 ---
 
-### Step 1 — Impersonate John Kim
-
-1. Select your **user avatar** → **Impersonate another user**.
-2. Type `john.kim` → select **John Kim** → **Impersonate user**.
+**Scene:** It's Monday morning. John Kim runs the weekly operations review for the OMS team. Leadership wants answers to three questions: *How many orders are in the pipeline? How is work distributed across the team? Are there any critical tasks that need immediate attention?* Instead of pulling data from three different spreadsheets, John opens the ServiceNow Configurable Workspace — a single-pane view across orders, tasks, and AI-assisted insights.
 
 ---
 
-### Step 2 — Navigate to Order Management Reports
-
-1. In the filter navigator, type `Reports` or navigate to **Now Intelligence > Reports**.
-2. Look for any pre-built reports under the **Order Management** category, or navigate directly to the Orders list for analytics.
-
-![Analytics dashboard showing order volume, status distribution, and turnaround metrics](.gitbook/assets/MYRIAD-OMS/ex5-step2-analytics-overview.png)
+### Steps
 
 ---
 
-### Step 3 — Order Volume by Status
+### Step 1: Impersonate John Kim
 
-1. Navigate to **Order Management > Orders**.
-2. Use the list to group or filter by **Order Status** to understand the current distribution.
-3. Count orders in each status bucket:
+Before we begin, you need to act as John Kim so the workspace reflects his supervisor role and permissions.
 
-| Status | Expected Count | Operational Meaning |
-|--------|---------------|---------------------|
-| New | ~3 | Just submitted, not yet triaged |
-| Awaiting Information | ~4 | Stalled — missing data, pending auth |
-| Sample Received | ~3 | Specimen in hand, processing queued |
-| Lab Processing | ~5 | Active sequencing / analysis |
-| Clinical Review | ~2 | Results ready, awaiting sign-off |
-| Results Available | ~3 | Ready for delivery to provider |
-| Report Delivered | ~8 | Closed — result sent to ordering physician |
+1. In the **top-right corner** of your ServiceNow screen, click your **profile avatar** (it may show your initials or a generic person icon).
+2. From the dropdown menu, select **Impersonate User**.
+3. A dialog box will appear. In the search field, type **John Kim**.
+4. Select **John Kim** from the results and click **Impersonate User**.
 
-> **The insight:** If Awaiting Information is growing week over week, that's a leading indicator of intake process breakdown — either eligibility delays, documentation gaps, or insurance issues are piling up.
+> **Note:** Impersonation lets you experience the platform exactly as John Kim would — seeing his dashboards, his permissions, and his workspace layout. You are not changing any account settings; you are simply "wearing his badge" for this exercise.
+
+5. The page will reload. Confirm that the name near the profile avatar now shows **John Kim**.
 
 ---
 
-### Step 4 — Filter Orders by Test Type (Product)
+### Step 2: Navigate to the OMS Workspace
 
-1. In the Orders list, apply a filter for each major product type and count:
+1. Look at the **dark left sidebar**. At the very top of the sidebar, you will see a row of navigation tabs: **All | Favorites | History | Workspaces | Admin**.
 
-| Test | Orders | % of Total |
-|------|--------|-----------|
-| MyRisk 25-Gene Hereditary Panel | ~10 | Highest volume — hereditary cancer risk |
-| MRD Baseline (AML + NHL) | ~8 | High-value oncology monitoring |
-| EndoPredict Dx | ~5 | Biopsy-based — highest exception rate |
-| Precise Tumor 500 | ~4 | Complex CGP — long turnaround |
-| MRD Monitoring T1/T2 | ~6 | Repeat test for existing series patients |
+> **Note:** These tabs control what appears in the sidebar below them. Think of them like folder tabs in a filing cabinet — each one reveals a different set of modules.
 
-> **The insight:** Biopsy-based tests (EndoPredict, Precise Tumor 500) have significantly higher exception rates than blood-draw tests (MyRisk, MRD). This drives the CSM case volume Julie Castillo manages — an insight that argues for a pre-submission checklist for tissue orders.
-
-![Orders filtered by test type showing volume distribution across product lines](.gitbook/assets/MYRIAD-OMS/ex5-step4-orders-by-product.png)
+2. Click the **Workspaces** tab.
+3. From the list of available workspaces, locate and click **OMS** (Order Management System). The workspace will open and the sidebar will now display the OMS modules: **Customer Orders**, **Order Tasks**, and **Cases**.
 
 ---
 
-### Step 5 — Order Task Performance
+### Step 3: Review the Customer Orders Queue
 
-1. Navigate to **Order Management > Order Tasks** (or **All > Order Tasks**).
-2. Review tasks across the full queue:
-   - Sort by **Assigned To** to see workload distribution across Sarah Rice, Sarah Chen, Marcus Webb, and Priya Nair.
-   - Sort by **State** to see how many tasks are open vs. resolved.
-   - Sort by **Opened** (oldest first) to identify the most aged tasks.
+Let's start John's weekly review by looking at the overall order pipeline.
 
-![Order Tasks list showing task distribution by assignee and state](.gitbook/assets/MYRIAD-OMS/ex5-step5-task-performance.png)
+1. In the left sidebar, click **Customer Orders**.
+2. The main content area will load a **list view** — a table showing all customer orders. This is similar to a spreadsheet, with rows (one per order) and columns (details about each order).
 
-3. Note the concentration of tasks on ORD0002156 (Patricia Williams):
-   - 23 tasks on a single order is an outlier — a signal for the supervisor to initiate an order review.
+📸 *Refer to screenshot:* **s-orders-list-page1.png** — *This shows the Customer Orders All list.*
 
----
+3. Look at the **record count** displayed just above the list (or in the list header area). You should see **41 records** total, with order numbers ranging from approximately **ORD0001001** to **ORD0002157**.
 
-### Step 6 — Review CSM Case Volume
+> **Note:** This count tells John at a glance how large the current pipeline is. Forty-one active orders is the number he'll report to leadership.
 
-1. Navigate to **Customer Service > Cases** (or **All > Cases**).
-2. Group by **State** to see open vs. resolved:
-
-| State | Count |
-|-------|-------|
-| Open | ~6 |
-| In Progress | ~variable |
-| Resolved | ~variable |
-
-3. Filter for **High** and **Critical** priority cases — these are Julie's active escalations.
+4. Take a moment to **scan the list columns**. You'll see information like order number, priority, state, and other details. Notice whether any orders show **Critical** or **High** priority — John will want to flag those.
 
 ---
 
-### Step 7 — MRD Series Overview (Dorothy Martinez)
+### Step 4: Navigate to Order Tasks — See the Full Team Workload
 
-1. If the custom schema has been loaded, navigate to **Order Management > MRD Series** (or `sn_ind_tmt_orm` → MRD Series module).
-2. Locate **MRD-SERIES-DMZ-AML-2024** — Dorothy Martinez's AML monitoring series.
-3. Review the series record:
+Customer Orders are the "big picture." Now John needs to zoom in to the task level — the individual pieces of work his team is executing.
 
-| Field | Value |
-|-------|-------|
-| **Series ID** | MRD-AML-DMZ-2024-001 |
-| **Patient** | Dorothy Martinez |
-| **Baseline Order** | ORD0002154 |
-| **Series Status** | Active |
-| **Cadence** | Every 3 months |
-| **T0 Report Date** | July 1, 2026 |
-| **T1 Due Date** | October 1, 2026 |
-| **T2 Due Date** | January 1, 2027 |
+1. In the left sidebar, click **Order Tasks**.
+2. A new list view loads showing all order tasks. Look at the record count — you should see **358 records** total.
 
-> **The strategic value:** MRD series represent Myriad's highest-value, longest-duration customer relationships. A single AML patient on a 12-month monitoring series generates 4 orders — each requiring the same intake, verification, and logistics workflow. ServiceNow's ability to track the series-level relationship (baseline → T1 → T2 → T3) is what transforms a transaction system into a longitudinal patient management platform.
+📸 *Refer to screenshot:* **s-order-tasks-all.png** — *This shows the Order Tasks All list with OMTASK numbers, descriptions, priorities, and assignees.*
 
-![MRD Series record for Dorothy Martinez showing baseline order link and monitoring cadence](.gitbook/assets/MYRIAD-OMS/ex5-step7-mrd-series-dorothy.png)
+3. Review the **column headers** across the top of the list. You should see:
+   - **Number** — the task ID (e.g., OMTASK0010045)
+   - **Short description** — what the task is about
+   - **Priority** — how urgent it is
+   - **State** — where it stands (Draft, Awaiting information, In progress)
+   - **Assigned to** — which team member owns it
+   - **Task type** — the category of work
+   - **Jeopardy** — whether the task is at risk of missing its deadline
 
----
-
-### Step 8 — End Impersonation
-
-1. Select your **user avatar** → **End impersonation**.
+> **Note:** This is John's "command center." Three hundred fifty-eight tasks across the team — but who has the most work? And how many tasks are stuck? The next two steps will answer those questions without any manual counting.
 
 ---
 
-### ✅ Exercise 5 Checkpoint
+### Step 5: Group Tasks by Assigned To — See Workload Distribution
 
-From John Kim's analytics seat you observed:
+Now we'll use one of the most powerful list features in ServiceNow: **Group by**. This instantly reorganizes your list into sections based on any field you choose — no formulas, no pivot tables.
 
-- **Order volume by status** reveals where the pipeline is healthy and where it's backing up.
-- **Test type distribution** shows that biopsy orders generate disproportionate exception volume — a product-specific quality signal.
-- **Task performance by assignee** surfaces capacity and workload distribution — a tool for staffing decisions.
-- **MRD series tracking** elevates ServiceNow from a transactional order system to a longitudinal patient management platform.
+1. Look at the **list toolbar** — the horizontal bar directly above the first row of data in your Order Tasks list. It contains several small buttons and controls for manipulating the list.
 
-**What happens next:** The Challenge round ties all five exercises together — you will trace a complete order from submission through results in a single end-to-end scenario.
+2. Locate the **Group by** button in the toolbar.
+
+> **Note:** The **Group by** button groups your list into collapsible sections organized by the field you select. Think of it like sorting a deck of cards into piles by suit — except here, you're sorting tasks into piles by team member, by state, or by any other column.
+
+3. Click the **Group by** button. A dropdown menu will appear showing the available fields you can group by.
+
+4. Select **Assigned to**.
+
+5. Watch the list transform. Instead of one long table, you now see **sections** — each section is headed by a team member's name with a count of their tasks. You should see names like:
+   - **Sarah Rice**
+   - **Sarah Chen**
+   - **Marcus Webb**
+   - **Priya Nair**
+   - *(and others)*
+
+6. **Scan the counts.** Each section header shows how many tasks belong to that person. This is John's instant workload distribution view:
+   - Is one person carrying significantly more tasks than others?
+   - Is anyone's section suspiciously empty (maybe they need tasks assigned)?
+   - Are there tasks with **no assignee** (an "(empty)" group)?
+
+> **Note:** In a traditional review, John would export data to Excel, build a pivot table, and create a chart. Here, he got the same answer in two clicks — directly from live data.
 
 ---
+
+### Step 6: Regroup Tasks by State — See Pipeline Health
+
+Now let's answer the second leadership question: *How many tasks are in each state?*
+
+1. The **Group by** button should still be active (your list is still grouped by Assigned to). Click the **Group by** button again.
+
+2. This time, select **State**.
+
+3. The list reorganizes into new sections, one for each task state. You should see groups like:
+   - **Draft** — tasks that have been created but not yet started
+   - **Awaiting information** — tasks that are blocked, waiting for input
+   - **In progress** — tasks that team members are actively working on
+
+4. **Read the counts** in each section header. Ask yourself the questions John would ask:
+   - How many tasks are stuck in **Awaiting information**? (This could signal bottlenecks — someone is waiting for a customer response, a lab result, or an approval.)
+   - How many are still in **Draft**? (Are these new tasks that haven't been picked up yet?)
+   - Is the **In progress** count healthy relative to the total 358?
+
+> **Note:** This two-step grouping exercise — first by **Assigned to**, then by **State** — gives John a complete picture of *who* is doing *what* and *where things stand*. It's the foundation of his weekly operations report.
+
+5. To **clear the grouping** and return to the standard flat list, click the **Group by** button once more and select **None** (or the option to remove grouping). Your list will return to its original 358-record flat view.
+
+---
+
+### Step 7: Try the Sort Feature
+
+While you're in the Order Tasks list, let's also try sorting.
+
+1. Look at the list toolbar again and locate the **Sort by** button (it's near the Group by button).
+
+2. Click **Sort by** and select **Priority**.
+
+3. The list reorders so that the highest-priority tasks appear at the top. This is another way John can quickly identify what needs attention first — without scrolling through all 358 records.
+
+> **Note:** **Group by** creates visual sections; **Sort by** reorders the rows. You can use both together — for example, group by State and sort by Priority within each group — to build exactly the view you need.
+
+---
+
+### Step 8: Use Now Assist — Ask a Natural Language Question
+
+John has reviewed workload distribution and pipeline health using built-in list tools. Now he wants to use **Now Assist** — ServiceNow's AI-powered assistant — to quickly surface critical items.
+
+1. Look at the **very top of the screen**, in the top navigation bar. You will see a search bar that reads: **"Search or ask Now Assist"**.
+
+> **Note:** This search bar is more than a keyword search. It understands **natural language questions** — meaning you can type a question the way you'd ask a colleague, and the AI will try to find the answer from your platform data.
+
+2. Click into the **Search or ask Now Assist** bar.
+
+3. Type the following question exactly as written:
+
+   **`show me critical order tasks`**
+
+4. Press **Enter** (or click the search/submit icon).
+
+5. Review the results. Now Assist will return a set of results — these may include order tasks flagged as **Critical** priority, or tasks with jeopardy indicators. The results appear directly in the workspace, allowing John to scan them without building a filter manually.
+
+> **Note:** You can ask Now Assist many types of questions: *"How many order tasks are assigned to Sarah Rice?"*, *"What orders are in draft state?"*, or *"Show me overdue tasks."* Experiment with your own questions if time permits — this is a safe environment and you won't break anything.
+
+---
+
+### Step 9: Open a Specific Order and Review Now Assist Summary
+
+Finally, let's see how Now Assist can summarize a specific record — saving John from reading through every field and every comment in the activity log.
+
+1. Navigate back to **Customer Orders** by clicking **Customer Orders**

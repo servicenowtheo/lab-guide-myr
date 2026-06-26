@@ -45,8 +45,9 @@ Your lab instance is pre-loaded with Myriad Genetics patient data, orders, tasks
 
 1. Open your browser and navigate to your assigned lab instance URL (provided by your facilitator).
 2. Log in as **admin** with the credentials provided.
-3. Confirm you see the home dashboard.
-4. You're ready to go — jump to Exercise 1!
+3. After login, navigate to the **CSM/FSM Configurable Workspace** by appending `/now/cwf/agent/home` to your instance URL — for example: `https://your-instance.service-now.com/now/cwf/agent/home`
+4. Confirm you see the Workspace home page — a dark sidebar on the left, "Hello, System Administrator" greeting, and the Myriad Genetics branding.
+5. You're ready to go — jump to Exercise 1!
 
 ---
 
