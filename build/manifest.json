@@ -1,0 +1,94 @@
+{
+  "lab": "MYRIAD-OMS",
+  "version": "1.1.0",
+  "description": "Myriad Genetics OMS lab — ServiceNow as oncology order management backbone",
+  "instance_requirements": {
+    "plugins": ["sn_ind_tmt_orm"],
+    "workspace_url": "/now/cwf/agent/home"
+  },
+  "story_orders": [
+    {
+      "number": "ORD0002157",
+      "short_description": "MyRisk 25-Gene Panel — BRCA1 family history",
+      "priority": "2",
+      "priority_label": "2 - High",
+      "state": "draft",
+      "exercise": "Exercise 1",
+      "persona": "Dr. Lydia Chen",
+      "patient": "Rachel Kim",
+      "epic_origin": true,
+      "fhir_priority": "urgent",
+      "clinical_context": "BRCA1 family history — maternal lineage, two first-degree relatives"
+    },
+    {
+      "number": "ORD0002156",
+      "short_description": "EndoPredict Dx — Breast cancer recurrence risk stratification",
+      "priority": "1",
+      "priority_label": "1 - Critical",
+      "state": "draft",
+      "exercise": "Exercises 2, 3, 4, Challenge",
+      "persona": "Lisa Morgan / Sarah Rice / Julie Castillo",
+      "patient": "Patricia Williams",
+      "epic_origin": true,
+      "fhir_priority": "urgent",
+      "clinical_context": "Post-lumpectomy ER+/HER2- breast cancer, surgical decision pending in 72h"
+    },
+    {
+      "number": "ORD0002154",
+      "short_description": "MRD Baseline — AML FLT3-ITD+ post-induction",
+      "priority": "1",
+      "priority_label": "1 - Critical",
+      "state": "draft",
+      "exercise": "Exercise 5 (analytics background)",
+      "persona": "John Kim",
+      "patient": "Dorothy Martinez",
+      "epic_origin": true,
+      "fhir_priority": "stat",
+      "clinical_context": "AML post-induction — MRD baseline must precede cycle 2 consolidation"
+    },
+    {
+      "number": "ORD0002116",
+      "short_description": "MRD Baseline — DLBCL NHL pre-treatment ctDNA",
+      "priority": "1",
+      "priority_label": "1 - Critical",
+      "state": "draft",
+      "exercise": "Exercise 5 (analytics background)",
+      "persona": "John Kim",
+      "patient": "Noah Gillen",
+      "epic_origin": true,
+      "fhir_priority": "stat",
+      "clinical_context": "Pre-treatment window closes at first R-CHOP infusion (scheduled D+3)"
+    }
+  ],
+  "priority_distribution": {
+    "critical_count": 3,
+    "critical_orders": ["ORD0002156", "ORD0002154", "ORD0002116"],
+    "high_count": "majority",
+    "note": "Only 3 orders should be Priority 1-Critical. All others should be 2-High or lower."
+  },
+  "total_orders": 41,
+  "personas": [
+    {"name": "Lydia Chen", "role": "Ordering Oncologist", "exercise": 1},
+    {"name": "Lisa Morgan", "role": "Order Oversight Manager", "exercise": 2},
+    {"name": "Sarah Rice", "role": "Order Intake Specialist", "exercise": 3},
+    {"name": "Julie Castillo", "role": "Order Support Services", "exercise": 4},
+    {"name": "John Kim", "role": "Supervisor / Analytics Lead", "exercise": 5}
+  ],
+  "key_cases": [
+    {
+      "number": "CS0001168",
+      "short_description": "Report delivery failure — secure portal issue (ORD0002072)",
+      "exercise": "Exercise 4, Challenge Step 6"
+    }
+  ],
+  "key_tasks": [
+    {
+      "number": "OMTASK000001092",
+      "short_description": "Insurance Eligibility Verification — BCBS Federal",
+      "priority": "1",
+      "state": "draft",
+      "assigned_to": "Sarah Rice",
+      "exercise": "Exercise 3"
+    }
+  ]
+}
