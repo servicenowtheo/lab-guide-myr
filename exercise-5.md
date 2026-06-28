@@ -32,7 +32,9 @@ Before we begin, you need to act as John Kim so the workspace reflects his super
 
 ### Step 2: Navigate to the OMS Workspace
 
-1. Look at the **dark left sidebar**. At the very top of the sidebar, you will see a row of navigation tabs: **All | Favorites | History | Workspaces | Admin**.
+1. Look at the **very top of the screen**, spanning the full width of the page. This is the **top navigation bar**. It contains tabs from left to right: **All | Favorites | History | Workspaces | Admin**.
+
+> **Note:** Do not confuse this with the dark left sidebar (which has icons and module lists). These tabs are in the **top navigation bar** — a separate horizontal strip at the very top of the page.
 
 > **Note:** These tabs control what appears in the sidebar below them. Think of them like folder tabs in a filing cabinet — each one reveals a different set of modules.
 
@@ -48,7 +50,7 @@ Let's start John's weekly review by looking at the overall order pipeline.
 1. In the left sidebar, click **Customer Orders**.
 2. The main content area will load a **list view** — a table showing all customer orders. This is similar to a spreadsheet, with rows (one per order) and columns (details about each order).
 
-📸 *Refer to screenshot:* **s-orders-list-page1.png** — *This shows the Customer Orders All list.*
+![](.gitbook/assets/MYRIAD-OMS/s-orders-list-page1.png)
 
 3. Look at the **record count** displayed just above the list (or in the list header area). You should see **41 records** total, with order numbers ranging from approximately **ORD0001001** to **ORD0002157**.
 
@@ -63,9 +65,9 @@ Let's start John's weekly review by looking at the overall order pipeline.
 Customer Orders are the "big picture." Now John needs to zoom in to the task level — the individual pieces of work his team is executing.
 
 1. In the left sidebar, click **Order Tasks**.
-2. A new list view loads showing all order tasks. Look at the record count — you should see **358 records** total.
+2. A new list view loads showing all order tasks. Look at the record count — you should see several hundred records total.
 
-📸 *Refer to screenshot:* **s-order-tasks-all.png** — *This shows the Order Tasks All list with OMTASK numbers, descriptions, priorities, and assignees.*
+![](.gitbook/assets/MYRIAD-OMS/s-order-tasks-all.png)
 
 3. Review the **column headers** across the top of the list. You should see:
    - **Number** — the task ID (e.g., OMTASK0010045)
@@ -174,4 +176,51 @@ John has reviewed workload distribution and pipeline health using built-in list 
 
 Finally, let's see how Now Assist can summarize a specific record — saving John from reading through every field and every comment in the activity log.
 
-1. Navigate back to **Customer Orders** by clicking **Customer Orders**
+1. Navigate back to **Customer Orders** by clicking **Customer Orders** in the left sidebar.
+
+2. In the orders list, locate **ORD0002156** — the EndoPredict order flagged as Priority 1-Critical. You can sort by the **Priority** column (click the column header once or twice until Critical orders appear at the top), or scan the list manually.
+
+3. **Click** on **ORD0002156** to open its detail record.
+
+![](.gitbook/assets/MYRIAD-OMS/s-ord0002156-detail.png)
+
+4. Look at the **right pane** of the order detail view. You are looking for a **Now Assist Summary** button or an auto-generated AI summary panel. It may be labeled:
+   - **Now Assist Summary**
+   - **AI Summary**
+   - Or shown as a collapsible section or button near the top of the right pane
+
+5. **Click** the **Now Assist Summary** button (or read the summary if it is already displayed).
+
+6. A short, AI-generated summary will appear — a paragraph that pulls together the key facts about this order without John having to read every field and every activity entry. Here is an example of what the summary might say:
+
+   > *"ORD0002156 is an EndoPredict genomic assay for Patricia Williams, a post-lumpectomy ER+/HER2- breast cancer patient. The order is Priority 1-Critical — a surgical consultation is scheduled within 72 hours and the oncologist needs the recurrence risk stratification result to finalize the treatment plan. One insurance eligibility verification task is currently In Progress. No results have been delivered yet."*
+
+7. Notice that the AI combined information from multiple sources — the order description, the active task, the priority flag, and the clinical context — into a single readable statement.
+
+> **Note:** In a full operations review, John might look at a dozen Priority 1-Critical and 2-High records. Without AI summaries, each record requires opening tabs, reading field values, and scrolling through activity logs — easily 5–10 minutes per record. With Now Assist Summary, John gets the critical facts in 30 seconds.
+
+---
+
+### Step 10: End Impersonation
+
+You have completed John Kim's analytics scenario.
+
+1. Click the **avatar/name** in the **top-right corner** of the screen (it should show **John Kim**).
+2. From the dropdown menu, click **End Impersonation** (or **Stop Impersonating**).
+3. The page will reload. Confirm that your admin account name has returned to the top-right corner.
+
+---
+
+### Checkpoint ✓
+
+You have completed Exercise 5. Before moving on, confirm you can answer these questions:
+
+- **How many Customer Orders are in the pipeline?** *(41 records)*
+- **Which feature lets you see which team members have the heaviest workload in Order Tasks?** *(Group by — specifically Group by Assigned to, found in the list header area)*
+- **What is the "Search or ask Now Assist" bar used for?** *(Natural-language questions about your data — type questions like "show me critical order tasks" and get structured results without building filters manually)*
+- **What does the Now Assist Summary on an order record provide?** *(A short AI-generated paragraph combining key order facts — test type, patient situation, priority reason, active tasks — in seconds)*
+- **What is the supervisor's advantage in using this workspace over spreadsheets or email?** *(Real-time, single-pane view across orders, tasks, and AI insights — no manual data aggregation, no waiting for reports)*
+
+---
+
+> **What's Next?** You have now experienced five roles in the Myriad Genetics OMS workflow. If time permits, try the **Challenge** — a scenario that asks you to trace a single critical order through all five lenses at once and demonstrate what you've learned.

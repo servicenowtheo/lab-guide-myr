@@ -30,7 +30,7 @@
       "persona": "Lisa Morgan / Sarah Rice / Julie Castillo",
       "patient": "Patricia Williams",
       "epic_origin": true,
-      "fhir_priority": "urgent",
+      "fhir_priority": "asap",
       "clinical_context": "Post-lumpectomy ER+/HER2- breast cancer, surgical decision pending in 72h"
     },
     {

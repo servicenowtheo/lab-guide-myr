@@ -86,7 +86,7 @@
     gr.setValue("priority", t.priority);
     gr.setValue("state", t.state);
     if (sarahSid) gr.setValue("assigned_to", sarahSid);
-    if (t.order) gr.setValue("order", t.order);
+    if (t.order) gr.setValue("customer_order", t.order);
     if (t.task_type) gr.setValue("task_type", t.task_type);
     gr.setWorkflow(false);
 

@@ -31,8 +31,8 @@
         "Physician (Dr. Lydia Chen) is awaiting the report to counsel the patient on " +
         "BRCA2 risk and surgical options. SLA breach risk: physician appointment in 48h.",
       priority: "2",
-      state: "2",        // In Progress
-      contact_type: "email",
+      state: "1",        // New
+      contact_type: "web",
       assigned_to: agentSid
     }
   ];

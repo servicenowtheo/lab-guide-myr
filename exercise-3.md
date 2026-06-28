@@ -31,15 +31,18 @@ The page will briefly reload. You are now working as Sarah Rice — everything y
 
 You should now be inside the **ServiceNow Configurable Workspace** — the main interface Sarah uses every day. Take a moment to orient yourself:
 
-- On the **left side** of the screen, you'll see a **dark-colored sidebar**. This is your primary navigation panel.
-- Along the **top of that sidebar**, you'll notice several tabs or links: **All**, **Favorites**, **History**, **Workspaces**, and **Admin**.
+Look at the **very top of the screen**, spanning the full width of the page. This is the **top navigation bar**. It contains tabs from left to right:
+
+**All** | **Favorites** | **History** | **Workspaces** | **Admin**
+
+> **Note:** Do not confuse this with the dark left sidebar (which has icons and module lists). The **All**, **Favorites**, **History**, **Workspaces**, and **Admin** tabs are in the **top navigation bar** — a separate horizontal strip at the very top of the page.
 
 If you are not already in the workspace (for example, if you see the older "classic" ServiceNow interface with a white background and a banner across the top), do the following:
 
-1. In the left sidebar, **click** the tab labeled **Workspaces**.
+1. In the **top navigation bar**, **click** the tab labeled **Workspaces**.
 2. From the list that appears, **click** on the workspace your lab uses (it may be labeled **CSM/FSM Configurable Workspace**, **OMS Workspace**, or similar — your instructor will confirm the exact name).
 
-You should now see the workspace with its dark left sidebar.
+You should now see the workspace with its dark left sidebar and the top navigation bar above it.
 
 > **Note:** The "workspace" is ServiceNow's modern, streamlined interface designed for daily task work. Think of it like the "home base" where all of Sarah's work happens — lists, records, and activity streams are all accessible from here without leaving this view.
 
@@ -141,4 +144,73 @@ Look at the **left pane** of the split view. This is the **task form** — it co
 
 ### Step 8: Read the Activity Stream (Right Pane)
 
-Now shift your attention to the **right pane**. This
+Now shift your attention to the **right pane**. This is the **Activity Stream** — a chronological record of everything that has happened on this task. Think of it like a chat thread, with the most recent entry at the top.
+
+1. Scroll through the Activity Stream. You may see entries such as:
+   - **Work notes** (often displayed in a distinct color — orange or similar) — internal-only messages from team members that are not visible to the patient or physician
+   - **Comments** — notes that may be shared more broadly
+   - **Field changes** — automated log entries showing when a field value was updated (e.g., "Priority changed to 1-Critical")
+
+2. Look for any entry that references **BCBS Federal** or **medical necessity letter**. If a note exists, read it carefully to understand the current status of the follow-up. If no notes appear, that itself tells you something — no one has documented this task's status yet.
+
+> **Note:** The Activity Stream is the single source of truth for *what has happened* on this record. Sarah always reads it before taking any action — she does not want to duplicate a step someone else already took.
+
+---
+
+### Step 9: Update the Task State
+
+Sarah has confirmed the task is still blocked, but she is now actively working it. She needs to update the **State** field from **Draft** to **In Progress** so her team knows this task is live.
+
+1. In the **left pane** (the task form), locate the **State** field. It currently shows **Draft**.
+2. **Click** on the **State** field. A dropdown list of state options will appear.
+3. Select **In Progress** from the dropdown.
+4. Look at the **top of the record** for a **Save** or **Update** button.
+5. **Click** **Save** (or **Update**) to commit the change.
+
+The form will refresh. The **State** field should now show **In Progress**.
+
+> **Note:** State changes are tracked automatically in the Activity Stream — once you save, you will see a new entry appear at the top of the stream confirming the state change. This is how teams maintain an audit trail without any manual logging.
+
+---
+
+### Step 10: Add a Work Note
+
+Sarah wants to document that she is actively following up today. She will add an internal **Work Note** — a note that only Myriad's operations team can see.
+
+1. In the **right pane** (Activity Stream area), look for a text input area or a button labeled **Work notes** or **Add work note**. Click it to expand the input field.
+2. Type the following note into the field, or write something equivalent in your own words:
+
+   > *Following up with referring physician's office re: BCBS Federal medical necessity letter for MRD testing on ORD0002156. Status: awaiting callback from Dr. Chen's office. Will update once letter is received or after close of business.*
+
+3. Before posting, confirm you are adding a **Work note** and not a **Comment** — most interfaces show a radio button or tab toggle between the two. Work notes stay internal; comments may be shared.
+4. **Click** **Submit** (or **Post** or **Add**) to save the note.
+
+The Activity Stream will refresh and your work note will appear at the top, timestamped to right now.
+
+> **Note:** This note protects Sarah and her colleagues. If someone else picks up this task tomorrow, they immediately see it is being worked — no duplication, no wasted follow-up calls.
+
+---
+
+### Step 11: End Impersonation
+
+You have completed Sarah Rice's scenario.
+
+1. Click the **avatar/name** in the **top-right corner** of the screen (it should still show **Sarah Rice**).
+2. In the dropdown menu, click **End Impersonation** (or **Stop Impersonating**).
+3. The page will reload and your admin account name will return to the top-right corner.
+
+---
+
+### Checkpoint ✓
+
+You have completed Exercise 3. Before moving on, confirm you can answer these questions:
+
+- **What table did you navigate to find OMTASK000001092?** *(Order Tasks — All)*
+- **What was the initial State of the task?** *(Draft)*
+- **What State did you change it to?** *(In Progress)*
+- **Where in the screen layout is the Activity Stream located?** *(Right pane)*
+- **Why are Work Notes different from Comments?** *(Work notes are internal-only — not visible to patients or external parties)*
+
+---
+
+> **Bridge to Exercise 4 →** Sarah is following up on a blocked task. Meanwhile, a separate issue has escalated — a patient portal failure is preventing a physician from accessing test results. That's a **support case**, not a task. Meet **Julie Castillo**, the person who handles exactly this kind of post-order problem.

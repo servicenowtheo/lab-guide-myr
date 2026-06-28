@@ -31,10 +31,15 @@ The page will briefly reload. You are now working as Julie Castillo. You may not
 
 Now you need to navigate to the CSM/FSM Configurable Workspace — this is the main screen where Julie does her work.
 
-1. Look at the **dark-colored left sidebar**. This is the vertical navigation bar that runs along the left edge of your screen. At the top of this sidebar, you will see a row of tabs or labels: **All | Favorites | History | Workspaces | Admin**.
-2. **Click** the tab labeled **"Workspaces"**.
-3. A list of available workspaces will appear. Look for **"CSM/FSM Configurable Workspace"** (or a similarly named workspace your instructor has specified).
-4. **Click** it to open the workspace.
+Look at the **very top of the screen**, spanning the full width of the page. This is the **top navigation bar**. It contains tabs from left to right:
+
+**All** | **Favorites** | **History** | **Workspaces** | **Admin**
+
+> **Note:** Do not confuse this with the dark left sidebar (which has icons and module lists). The **All**, **Favorites**, **History**, **Workspaces**, and **Admin** tabs are in the **top navigation bar** — a separate horizontal strip at the very top of the page.
+
+1. **Click** the tab labeled **Workspaces** in the top navigation bar.
+2. A list of available workspaces will appear. Look for **"CSM/FSM Configurable Workspace"** (or a similarly named workspace your instructor has specified).
+3. **Click** it to open the workspace.
 
 The screen will change to the workspace view. This is Julie's home base — a purpose-built interface for managing customer service cases.
 
@@ -94,7 +99,7 @@ The workspace will change from the list view to a **case record detail view**. T
 
 At the **top of the case record**, you will also see a row of action buttons: **Create** (with a dropdown arrow), **Manage case** (with a dropdown arrow), and **Save**.
 
-📷 *Refer to screenshot:* **s-cs0001168-detail.png** — This shows exactly what your screen should look like with CS0001168 open: the form fields on the left, the activity and communication area in the center, and the Recommendations panel on the right.
+![](.gitbook/assets/MYRIAD-OMS/s-cs0001168-detail.png)
 
 ---
 
@@ -157,4 +162,57 @@ Now turn your attention to the **right panel** of the screen. This is the **Reco
    The number in parentheses — **(1)** — tells you that the system has **one** recommendation ready for you to explore.
 
 2. Below the tab label, you will see text that reads something like:
+
+   > **"Portal authentication error — secure delivery channel unavailable. Suggested action: Escalate to IT Operations to investigate authentication failure and restore delivery channel."**
+
+   This is Now Assist's AI-generated recommendation. It read the case description, the linked order, and the case history — and surfaced the most likely next action.
+
+3. Read the recommendation carefully. You don't have to act on it right now, but take note of what it says and which team it points to.
+
+> **Note:** This is **Now Assist** in action — ServiceNow's AI capability applied to case management. Instead of Julie having to decide "who should handle this?" from scratch, Now Assist reviews similar past cases and the current case context to suggest the most effective next step. In a high-volume environment with dozens of cases, this saves significant decision time.
+
+---
+
+### Step 10: Review What Julie Knows
+
+Julie has now completed her initial review of CS0001168. Before taking action, she mentally assembles the picture:
+
+| What she knows | Detail |
+|---|---|
+| **The issue** | Patient portal failed to deliver genomic report for ORD0002072 |
+| **Who is waiting** | Patient: Linda Patel. Physician: Dr. Lydia Chen |
+| **Time pressure** | Dr. Lydia Chen has a patient appointment in 48 hours — she needs the results to counsel the patient on BRCA2 risk |
+| **Root cause hint** | IT logged a portal authentication error |
+| **Recommended action** | Escalate to IT Operations |
+
+> **Note:** Julie does not need to diagnose the technical failure herself — that's IT's job. Her role is to coordinate: get IT moving, set expectations with the physician, and make sure the case moves forward. ServiceNow gives her all the context she needs to do that without picking up the phone for a status call.
+
+1. **Do not** close the case or change its State in this exercise. Leave CS0001168 as-is.
+2. Simply take stock of the information you found across all three panels and the Activity stream.
+
+---
+
+### Step 11: End Impersonation
+
+You have completed Julie Castillo's scenario.
+
+1. Click the **avatar/name** in the **top-right corner** of the screen (it should still show **Julie Castillo**).
+2. In the dropdown menu, click **End Impersonation** (or **Stop Impersonating**).
+3. The page will reload and your admin account will be restored.
+
+---
+
+### Checkpoint ✓
+
+You have completed Exercise 4. Before moving on, confirm you can answer these questions:
+
+- **What is the table that holds CS0001168?** *(sn_customerservice_case — the Cases list)*
+- **What was the issue in this case?** *(Secure portal delivery failure — patient couldn't access genomic report for ORD0002072)*
+- **Who is waiting for the results, and why is timing critical?** *(Patient Linda Patel and physician Dr. Lydia Chen — physician appointment in 48 hours to discuss BRCA2 risk and surgical options)*
+- **Where is the Recommendations panel on the case record?** *(Right panel — look for the "Suggested actions" tab with a number in parentheses)*
+- **What did Now Assist recommend?** *(Escalate to IT Operations to investigate portal authentication failure)*
+
+---
+
+> **Bridge to Exercise 5 →** You've seen reactive work — Sarah resolving a blocked task, Julie reviewing a support case. Now let's take the supervisor view. **John Kim** runs the weekly operations review and needs answers across the entire OMS pipeline. He uses analytics and AI-assisted search to answer leadership's questions in minutes, not hours.
    > *

@@ -98,7 +98,7 @@
       "Found — assigned_to: " + taskGr.getDisplayValue("assigned_to") +
       " priority: " + taskGr.getValue("priority"));
   } else {
-    warn("task-OMTASK000001092", "OMTASK000001092 not found — Exercise 3 task missing");
+    check("task-OMTASK000001092", false, "OMTASK000001092 NOT FOUND — Exercise 3 will fail without this task");
   }
 
   // Task count

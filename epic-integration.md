@@ -85,7 +85,7 @@ These four orders arrived via Epic integration from Huntsman Cancer Institute th
 | Order | Patient | Test | Epic Priority | Who works it |
 |---|---|---|---|---|
 | **ORD0002157** | Rachel Kim | MyRisk 25-Gene — BRCA1 family history | Urgent | Exercise 1 — Dr. Lydia Chen's perspective |
-| **ORD0002156** | Patricia Williams | EndoPredict Dx — Breast cancer recurrence risk stratification | Urgent | Exercises 2, 3, 4, Challenge |
+| **ORD0002156** | Patricia Williams | EndoPredict Dx — Breast cancer recurrence risk stratification | ASAP | Exercises 2, 3, 4, Challenge |
 | **ORD0002154** | Dorothy Martinez | MRD Baseline — AML FLT3-ITD+ post-induction | STAT | Background — visible in Analytics (Ex 5) |
 | **ORD0002116** | Noah Gillen | MRD Baseline — DLBCL NHL pre-treatment ctDNA | STAT | Background — visible in Analytics (Ex 5) |
 
