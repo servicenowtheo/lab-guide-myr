@@ -27,19 +27,19 @@ The page will briefly reload. You are now working as Lisa Morgan. Everything you
 
 ---
 
-### Step 2: Locate the Left Sidebar and Open "All"
+### Step 2: Open the "All" Menu via the Top Navigation Bar
 
-Look at the **left edge** of your screen. You will see a **dark-colored vertical sidebar**. This sidebar is your main navigation tool in the Configurable Workspace — think of it like a table of contents for the entire system.
-
-At the **top** of the sidebar, you will see a row of navigation tabs:
+Look at the **very top of the screen** — above everything else, spanning the full width of the page. This is the **top navigation bar**. It contains several tabs from left to right:
 
 **All** | **Favorites** | **History** | **Workspaces** | **Admin**
 
-1. **Click** the tab labeled **All**.
+> **Note:** Do not confuse this with the dark left sidebar, which has small icons for Home, Lists, and Cases. The tabs described here are in the **top navigation bar**, a separate horizontal strip at the very top of the page.
+
+1. **Click** the tab labeled **All** in the top navigation bar.
 
 This opens a full list of all available menus and modules — everything the platform can do, organized into categories.
 
-> **Note:** If you ever feel lost in ServiceNow, clicking **All** in the left sidebar brings you back to this master menu. It is your home base.
+> **Note:** If you ever feel lost in ServiceNow, clicking **All** in the top navigation bar brings you back to this master menu. It is your home base.
 
 ---
 
@@ -184,3 +184,17 @@ Lisa's initial priority check is complete. You now need to stop impersonating Li
 2. In the dropdown menu that appears, click **End impersonation**.
 
 The page will reload. You are now back to your own user account.
+
+---
+
+### ✅ Exercise 2 Checkpoint
+
+You have successfully:
+- Used the Customer Orders queue to scan for priority flags across the pipeline
+- Identified the three Priority 1-Critical orders and understood why ORD0002156 takes priority
+- Opened ORD0002156 and reviewed its key fields in the split-pane record view
+- Used Now Assist's Summarize feature to generate an AI-powered order summary in seconds
+
+**What happens next:** ORD0002156 has several open intake exceptions blocking it from progressing. Sarah Rice — the intake specialist — is responsible for working through those tasks one by one. That's Exercise 3.
+
+---

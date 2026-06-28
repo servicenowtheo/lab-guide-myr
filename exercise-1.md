@@ -1,4 +1,4 @@
-## Exercise 1: Submit a New Genomic Test Order
+## Exercise 1: Explore a New Genomic Test Order
 
 **Persona:** Dr. Lydia Chen — Ordering Oncologist
 **Duration:** ~10 minutes

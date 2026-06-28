@@ -28,7 +28,7 @@
       description: "Patient portal failed to deliver genomic report for order ORD0002072. " +
         "Patient (Linda Patel) confirmed she cannot access the MyRisk results via the " +
         "patient-facing portal. IT logged a portal authentication error. " +
-        "Physician (Dr. Sarah Chen) is awaiting the report to counsel the patient on " +
+        "Physician (Dr. Lydia Chen) is awaiting the report to counsel the patient on " +
         "BRCA2 risk and surgical options. SLA breach risk: physician appointment in 48h.",
       priority: "2",
       state: "2",        // In Progress

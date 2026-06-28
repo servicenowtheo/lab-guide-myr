@@ -17,7 +17,11 @@ import base64
 import os
 
 ONELLM_URL = "https://apicid-dev.servicenow.com/v4/onellm/models/anthropic?model=claude-opus-4-6"
-ONELLM_KEY = os.environ.get("ONELLM_API_KEY", "rHnVExpEAxfXVcen")
+ONELLM_KEY = os.environ.get("ONELLM_API_KEY")
+if not ONELLM_KEY:
+    print("ERROR: ONELLM_API_KEY environment variable is not set.")
+    print("  export ONELLM_API_KEY=<your-key>")
+    sys.exit(1)
 
 DESCRIPTION_PROMPT = """You are generating realistic short_description values for a Myriad Genetics order management system (OMS).
 Each description is a lab test order short description — concise (under 80 chars), clinically specific, uses real Myriad Genetics product names.
@@ -41,7 +45,13 @@ def call_onellm(prompt):
     )
     with urllib.request.urlopen(req) as r:
         result = json.load(r)
-    return json.loads(result["content"][0]["text"])
+    raw = result["content"][0]["text"]
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError as e:
+        print(f"ERROR: OneLLM response was not valid JSON: {e}")
+        print(f"Raw response (first 500 chars): {raw[:500]}")
+        sys.exit(1)
 
 def main():
     if len(sys.argv) != 4:

@@ -57,8 +57,8 @@ The main area of your screen (the large panel to the right of the sidebar) will 
 
 > **Note:** "All" means every Order Task regardless of status, priority, or who it's assigned to. In a real shift, Sarah might use filtered views, but for this exercise, we're starting with the full list so you can learn how the workspace displays data.
 
-![Order Tasks — All list showing 358 records in the workspace table](s-order-tasks-all.png)
-*You should see a view similar to this screenshot — a table of Order Tasks with 358 total records.*
+![](.gitbook/assets/MYRIAD-OMS/s-order-tasks-all.png)
+*You should see a view similar to this screenshot — a table of Order Tasks with hundreds of records.*
 
 ---
 
@@ -112,7 +112,7 @@ The screen will change to a **split-pane view** — the task record's detail vie
 - **Left pane:** The **form** — a structured set of fields containing all the task's data (Number, State, Priority, Account, Assignment group, Assigned to, and more).
 - **Right pane:** The **Activity stream** — a chronological feed of comments, work notes, and updates related to this task. You'll also see tabs for **Comments** and **Work Notes** above the stream.
 
-![OMTASK000001092 detail view — split-pane with form fields on the left and activity stream on the right](s-omtask-detail.png)
+![](.gitbook/assets/MYRIAD-OMS/s-omtask-detail.png)
 *Your screen should look similar to this screenshot — the form on the left, the activity feed on the right.*
 
 > **Note:** The split-pane layout is one of the most important views in the workspace. You'll spend a large portion of every shift in this view — reading task details on the left while reviewing the conversation history on the right.

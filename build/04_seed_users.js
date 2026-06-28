@@ -59,6 +59,7 @@
     gr.setValue("user_name", p.user_name);
     gr.setValue("email", p.email);
     gr.setValue("title", p.title);
+    gr.setValue("department", p.department);
     gr.setValue("active", true);
     gr.setValue("password_needs_reset", false);
     gr.setWorkflow(false);

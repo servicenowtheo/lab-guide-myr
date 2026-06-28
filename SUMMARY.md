@@ -7,4 +7,4 @@
 * [Exercise 4: Order Support Services](exercise-4.md)
 * [Exercise 5: Analytics & AI Insights](exercise-5.md)
 * [Challenge: End-to-End Order Lifecycle](challenge.md)
-* [Epic Integration Background](epic-integration.md)
+* [How Orders Enter the System — Epic Integration](epic-integration.md)

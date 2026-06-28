@@ -48,7 +48,7 @@
     { number: "ORD0002060", short_description: "MRD Baseline — AML pre-induction chemotherapy sample collection", priority: "2", state: "draft" },
     { number: "ORD0002062", short_description: "MRD Monitoring T1 — NHL post-R-CHOP cycle 3 surveillance", priority: "2", state: "draft" },
     { number: "ORD0002061", short_description: "MRD Monitoring T2 — ALL post-consolidation therapy follow-up", priority: "2", state: "draft" },
-    { number: "ORD0001001", short_description: "MRD Baseline — multiple myeloma pre-autologous stem cell transplant", priority: "4", state: "draft" },
+    { number: "ORD0001001", short_description: "MRD Baseline — multiple myeloma pre-autologous stem cell transplant", priority: "2", state: "draft" },
     { number: "ORD0002063", short_description: "MRD Monitoring T3 — CML post-TKI therapy 12-month assessment", priority: "2", state: "draft" },
     { number: "ORD0002078", short_description: "Precise Tumor 500 — metastatic NSCLC, comprehensive genomic profiling", priority: "2", state: "draft" },
     { number: "ORD0002066", short_description: "Precise Tumor 500 — advanced cholangiocarcinoma, therapy selection", priority: "2", state: "draft" },

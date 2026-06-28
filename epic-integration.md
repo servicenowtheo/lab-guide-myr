@@ -65,6 +65,17 @@ A simplified example of what the Epic-generated FHIR message for ORD0002157 look
 
 ServiceNow receives this, maps `code.text` → `short_description`, `priority: urgent` → `2-High`, and creates the order record you'll open in Exercise 1.
 
+FHIR R4 defines four priority levels that map to ServiceNow priorities as follows:
+
+| FHIR priority | Clinical meaning | ServiceNow priority |
+|---|---|---|
+| `routine` | Standard turnaround | 3 - Moderate |
+| `urgent` | Expedited — result affects near-term clinical decision | 2 - High |
+| `asap` | Time-critical — surgery/treatment decision imminent | 1 - Critical |
+| `stat` | Immediate — pre-treatment window closing | 1 - Critical |
+
+ORD0002157 (Rachel Kim) arrived as `urgent` → 2-High. ORD0002156 (Patricia Williams) arrived as `asap` → 1-Critical because the surgical consult is in 72 hours. ORD0002154 (Dorothy Martinez AML) and ORD0002116 (Noah Gillen NHL) arrived as `stat` → 1-Critical because pre-treatment baseline windows close at first infusion.
+
 ---
 
 ### The Four Story Orders in This Lab
@@ -78,7 +89,7 @@ These four orders arrived via Epic integration from Huntsman Cancer Institute th
 | **ORD0002154** | Dorothy Martinez | MRD Baseline — AML FLT3-ITD+ post-induction | STAT | Background — visible in Analytics (Ex 5) |
 | **ORD0002116** | Noah Gillen | MRD Baseline — DLBCL NHL pre-treatment ctDNA | STAT | Background — visible in Analytics (Ex 5) |
 
-The remaining 37 orders in the queue are from other referring facilities and represent the realistic background workload of a busy genomics lab.
+The remaining 37 orders in the queue represent the broader workload of a busy genomics lab — a mix of hereditary cancer panels, MRD monitoring, tumor profiling, and specialty tests from referring oncology practices across the region.
 
 ---
 
