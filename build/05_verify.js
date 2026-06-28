@@ -120,7 +120,7 @@
     check("case-CS0001168", true,
       "Found — " + (caseGr.getValue("short_description") || "(no desc)"));
   } else {
-    warn("case-CS0001168", "CS0001168 not found — Exercise 4 may not work");
+    check("case-CS0001168", false, "CS0001168 NOT FOUND — Exercise 4 will fail without this case");
   }
 
   // --- Personas ---
