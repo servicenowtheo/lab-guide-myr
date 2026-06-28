@@ -78,19 +78,21 @@ Each **row** below the headers represents a single customer order. The list cont
 
 ---
 
-### Step 5: Identify the Highest-Priority Order
+### Step 5: Identify the Priority 1-Critical Orders
 
-Lisa is looking for the most urgent order in the queue. In ServiceNow, urgency is indicated by the **Priority** field. The scale runs from **1-Critical** (most urgent) to lower numbers being less urgent.
+Lisa is looking for the most urgent orders in the queue. In ServiceNow, urgency is indicated by the **Priority** field. The scale runs from **1-Critical** (most urgent) down to lower priority levels.
 
-Scan the list for order **ORD0002156**. Here is what you are looking for:
+Scan the list — you will find **three** Priority 1-Critical orders today. These arrived this morning via the Epic integration from Huntsman Cancer Institute:
 
-| Number | Description | Priority | State |
+| Number | Description | Priority | Why Critical |
 |---|---|---|---|
-| **ORD0002156** | EndoPredict Dx — Breast cancer recurrence risk stratification | **1-Critical** | Draft |
+| **ORD0002154** | MRD Baseline — AML FLT3-ITD+ post-induction | **1-Critical** | AML is fast-progressing — baseline must be captured before next treatment cycle |
+| **ORD0002116** | MRD Baseline — DLBCL NHL pre-treatment ctDNA | **1-Critical** | Pre-treatment window closes at first infusion |
+| **ORD0002156** | EndoPredict Dx — Breast cancer recurrence risk stratification | **1-Critical** | Surgery decision pending results — physician has a 72-hour window |
 
-This is the most urgent order in today's queue. Lisa needs to open it and review the details.
+Lisa focuses on **ORD0002156** first. The other two MRD baselines are also critical but have been flagged for the lab processing team. ORD0002156 is in Lisa's direct queue because the ordering surgeon needs the EndoPredict result to decide whether to proceed with chemotherapy — and the surgical consult is in 72 hours.
 
-> **Note:** You may also notice **ORD0002157** (Priority 2-High). That is the second most urgent order, but Lisa always handles Critical-priority orders first.
+> **Note:** In a real OMS environment, Lisa would have a saved filter or personal dashboard view that surfaces her specific queue automatically. For this exercise, you are looking at the unfiltered "All" view so you can see the full picture.
 
 ---
 

@@ -114,6 +114,8 @@ In the Customer Orders list, look for the row with Number **ORD0002157**.
 
 > **Tip:** If you don't see it immediately, use the search bar above the list — type `ORD0002157` and press **Enter**.
 
+> **Where did this order come from?** ORD0002157 was not entered manually into ServiceNow. Dr. Lydia Chen placed it in **Epic** — Huntsman Cancer Institute's electronic health record system. Epic transmitted the order automatically to Myriad's ServiceNow OMS as a FHIR R4 ServiceRequest message. ServiceNow received it, created this Customer Order record, and queued it for intake — all within seconds, with no one at Myriad lifting a finger. This is the Epic → ServiceNow integration in action. See [Epic Integration Background](epic-integration.md) for the full picture.
+
 **Click the blue "ORD0002157" link** in the Number column.
 
 The record opens in a new tab. The tab bar now shows: **List | ORD0002157**

@@ -4,11 +4,21 @@
 
 ---
 
+## Where Do These Orders Come From?
+
+> **Before you start:** The orders you will work in this lab did not appear from nowhere. They were submitted by oncologists at **Huntsman Cancer Institute** in Salt Lake City using **Epic** — the electronic health record system used by the physicians. When a doctor places a genomic test order in Epic, it is automatically transmitted to Myriad Genetics' ServiceNow OMS via a **FHIR R4 integration**. ServiceNow receives the message, creates a Customer Order record, and routes it into the team's task queues — all without manual entry.
+>
+> The four key orders in this lab (ORD0002157, ORD0002156, ORD0002154, ORD0002116) represent orders that arrived this morning from that Epic integration. **Your job is to work them.**
+>
+> For a deeper look at how the Epic → ServiceNow integration works, see [Epic Integration Background](epic-integration.md).
+
+---
+
 ## Introduction and Objectives
 
 Genomic diagnostics labs operate at the intersection of clinical urgency, insurance complexity, and precision logistics. A single order for a hereditary cancer panel or minimal residual disease test touches a dozen teams — providers, intake specialists, insurance verifiers, lab technicians, and support agents — before a result ever reaches the oncologist. Today, most of that handoff happens through fax queues, email threads, and disconnected systems.
 
-In this lab, you will experience ServiceNow as the operational backbone for Myriad Genetics' order management workflows. You will walk through the full order lifecycle — from a physician submitting a genetic test order through the provider portal, to intake processing, insurance verification, sample logistics, exception handling, and executive analytics — all within a single connected platform.
+In this lab, you will experience ServiceNow as the operational backbone for Myriad Genetics' order management workflows. You will walk through the full order lifecycle — from a physician submitting a genetic test order through Epic, to intake processing, insurance verification, sample logistics, exception handling, and executive analytics — all within a single connected platform.
 
 **By the end of this lab, you will be able to:**
 

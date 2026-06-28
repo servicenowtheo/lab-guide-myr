@@ -16,9 +16,9 @@ You are an operations lead at Myriad Genetics reviewing the highest-priority ord
 
 ### Step 1 — Find the Critical Order
 
-Navigate to the **Customer Orders** list and locate **ORD0002156**, the Priority 1–Critical order for *EndoPredict Dx — Breast cancer recurrence risk stratification*. Use whatever method feels fastest to you — scrolling, sorting, filtering, or searching.
+Navigate to the **Customer Orders** list and locate **ORD0002156** — the EndoPredict Dx order for breast cancer recurrence risk stratification. Use whatever method feels fastest to you — scrolling, sorting, filtering by number, or using the search bar.
 
-> **Note:** There are 41 orders in the system. Only one is Priority 1–Critical. If you're having trouble, think back to how you sorted and filtered the list in Exercise 2.
+> **Note:** There are 41 orders in the system and three are Priority 1-Critical (two MRD baselines and ORD0002156). ORD0002156 is the one you want — it's the EndoPredict Dx order with a pending surgical decision. If you're having trouble finding it, type `ORD0002156` directly into the Number column search field the way you did in Exercise 3.
 
 ---
 
@@ -38,7 +38,7 @@ Ask yourself: *Did the summary surface anything I missed? Did it confirm what I 
 
 ### Step 4 — Investigate Linked Order Tasks
 
-Navigate to the **Order Tasks** list. Your goal is to find any tasks that are associated with ORD0002156. There are 358 tasks in the queue — you'll need to filter or search to narrow down to the ones linked to this specific order.
+Navigate to the **Order Tasks** list. Your goal is to find any tasks that are associated with ORD0002156. The full queue has hundreds of tasks — you'll need to filter or search to narrow down to the ones linked to this specific order.
 
 > **Note:** Think back to Exercise 3. How did you navigate from an order to its related tasks — or how might you filter the task list to show only tasks for a specific order?
 
