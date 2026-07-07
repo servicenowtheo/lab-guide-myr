@@ -3,6 +3,7 @@
 * [Lab Overview](README.md)
 * [Exercise 1: Submit a New Genomic Test Order](exercise-1.md)
 * [Scenario 1: Submit a New MRD Process Order](exercise-1-1.md)
+* [Scenario 2:](exercise-1-2.md)
 * [Exercise 2: Order Pipeline Oversight](exercise-2.md)
 * [Exercise 3: Order Intake & Task Resolution](exercise-3.md)
 * [Exercise 4: Order Support Services](exercise-4.md)
