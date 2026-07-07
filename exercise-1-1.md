@@ -45,11 +45,11 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 1.16.53 PM.png" alt=""><figcaption></figcaption></figure>
 
-Congratulations, you've just placed your first order! We're now going to take a look at it from the perspective of the Myriad operations team.&#x20;
+#### Congratulations, you've just placed your first order! We're now going to take a look at it from the perspective of the Myriad operations team.&#x20;
 
 ***
 
-### **Exercise 2: Reviewing the Order**
+### **Exercise 2: Orientation to the Order**
 
 **Persona:** Sam Anderson
 
@@ -61,9 +61,30 @@ Congratulations, you've just placed your first order! We're now going to take a 
 
 **Scene:** You are **Sam Anderson**, a member of the Myriad Order Operations team. Your role is to review incoming test orders, verify the information provided, and ensure each order is ready to move through the fulfillment process. An order has just been submitted through the Myriad Provider Portal by Dr. Jennifer Park for patient Dorothy Martinez. Your task is to locate the order in ServiceNow, review its details, and understand the information your team uses to process and fulfill provider requests.
 
-![](.gitbook/assets/MYRIAD-OMS/s-avatar-menu.png)
+***
 
-> **Note:** "Impersonate user" lets you view the system as another person — no password needed. This is how we'll switch perspective to Dr. Lydia Chen.
+Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspace**. You will see:
+
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 1.31.58 PM (1).png" alt=""><figcaption></figcaption></figure>
+
+* An **order header** displaying key details such as the order number, patient, order type, state, priority, and current status.
+* A set of **related tabs** that organize the work required to fulfill the order:
+  * **Line Items** represent the products or services that were ordered.
+  * **Order Tasks** contain the individual fulfillment activities required to complete the order. These tasks are automatically generated based on the fulfillment workflow configured for the selected product offering.
+  * **Specimens** track the samples required for the test, including their collection and processing status. These records are also created automatically based on the selected product offering.
+  * **MRD Monitoring Series** groups the patient's scheduled monitoring events into a single series, allowing your team to track recurring MRD testing over time. The cadence and monitoring schedule are generated from the product configuration.
+* An **Order Overview** panel on the left with fulfillment details, important dates, and links to the order timeline and orchestration, helping you understand where the order is in its lifecycle.
+* A **collaboration panel** on the right where your team can communicate and document progress:
+  * **Work Notes** are visible only to internal users and are used to document progress, hand off work, troubleshoot issues, and communicate with other fulfillment team members.
+  * **Comments** can be shared with external users, such as healthcare providers, when updates or additional information need to be communicated.
+  * The **Activity** stream provides a chronological history of changes, updates, and communications related to the order.
+* A **Customer Order Summary** panel that uses AI to generate a concise overview of the order. The summary highlights key information—such as the patient, ordering provider, product offering, monitoring cadence, fulfillment status, and upcoming specimen collection dates—so you can quickly understand the order before diving into the individual records.
+
+1. Click the **Customer order summary button** to see a concise summary of this order.
+
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 1.44.23 PM.png" alt=""><figcaption></figcaption></figure>
+
+#### Congratulations, you have reviewed the submitted order!
 
 ***
 
