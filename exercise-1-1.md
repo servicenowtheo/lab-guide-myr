@@ -1,4 +1,4 @@
-# Scenario 1: Submit a New MRD Process Order
+# Scenario 1: Submit, Process, and Manage a MRD Order
 
 ### **Exercise 1: Placing the order**
 
@@ -47,7 +47,7 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 1.16.53 PM.png" alt=""><figcaption></figcaption></figure>
 
-#### Congratulations, you've just placed your first order! We're now going to take a look at it from the perspective of the Myriad operations team.&#x20;
+
 
 {% hint style="success" %}
 #### **Congratulations, you've just placed your first order! We're now going to take a look at it from the perspective of the Myriad operations team.**&#x20;
