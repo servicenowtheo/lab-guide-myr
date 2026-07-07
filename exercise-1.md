@@ -405,7 +405,7 @@ This flexibility enables you to design escalation paths that align with your own
 
 ***
 
-## ✅ Exercise 1 Checkpoint
+## ✅ Scenario 1 Checkpoint
 
 {% hint style="success" %}
 **Congratulations, you have successfully completed scenario 1!**

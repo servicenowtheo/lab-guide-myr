@@ -190,9 +190,9 @@ The **original failed specimen has been retained for traceability**, while the *
 
 ***
 
-## ✅ Exercise 2 Checkpoint
+## ✅ Scenario 2 Checkpoint
 
 {% hint style="success" %}
-**Congratulations, you have successfully completed scenario 1!**
+**Congratulations, you have successfully completed scenario 2!**
 {% endhint %}
 
