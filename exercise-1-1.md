@@ -1,6 +1,6 @@
 # Scenario 2: Submit, Process, and Manage a Precise Tumor + MyRisk Order
 
-### **Exercise 1: Placing the order**
+## **Exercise 1: Placing the order**
 
 **Persona:** Dr. Jennifer Park — Ordering Oncologist&#x20;
 
@@ -14,7 +14,7 @@
 
 ***
 
-## Step 1: Open the Myriad Provider Portal
+### Step 1: Open the Myriad Provider Portal
 
 Navigate to the provider portal by appending /**myriad-provider** to the end of your instance URL. You will see:
 
@@ -22,7 +22,7 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 
 ***
 
-## Step 2: Place the Order
+### Step 2: Place the Order
 
 1. Select **+Submit Order in** the top navigation.
 2. Select your patient, **Dorothy Martinez** from the patient dropdown.&#x20;
@@ -124,6 +124,20 @@ Although the provider submitted a single order, each Product Offering follows it
 | **Order**                 | ORD0001183                           | Identifies the customer order that the specimen belongs to, allowing multiple specimens to be tracked under a single order when appropriate.                                      |
 | **MRD Monitoring Series** | _(Blank)_                            | Links the specimen to a longitudinal monitoring program when applicable. This field remains blank for one-time tests that do not require recurring specimen collections.          |
 
+
+
+{% hint style="info" %}
+Specimen records are fully configurable to match your operational processes. You can define the statuses, metadata, lifecycle stages, and business rules that best support your workflow. Because specimens remain linked to the patient and order, every collection event maintains complete traceability throughout the testing lifecycle.
+{% endhint %}
+
+{% hint style="success" %}
+Congratulations, you have successfully managed a multi-test order!
+{% endhint %}
+
+
+
+***
+
 ### Exercise 3: Kick Off a Sample Recollection
 
 Dorothy Martinez's specimen has been collected and received by the laboratory.&#x20;
@@ -187,6 +201,16 @@ Notice that the specimen count has increased from **2** to **3**.
 The **original failed specimen has been retained for traceability**, while the **replacement specimen has been automatically associated** with the existing order. This allows the laboratory to continue fulfillment without creating a new customer order or losing the historical record of the failed specimen.
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.42.46 PM.png" alt=""><figcaption></figcaption></figure>
+
+
+
+{% hint style="info" %}
+The specimen recollection process shown in this exercise is fully configurable and can be tailored to your organization's operations.
+
+Rather than requiring teams to manually coordinate a failed specimen, you can define the workflow that should occur when a specimen enters a specific status, such as QC Failed – Redraw Request Submitted, or generally when it needs to follow a specific flow.
+{% endhint %}
+
+
 
 ***
 
