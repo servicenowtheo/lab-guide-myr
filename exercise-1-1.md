@@ -138,7 +138,7 @@ Congratulations, you have successfully managed a multi-test order!
 
 ***
 
-### Exercise 3: Kick Off a Sample Recollection
+## Exercise 3: Kick Off a Sample Recollection
 
 Dorothy Martinez's specimen has been collected and received by the laboratory.&#x20;
 
@@ -146,7 +146,7 @@ During quality control (QC), however, the laboratory determines that the specime
 
 Rather than allowing the order to remain blocked while laboratory staff manually coordinate the next steps, the platform can automatically initiate the specimen recollection process.
 
-## Step 1: Record the QC Failure
+### Step 1: Record the QC Failure
 
 1. On the same specimen record, locate the **Status** field.
 2. Change the status to **QC Failed – Redraw Request Submitted**.
