@@ -274,50 +274,140 @@ Notice that the monitoring series captures the planned collection dates for each
 
 This provides laboratory staff with a centralized view of upcoming and completed collection events.
 
-
+{% hint style="success" %}
+**Congratulations, you have successfully reviewed the monitoring series associated with this order!**
+{% endhint %}
 
 ***
 
 ## Exercise 5: Managing Order Fulfillment
 
-In the left form pane, locate these fields:
+**Persona:** Sam Anderson
 
-| Field                 | Value                                       | What It Means                                       |
-| --------------------- | ------------------------------------------- | --------------------------------------------------- |
-| **Number**            | ORD0002157                                  | Unique order ID — use this to find the record later |
-| **Short description** | MyRisk 25-Gene Panel — BRCA1 family history | The test ordered — 25-gene hereditary cancer panel  |
-| **Account**           | Myriad Genetics                             | The laboratory processing this order                |
-| **Order type**        | Product                                     | Classification in the order system                  |
-| **State**             | Draft                                       | Not yet active — pending review and intake          |
-| **Priority**          | 2 - High                                    | How urgently this order needs attention             |
+<mark style="color:red;">**Duration:**</mark> <mark style="color:red;"></mark><mark style="color:red;">Update</mark>&#x20;
 
-***
+**Objective:** Monitor the progress of an active laboratory order, identify workflow bottlenecks, and use the available tools to investigate delays and keep the order moving.
 
-## Step 10: View the Activity Stream
+It has been several weeks since Dorothy Martinez's MRD monitoring program began. During your morning operational review, you notice that Dorothy's order has stopped progressing through the laboratory workflow. A delay in processing could impact the patient's scheduled monitoring timeline. Your job is to investigate the order, determine where the bottleneck exists, and use the platform to coordinate the next steps needed to move the order forward.
 
-On the **right pane**, click the **Activity** section header to expand it (if not already open).
 
-The Activity stream shows a timestamp log of every change and note added to this order. Even at this early stage, you can see the creation event — who created it, when, and what fields were set.
 
-> **Note:** As the order progresses through intake → eligibility → processing → results, each step is logged here. This is how Myriad operations teams stay informed without sending emails.
+#### Step 1: Open the Order Task
+
+1. Select the "**Order Tasks"** tab
+2. **Click the blue hyperlink** of the first order task.
 
 ***
 
-## Step 11: End Impersonation
+#### Step 2: Review the Task Details
 
-You have reviewed ORD0002157 from Dr. Lydia Chen's perspective.
+Review the information available on the task record.
 
-**Click the avatar icon → "End impersonation"** to return to the admin session.
+| Field                                     | Value            | What It Means                                                            |
+| ----------------------------------------- | ---------------- | ------------------------------------------------------------------------ |
+| **Consumer**                              | Dorothy Martinez | This identifies the patient associated with the task.                    |
+| **Order line item**                       | ORDLXXXXXXX      | This identifies the order and Product Offering that generated this task. |
+| **State**                                 | Draft            | Priority helps your teams determine the urgency of the work.             |
+| **Priority**                              | Product          | Classification in the order system                                       |
+| **Planned Start Date / Planned End Date** | Date             | The scheduled timeline for task completion.                              |
+| **Actual Start Date / Actual End Date**   | Date             | The actual timeline for task completion.                                 |
+
+***
+
+#### Step 3: Request a Status Update
+
+1. Locate the **Work notes** tab in the Activity Stream.
+2.  Enter the following message:
+
+    ```
+    @john.jason Can you please provide a status update?
+    ```
+3. Save or post the work note.
+
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 2.46.22 PM.png" alt=""><figcaption></figcaption></figure>
+
+**What to Notice**
+
+* Mentioning a user with **@username** notifies that team member directly within the platform.
+* Work Notes provide an internal collaboration space that keeps all communication tied to the task, creating a complete audit trail.
+
+***
+
+### Step 2: Start a Sidebar Discussion
+
+For more immediate collaboration, you decide to start a conversation with John.
+
+1. In the right-side utility pane, click the **People** icon.
+2. Select **+** to create a new Sidebar Discussion.
+3. In the **Participants** field, search for and select **John Jason**.
+4.  In the message box, enter:
+
+    ```
+    Please review and complete this task.
+    ```
+5. Click **Start Discussion**.
+
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 2.47.42 PM.png" alt=""><figcaption></figcaption></figure>
+
+**What to Notice**
+
+* Sidebar Discussions create real-time, in-platform conversations without leaving the task.
+* These discussions allow teams to quickly collaborate while maintaining context around the work being performed.
+
+***
+
+### Step 3: Escalate the Task
+
+Despite reaching out to John, the task is still not progressing. You decide to formally escalate it.
+
+1. Locate the **Escalation Level** field.
+2. Change the value to **Medium**.
+3. Click **Save** in the upper-right corner of the record.
+
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 2.48.37 PM.png" alt=""><figcaption></figcaption></figure>
+
+**What to Notice**
+
+* After saving, the task is automatically reassigned based on the configured escalation workflow.
+* Additional work notes and system updates are recorded in the Activity Stream to document the escalation.
+
+***
+
+### Step 4: Escalate Further
+
+The task continues to remain unresolved, requiring additional attention.
+
+1. Change the **Escalation Level** to **High**.
+2. Save the record again.
+
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 2.49.24 PM.png" alt=""><figcaption></figcaption></figure>
+
+**What to Notice**
+
+* The task priority is automatically increased to reflect the higher level of urgency.
+* Additional notifications are generated for managers and other stakeholders.
+* The Activity Stream records each automated action taken by the workflow.
+
+{% hint style="info" %}
+The escalation process shown in this exercise is fully configurable and can be tailored to your operational procedures.
+
+Depending on the workflow configured, escalating a task can automatically trigger actions such as:
+
+* Reassigning the task to another assignment group or individual.
+* Increasing the task priority.
+* Sending email notifications.
+* Posting messages to collaboration platforms such as Microsoft Teams or Slack through integrations.
+* Creating follow-up tasks or approvals.
+* Triggering additional workflows or automations.
+
+This flexibility enables you to design escalation paths that align with your own operational policies and service level agreements, ensuring delayed work is surfaced and addressed appropriately.
+{% endhint %}
 
 ***
 
 ## ✅ Exercise 1 Checkpoint
 
-You have successfully:
+{% hint style="success" %}
+**Congratulations, you have successfully completed scenario 1!**
+{% endhint %}
 
-* Navigated the CSM/FSM Configurable Workspace
-* Used the impersonation feature to take a provider's perspective
-* Located a new order (ORD0002157) in the Customer Orders list
-* Examined the split-pane record view with form fields and Activity stream
-
-**What happens next:** ORD0002157 is now in the intake queue. Lisa Morgan's oversight role is to monitor all open orders and escalate the most critical ones — that's Exercise 2.
