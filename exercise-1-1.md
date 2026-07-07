@@ -131,7 +131,7 @@ Specimen records are fully configurable to match your operational processes. You
 {% endhint %}
 
 {% hint style="success" %}
-Congratulations, you have successfully managed a multi-test order!
+**Congratulations, you have successfully managed a multi-test order!**
 {% endhint %}
 
 
