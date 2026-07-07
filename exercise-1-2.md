@@ -29,7 +29,7 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 3. Select **Jennifer Park** from the ordering provider dropdown.
 4. Select the **MyRisk** and **Precise Tumor** tests.
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 3.30.13 PM.png" alt=""><figcaption></figcaption></figure>
+![](<.gitbook/assets/Screenshot 2026-07-07 at 3.30.13 PM.png>)
 
 {% hint style="info" %}
 **Note:** The tests displayed in the Provider Portal represent your organization's product offerings. These offerings are managed through the ServiceNow Product Catalog, allowing you to control which tests providers can order. When a provider submits an order, a fulfillment workflow is automatically initiated in ServiceNow.
@@ -37,7 +37,7 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 
 5. Click **Submit Order** and wait for the confirmation screen to load. In the confirmation message, select the **order hyperlink (ORDXXXXXXX).**
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 3.32.00 PM.png" alt=""><figcaption></figcaption></figure>
+![](<.gitbook/assets/Screenshot 2026-07-07 at 3.32.00 PM.png>)
 
 {% hint style="success" %}
 #### **Congratulations, you've just placed your an order! We're now going to take a look at it from the perspective of the Myriad operations team.**
@@ -69,7 +69,7 @@ Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspa
 
 Although the provider submitted a single order, each Product Offering follows its own configurable fulfillment workflow, allowing different tests to have unique operational requirements while remaining part of the same patient order.
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.12.51 PM.png" alt=""><figcaption></figcaption></figure>
+![](<.gitbook/assets/Screenshot 2026-07-07 at 5.12.51 PM.png>)
 
 ***
 
@@ -79,7 +79,7 @@ Although the provider submitted a single order, each Product Offering follows it
 2. Hover over the **'Order line item'** column and select the three dots at the right of the column.
 3. Click the blue hyperlink that says **'Group by Order line item'**
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.15.28 PM.png" alt=""><figcaption></figcaption></figure>
+![](<.gitbook/assets/Screenshot 2026-07-07 at 5.15.28 PM.png>)
 
 **What to Notice**
 
@@ -99,7 +99,7 @@ Although the provider submitted a single order, each Product Offering follows it
 * Each Product Offering generates the specimen records required to complete its workflow.
 * The number and type of specimens are determined by the Product Offering configuration.
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.18.21 PM.png" alt=""><figcaption></figcaption></figure>
+![](<.gitbook/assets/Screenshot 2026-07-07 at 5.18.21 PM.png>)
 
 3. Open the specimen record by clicking the **blue hyperlink** in the **'Display Name'** column.
 4. Review all of the available information about this specimen record. Definitions and purposes for each of the fields you see are described below.
@@ -146,7 +146,7 @@ Rather than allowing the order to remain blocked while laboratory staff manually
 2. Change the status to **QC Failed – Redraw Request Submitted**.
 3. Click **Save** in the top right corner.
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.40.31 PM.png" alt=""><figcaption></figcaption></figure>
+![](<.gitbook/assets/Screenshot 2026-07-07 at 5.40.31 PM.png>)
 
 #### What to Notice
 
@@ -157,7 +157,7 @@ Notice that:
 * The **Activity** stream records that the patient and ordering provider have been notified of the redraw request.
 * A new specimen record has been automatically created for the recollection.
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.40.59 PM.png" alt=""><figcaption></figcaption></figure>
+![](<.gitbook/assets/Screenshot 2026-07-07 at 5.40.59 PM.png>)
 
 ***
 
@@ -176,7 +176,7 @@ The replacement specimen has already been associated with:
 
 The new specimen now becomes the active sample that will continue through the collection and testing process, while the failed specimen remains part of the patient's laboratory history.
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.41.40 PM.png" alt=""><figcaption></figcaption></figure>
+![](<.gitbook/assets/Screenshot 2026-07-07 at 5.41.40 PM.png>)
 
 ***
 
@@ -194,7 +194,7 @@ Notice that the specimen count has increased from **2** to **3**.
 
 The **original failed specimen has been retained for traceability**, while the **replacement specimen has been automatically associated** with the existing order. This allows the laboratory to continue fulfillment without creating a new customer order or losing the historical record of the failed specimen.
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.42.46 PM.png" alt=""><figcaption></figcaption></figure>
+![](<.gitbook/assets/Screenshot 2026-07-07 at 5.42.46 PM.png>)
 
 {% hint style="info" %}
 The specimen recollection process shown in this exercise is fully configurable and can be tailored to your organization's operations.
