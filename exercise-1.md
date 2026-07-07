@@ -1,6 +1,6 @@
 # Scenario 1: Submit, Process, and Manage a MRD Order
 
-### **Exercise 1: Placing the order**
+## **Exercise 1: Placing the order**
 
 **Persona:** Dr. Jennifer Park — Ordering Oncologist&#x20;
 
@@ -14,7 +14,7 @@
 
 ***
 
-## Step 1: Open the Myriad Provider Portal
+### Step 1: Open the Myriad Provider Portal
 
 Navigate to the provider portal by appending /**myriad-provider** to the end of your instance URL. You will see:
 
@@ -29,8 +29,6 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 > **Note:** This is your Myriad Provider Portal, the streamlined experience that you designed for healthcare providers to order tests, track specimens, and manage patients. Behind the scenes, very order submitted through the portal automatically creates a corresponding order in ServiceNow for your operations team to review and fulfill.&#x20;
 
 ***
-
-## Step 2: Place the Order
 
 1. Select **+Submit Order in** the top navigation.
 2. Select your patient, **Dorothy Martinez** from the patient dropdown.&#x20;
@@ -85,8 +83,7 @@ Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspa
   * **Comments** can be shared with external users, such as healthcare providers, when updates or additional information need to be communicated.
   * The **Activity** stream provides a chronological history of changes, updates, and communications related to the order.
 * A **Customer Order Summary** panel that uses AI to generate a concise overview of the order. The summary highlights key information—such as the patient, ordering provider, product offering, monitoring cadence, fulfillment status, and upcoming specimen collection dates—so you can quickly understand the order before diving into the individual records.
-
-1. Click the **Customer order summary button** to see a concise summary of this order.
+* Click the **Customer order summary button** to see a concise summary of this order.
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 1.44.23 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -118,7 +115,7 @@ A list of order tasks appears on the screen:
 
 ![](<.gitbook/assets/Screenshot 2026-07-07 at 1.50.24 PM.png>)
 
-### **What to notice:**
+### **What to notice**
 
 #### **Assignment Groups**
 
