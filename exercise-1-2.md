@@ -1,4 +1,4 @@
-# Scenario 3: Submit, Process, and Manage a Precise Tumor + MyRisk + MRD Order
+# Scenario 3: Submit, Process, and Manage a Precise Tumor + MyRisk + MRD Combo Order
 
 ## **Exercise 1: Placing the order**
 
@@ -10,7 +10,7 @@
 
 ***
 
-**Scene:** You are Dr. Jennifer Park, an ordering oncologist preparing care for your patient, Dorothy Martinez. The patient visit has just concluded, and you're ready to order Precise Tumor and MyRisk testing for Dorothy Martinez. Log in to the Myriad Provider Portal, locate the appropriate product, and complete the order submission accurately and efficiently.
+**Scene:** You are Dr. Jennifer Park, an ordering oncologist preparing care for your patient, Dorothy Martinez. The patient visit has just concluded, and you're ready to order Precise Tumor, MyRisk, and MRD testing for Dorothy Martinez. Log in to the Myriad Provider Portal, locate the appropriate product, and complete the order submission accurately and efficiently.
 
 ***
 
@@ -29,7 +29,7 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 3. Select **Jennifer Park** from the ordering provider dropdown.
 4. Select the **MyRisk** and **Precise Tumor** tests.
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 3.30.13 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 6.47.18 PM.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 **Note:** The tests displayed in the Provider Portal represent your organization's product offerings. These offerings are managed through the ServiceNow Product Catalog, allowing you to control which tests providers can order. When a provider submits an order, a fulfillment workflow is automatically initiated in ServiceNow.
@@ -37,10 +37,10 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 
 5. Click **Submit Order** and wait for the confirmation screen to load. In the confirmation message, select the **order hyperlink (ORDXXXXXXX).**
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 3.32.00 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 6.47.45 PM.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
-#### **Congratulations, you've just placed your an order! We're now going to take a look at it from the perspective of the Myriad operations team.**
+#### **Congratulations, you've just placed your complex combo order! We're now going to take a look at it from the perspective of the Myriad operations team.**
 {% endhint %}
 
 ***
@@ -51,7 +51,7 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 
 <mark style="color:red;">**Duration:**</mark> <mark style="color:red;">Update</mark>
 
-**Objective:** Explore how ServiceNow manages multiple Product Offerings within a single customer order and automatically generates independent fulfillment workflows for each.
+**Objective:** Explore how ServiceNow manages combo testing within a single customer order and automatically generates independent fulfillment workflows for each.
 
 ***
 
@@ -60,16 +60,17 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspace**.
 
 * Open the **Line Items** **tab**
-* Notice that this order contains **two line items**:
+* Notice that this order contains **three line items**:
   * Precise Tumor
   * MyRisk Hereditary Cancer Test
+  * MRD: Baseline & Monitoring Cadence Management
 * Observe that each Line Item represents an independently fulfilled Product Offering within the same customer order.
 
 **What to Notice**
 
 Although the provider submitted a single order, each Product Offering follows its own configurable fulfillment workflow, allowing different tests to have unique operational requirements while remaining part of the same patient order.
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.15.28 PM.png" alt=""><figcaption></figcaption></figure>
+
 
 ***
 
@@ -99,31 +100,45 @@ Although the provider submitted a single order, each Product Offering follows it
 * Each Product Offering generates the specimen records required to complete its workflow.
 * The number and type of specimens are determined by the Product Offering configuration.
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.18.21 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 6.51.54 PM.png" alt=""><figcaption></figcaption></figure>
 
 3. Open the specimen record by clicking the **blue hyperlink** in the **'Display Name'** column.
-4. Review all of the available information about this specimen record. Definitions and purposes for each of the fields you see are described below.
+4. You just received an update that the baseline specimen has gone through testing and has relieved a result status of Negative.&#x20;
+5. Update the **Status** field to **QC Passed.**
+6. Update the **Result Status** to **Negative**.
+7. Set the **Result Date** to **today's date.**&#x20;
+8. Save the record.
 
-| **Field**                 | **Example Value**                    | **What It Means**                                                                                                                                                                 |
-| ------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Status**                | Pending Collection                   | Indicates where the specimen is within its lifecycle, from collection through laboratory processing and result reporting. This provides an at-a-glance view of specimen progress. |
-| **Specimen Type**         | MyRisk Sample                        | Identifies the type of biological sample required for the selected Product Offering, helping ensure the correct specimen is collected and processed.                              |
-| **Test Type**             | MyRisk                               | Identifies the laboratory test associated with this specimen, allowing laboratories to support multiple testing workflows within the same platform.                               |
-| **Result Status**         | None                                 | Indicates whether testing results have been generated, reviewed, or finalized for this specimen.                                                                                  |
-| **Result Date**           | Date                                 | Records when results became available, supporting turnaround time reporting and downstream clinical workflows.                                                                    |
-| **Sequence**              | Baseline                             | Identifies where this specimen falls within the testing program. For longitudinal monitoring products, this may represent Baseline, Draw 1, Draw 2, and so on.                    |
-| **Scheduled Date**        | 2026-07-07                           | The planned specimen collection date generated by the configurable workflow for the Product Offering.                                                                             |
-| **Collection Date**       | Date                                 | Records when the specimen was actually collected from the patient, enabling comparison between planned and actual collection timelines.                                           |
-| **Received Date**         | Date                                 | Indicates when the laboratory received the specimen, providing visibility into specimen logistics and laboratory intake.                                                          |
-| **Patient**               | Dorothy Martinez                     | Identifies the patient associated with the specimen, ensuring traceability throughout the testing process.                                                                        |
-| **Accession Number**      | Laboratory Identifier                | The unique laboratory identifier assigned to the specimen after receipt, supporting chain of custody and specimen traceability throughout laboratory operations.                  |
-| **Display Name**          | MYRISK - Dorothy Martinez - Baseline | A human-readable identifier that makes it easy for laboratory staff to quickly recognize the specimen.                                                                            |
-| **Order Line Item**       | ORDL0001066                          | Identifies the specific Product Offering that generated this specimen, linking the specimen back to the appropriate laboratory workflow.                                          |
-| **Order**                 | ORD0001183                           | Identifies the customer order that the specimen belongs to, allowing multiple specimens to be tracked under a single order when appropriate.                                      |
-| **MRD Monitoring Series** | _(Blank)_                            | Links the specimen to a longitudinal monitoring program when applicable. This field remains blank for one-time tests that do not require recurring specimen collections.          |
+**What to Notice**
+
+* On **Save** of the record, ServiceNow automatically generated a **Specimen Report,** using your document template and pulling in relevant information from the specimen record. Notice that a comment was added to the activity stream sharing this update, and that a document has been made available in **Attachments** on the right side pane of the screen.
+
+#### Step 3: Review the Result Report
+
+1. Select the document that was generated **under Attachments.**&#x20;
+2. Open and review the document that was generated.&#x20;
+
+**What to Notice**
+
+*   The document pulls in information directly from the speciment record. Notice that the fields on the document that correspond with fields on the record:
+
+    * Specimen
+    * Specimen Type
+    * Test Type
+    * Patient
+    * Order
+    * Ordering Provider
+    * Result
+
+    ![](<.gitbook/assets/Screenshot 2026-07-07 at 7.01.26 PM.png>)
 
 {% hint style="info" %}
-Specimen records are fully configurable to match your operational processes. You can define the statuses, metadata, lifecycle stages, and business rules that best support your workflow. Because specimens remain linked to the patient and order, every collection event maintains complete traceability throughout the testing lifecycle.
+Document generation is a configurable platform capability that enables you to automatically create reports and other business documents throughout the order lifecycle. Rather than manually generating documentation, you can define when documents should be created, such as when a specimen reaches a particular status, a result is finalized, or an approval is completed.
+
+Once generated, documents can automatically follow the workflow you define, for example:
+
+* Attaching the document to the appropriate record.
+* Delivering the document to ordering providers or patients.
 {% endhint %}
 
 {% hint style="success" %}

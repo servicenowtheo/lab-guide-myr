@@ -40,7 +40,7 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 3.32.00 PM.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
-#### **Congratulations, you've just placed your an order! We're now going to take a look at it from the perspective of the Myriad operations team.**&#x20;
+#### **Congratulations, you've just placed your order! We're now going to take a look at it from the perspective of the Myriad operations team.**&#x20;
 {% endhint %}
 
 ***
