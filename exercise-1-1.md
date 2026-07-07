@@ -51,7 +51,7 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 
 <mark style="color:red;">**Duration:**</mark> <mark style="color:red;"></mark><mark style="color:red;">Update</mark>&#x20;
 
-**Objective:** **Objective:** Explore how ServiceNow manages multiple Product Offerings within a single customer order and automatically generates independent fulfillment workflows for each.
+**Objective:** Explore how ServiceNow manages multiple Product Offerings within a single customer order and automatically generates independent fulfillment workflows for each.
 
 ***
 
@@ -69,33 +69,39 @@ Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspa
 
 Although the provider submitted a single order, each Product Offering follows its own configurable fulfillment workflow, allowing different tests to have unique operational requirements while remaining part of the same patient order.
 
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.12.51 PM.png" alt=""><figcaption></figcaption></figure>
+
 ***
 
 #### Step 2: Compare the Fulfillment Workflows
 
-* Select the **Order Tasks** related list.
-* Group the list by **Order Line Item**.
-* Expand each group to review the tasks generated for each Product Offering.
+1. Select the **'Order Tasks'** tab next to Line items.
+2. Hover over the **'Order line item'** column and select the three dots at the right of the column.
+3. Click the blue hyperlink that says **'Group by Order line item'**
+
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.15.28 PM.png" alt=""><figcaption></figcaption></figure>
 
 **What to Notice**
 
-* Each Product Offering has its own set of Order Tasks.
+* Each order line item (which represents the tests ordered) has its own set of Order Tasks.
 * The tasks differ because they are generated from the configurable workflow associated with each Product Offering.
-* This allows laboratories to configure different operational processes for different tests without requiring separate customer orders.
+* This allows you to configure different operational processes for different tests without requiring separate customer orders.
 
 ***
 
 #### Step 3: Compare the Specimens
 
-* Select the **Specimens** related list.
-* Review the specimens generated for each Product Offering.
+1. Select the **'Specimens'** **tab.**&#x20;
+2. Review the specimens generated for each Product Offering.
 
 **What to Notice**
 
 * Each Product Offering generates the specimen records required to complete its workflow.
 * The number and type of specimens are determined by the Product Offering configuration.
 
-***
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.18.21 PM.png" alt=""><figcaption></figcaption></figure>
+
+3\. Open the specimen record by clicking the **blue hyperlink** in the **'Display Name'** column.
 
 #### Step 4: Review the MRD Monitoring Series
 
