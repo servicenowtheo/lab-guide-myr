@@ -147,80 +147,102 @@ Once generated, documents can automatically follow the workflow you define, for 
 
 ***
 
-## Exercise 3: Kick Off a Sample Recollection
+## Exercise 3: Completing and Releasing an Order
 
-Dorothy Martinez's specimen has been collected and received by the laboratory.
+### Step 1: Record the updated status
 
-During quality control (QC), however, the laboratory determines that the specimen does not meet the required standards for testing.
+1. Close out the current **Specimen** page you have open by clicking **x** at it's tab at the top of the record.
+2. Time has passed, and now all of the specimens have been processed by the lab.&#x20;
+3. To bulk update the result status, in the **Specimens tab** on the order, scroll all the way right on the list to the **Result Status** column.
+4. On your keyboard, hold **command** and at the same time click all of the empty **Result Status** fields for each specimen.
 
-Rather than allowing the order to remain blocked while laboratory staff manually coordinate the next steps, the platform can automatically initiate the specimen recollection process.
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 7.15.35 PM.png" alt=""><figcaption></figcaption></figure>
 
-### Step 1: Record the QC Failure
+5. Once all are highlighted, double click into any of the fields, set the **Result Status** to **Negative** and click OK.
+6. Notice that all of the **Result Status** fields have been updated.
 
-1. On the same specimen record, locate the **Status** field.
-2. Change the status to **QC Failed – Redraw Request Submitted**.
-3. Click **Save** in the top right corner.
+***
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.40.31 PM.png" alt=""><figcaption></figcaption></figure>
+### Step 2: Approve the record for release
+
+1. On the top right of the order, click the **ellipses button** and then click **order details.**
+
+***
+
+#### Step 3: Generate the Order Result Report
+
+1. In the upper-right corner of the Customer Order, click the **ellipsis (...)** button.
+2. Select **Order Details**.
+3. Review the information on the Customer Order record.
 
 #### What to Notice
 
-Saving the record automatically triggers the configured recollection workflow.
+Locate the **State** field.
+
+The **State** tracks the overall lifecycle of the customer orde from initial submission through laboratory processing, clinical review, results generation, and final delivery.&#x20;
+
+***
+
+#### Step 2: Generate the Order Results
+
+1. Change the **State** field to **Results Generated**.
+2. Click **Update** in the lower-right corner of the record.
+
+#### What to Notice
+
+Updating the order status automatically triggers the configured results generation workflow.
 
 Notice that:
 
-* The **Activity** stream records that the patient and ordering provider have been notified of the redraw request.
-* A new specimen record has been automatically created for the recollection.
+* A work note is added to the **Activity** stream indicating that the order report has been generated.
+* A consolidated results document is created and attached to the Customer Order in **Attachments**.
+* Depending on your organization's workflow, additional downstream actions can also be triggered.
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.40.59 PM.png" alt=""><figcaption></figcaption></figure>
-
-***
-
-### Step 2: Review the Replacement Specimen
-
-1. In the **Activity** stream, locate the work note indicating that a new specimen has been created.
-2. **Click the blue hyperlink** that was automatically posted when you hit save to open the newly created specimen record.
-
-#### What to Notice
-
-The replacement specimen has already been associated with:
-
-* Dorothy Martinez
-* The original customer order
-* The appropriate Order Line Item
-
-The new specimen now becomes the active sample that will continue through the collection and testing process, while the failed specimen remains part of the patient's laboratory history.
-
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.41.40 PM.png" alt=""><figcaption></figcaption></figure>
-
-***
-
-### Step 3: Verify the Customer Order is Updated
-
-1. On the replacement specimen record, locate the **Order** field.
-2. Select the **Information (i)** icon on the order field.
-3. Click **Open Record** in the popout.
-4. You are now looking at the order that was placed.
-5. Select the **Specimens** related list.
-
-#### What to Notice
-
-Notice that the specimen count has increased from **2** to **3**.
-
-The **original failed specimen has been retained for traceability**, while the **replacement specimen has been automatically associated** with the existing order. This allows the laboratory to continue fulfillment without creating a new customer order or losing the historical record of the failed specimen.
-
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.42.46 PM.png" alt=""><figcaption></figcaption></figure>
-
-{% hint style="info" %}
-The specimen recollection process shown in this exercise is fully configurable and can be tailored to your organization's operations.
-
-Rather than requiring teams to manually coordinate a failed specimen, you can define the workflow that should occur when a specimen enters a specific status, such as QC Failed – Redraw Request Submitted, or generally when it needs to follow a specific flow.
+{% hint style="warning" %}
+If you do not immediately see the generated document, refresh the page.
 {% endhint %}
 
 ***
 
-## ✅ Scenario 2 Checkpoint
+#### Step 3: Review the Generated Report
+
+1. Open the generated report from the **Attachments** section by clicking the report.
+2. Review the contents of the document.
+
+#### What to Notice
+
+The report is automatically populated using information stored throughout the platform.
+
+Notice that it includes information from across the order, including:
+
+* Customer Order information
+* Patient
+* Ordering Provider
+* Product Offerings included in the order
+* Specimen collection information
+* Individual specimen results
+* Overall order status
+
+Rather than manually compiling information from multiple records, the document is generated dynamically using data from the Customer Order and its related records.
+
+***
+
+### Step 4: Setting You Up for Scenario 4
+
+1. On the left side of your screen, notice the **dark left sidebar.** It has three icons from top to bottom:
+
+| Icon  | Looks Like                 | What It Does                                    |
+| ----- | -------------------------- | ----------------------------------------------- |
+| Home  | A small house              | Returns you to the Workspace landing page       |
+| Lists | Three horizontal lines (☰) | Opens the full list of record categories        |
+| Inbox | An inbox/folder            | An inbox where tasks are routed to you for work |
+
+2. Click the lists icon.
+3. In the default lists section, find **Patients** under **Healthcare data.** If it is easier for you, you can also command +F 'patient'.
+4. Click **patients**. Notice the list of all patient records. Select the patient record for Dorothy Martinez by clicking her **blue hyperlink PATXXXXXXXX number**.<br>
+
+## ✅ Scenario 3 Checkpoint
 
 {% hint style="success" %}
-**Congratulations, you have successfully completed scenario 2!**
+**Congratulations, you have successfully completed scenario 3!**
 {% endhint %}
