@@ -69,7 +69,7 @@ Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspa
 
 Although the provider submitted a single order, each Product Offering follows its own configurable fulfillment workflow, allowing different tests to have unique operational requirements while remaining part of the same patient order.
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.12.51 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.15.28 PM.png" alt=""><figcaption></figcaption></figure>
 
 ***
 
