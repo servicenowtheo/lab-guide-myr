@@ -124,15 +124,69 @@ Although the provider submitted a single order, each Product Offering follows it
 | **Order**                 | ORD0001183                           | Identifies the customer order that the specimen belongs to, allowing multiple specimens to be tracked under a single order when appropriate.                                      |
 | **MRD Monitoring Series** | _(Blank)_                            | Links the specimen to a longitudinal monitoring program when applicable. This field remains blank for one-time tests that do not require recurring specimen collections.          |
 
-#### Step 4: Review the MRD Monitoring Series
+### Exercise 3: Kick Off a Sample Recollection
 
-* Select the **MRD Monitoring Series** related list.
+Dorothy Martinez's specimen has been collected and received by the laboratory.&#x20;
 
-**What to Notice**
+During quality control (QC), however, the laboratory determines that the specimen does not meet the required standards for testing.
 
-* No **MRD Monitoring Series** records have been generated for this order.
-* MRD Monitoring Series records are created only for Product Offerings configured for longitudinal monitoring.
-* Since neither Product Offering in this order requires recurring specimen collections, no monitoring series is created.
+Rather than allowing the order to remain blocked while laboratory staff manually coordinate the next steps, the platform can automatically initiate the specimen recollection process.
+
+## Step 1: Record the QC Failure
+
+1. On the same specimen record, locate the **Status** field.
+2. Change the status to **QC Failed – Redraw Request Submitted**.
+3. Click **Save** in the top right corner.
+
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.40.31 PM.png" alt=""><figcaption></figcaption></figure>
+
+#### What to Notice
+
+Saving the record automatically triggers the configured recollection workflow.
+
+Notice that:
+
+* The **Activity** stream records that the patient and ordering provider have been notified of the redraw request.
+* A new specimen record has been automatically created for the recollection.
+
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.40.59 PM.png" alt=""><figcaption></figcaption></figure>
+
+***
+
+### Step 2: Review the Replacement Specimen
+
+1. In the **Activity** stream, locate the work note indicating that a new specimen has been created.
+2. **Click the blue hyperlink** that was automatically posted when you hit save to open the newly created specimen record.
+
+#### What to Notice
+
+The replacement specimen has already been associated with:
+
+* Dorothy Martinez
+* The original customer order
+* The appropriate Order Line Item
+
+The new specimen now becomes the active sample that will continue through the collection and testing process, while the failed specimen remains part of the patient's laboratory history.
+
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.41.40 PM.png" alt=""><figcaption></figcaption></figure>
+
+***
+
+### Step 3: Verify the Customer Order is Updated
+
+1. On the replacement specimen record, locate the **Order** field.
+2. Select the **Information (i)** icon on the order field.
+3. Click **Open Record** in the popout.
+4. You are now looking at the order that was placed.
+5. Select the **Specimens** related list.
+
+#### What to Notice
+
+Notice that the specimen count has increased from **2** to **3**.
+
+The **original failed specimen has been retained for traceability**, while the **replacement specimen has been automatically associated** with the existing order. This allows the laboratory to continue fulfillment without creating a new customer order or losing the historical record of the failed specimen.
+
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.42.46 PM.png" alt=""><figcaption></figcaption></figure>
 
 ***
 
