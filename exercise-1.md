@@ -1,181 +1,413 @@
-## Exercise 1: Explore a New Genomic Test Order
+# Scenario 1: Submit, Process, and Manage a MRD Order
 
-**Persona:** Dr. Lydia Chen — Ordering Oncologist
-**Duration:** ~10 minutes
-**Objective:** Navigate the CSM/FSM Configurable Workspace, impersonate Dr. Lydia Chen, locate a genomic test order in the Customer Orders list, open the record, and understand the key order fields.
+### **Exercise 1: Placing the order**
 
----
+**Persona:** Dr. Jennifer Park — Ordering Oncologist&#x20;
 
-**Scene:** Dr. Lydia Chen recently placed a MyRisk 25-Gene Hereditary Cancer Panel order for a patient with a BRCA1 family history. The order has just arrived in the Myriad Genetics OMS system. Your job is to view it from her perspective and confirm the order details.
+**Duration:** \~10 minutes&#x20;
 
----
+**Objective:** Navigate the Myriad Provider Portal, and submit an order from Myriad's product offerings.
 
-### Step 1: Open the Configurable Workspace
+***
 
-Navigate to the Configurable Workspace using the URL provided by your instructor. You will see:
-- A **dark-colored left sidebar** running top-to-bottom with a few small icons
-- A large main area showing a greeting and metrics dashboard
-- A **top navigation bar** across the very top of the screen
+**Scene:** You are Dr. Jennifer Park, an ordering oncologist preparing care for your patient, Dorothy Martinez. The patient visit has just concluded, and you're ready to order MRD testing for Dorothy Martinez. Log in to the Myriad Provider Portal, locate the appropriate product, and complete the order submission accurately and efficiently.
 
-![](.gitbook/assets/MYRIAD-OMS/s-ws-home.png)
+***
 
-> **Note:** This is the CSM/FSM Configurable Workspace — designed for agents and reps who work records day-to-day. The modern panel-based layout is different from the classic ServiceNow back-end interface.
+## Step 1: Open the Myriad Provider Portal
 
----
+Navigate to the provider portal by appending /**myriad-provider** to the end of your instance URL. You will see:
 
-### Step 2: Orient Yourself — The Left Sidebar
+* A **top navigation bar** with options for **Dashboard**, **Submit Order**, **My Orders**, and **Specimen Tracking**
+* A **welcome banner** with a **New Test Order** button
+* Dashboard tiles displaying metrics such as **Total Orders**, **Specimens**, **Patients**, and **MRD Monitoring**
+* A **Browse Tests** section featuring available Myriad products that can be ordered
+* A **Recent Orders** section at the bottom of the page
 
-The **dark left sidebar** has three icons from top to bottom:
+![](<.gitbook/assets/Screenshot 2026-07-07 at 1.04.36 PM.png>)
 
-| Icon | Looks Like | What It Does |
-|---|---|---|
-| **Home** | A small house | Returns you to the Workspace landing page |
-| **Lists** | Three horizontal lines (☰) | Opens the full list of record categories |
-| **Cases** | A briefcase/folder | Quick shortcut to the Cases list |
+> **Note:** This is your Myriad Provider Portal, the streamlined experience that you designed for healthcare providers to order tests, track specimens, and manage patients. Behind the scenes, very order submitted through the portal automatically creates a corresponding order in ServiceNow for your operations team to review and fulfill.&#x20;
 
-> **Tip:** Hovering over any sidebar icon shows a tooltip with its name.
+***
 
----
+## Step 2: Place the Order
 
-### Step 3: Orient Yourself — The Top Navigation Bar
+1. Select **+Submit Order in** the top navigation.
+2. Select your patient, **Dorothy Martinez** from the patient dropdown.&#x20;
+3. Select **Jennifer Park** from the ordering provider dropdown.
+4. Select a **30-day** cadence for the **MRD Monitoring** test.
 
-The top navigation bar contains from left to right:
-1. **All** — Shows all available menus and modules
-2. **Favorites** — Bookmark frequently-used records or lists
-3. **History** — Recently visited records and pages
-4. **Workspaces** — Switch to a different workspace
-5. **Admin** — Administrative options
-6. **"Search or ask Now Assist"** — Global search bar
-7. **Avatar icon** — Circular photo at the **far top-right corner** — your user menu
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 1.12.47 PM.png" alt=""><figcaption></figcaption></figure>
 
----
+{% hint style="info" %}
+**Note:** The tests displayed in the Provider Portal represent your organization's product offerings. These offerings are managed through the ServiceNow Product Catalog, allowing you to control which tests providers can order. When a provider submits an order, a fulfillment workflow is automatically initiated in ServiceNow.
+{% endhint %}
 
-### Step 4: Open the Avatar Menu
+5. Click **Submit Order** and wait for the confirmation screen to load. In the confirmation message, select the **order hyperlink (ORDXXXXXXX).**&#x20;
 
-Locate the **avatar** — the circular photo icon at the **top-right corner** of the screen.
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 1.16.53 PM.png" alt=""><figcaption></figcaption></figure>
 
-**Click the avatar.**
 
-A dropdown menu appears with several options including:
-- Profile
-- **Impersonate user**
-- Preferences
-- Log out
 
-![](.gitbook/assets/MYRIAD-OMS/s-avatar-menu.png)
+{% hint style="success" %}
+#### **Congratulations, you've just placed your first order! We're now going to take a look at it from the perspective of the Myriad operations team.**&#x20;
+{% endhint %}
 
-> **Note:** "Impersonate user" lets you view the system as another person — no password needed. This is how we'll switch perspective to Dr. Lydia Chen.
+***
 
----
+## **Exercise 2: Orientation to the Order**
 
-### Step 5: Impersonate Dr. Lydia Chen
+**Persona:** Sam Anderson
 
-**Click "Impersonate user"** in the avatar dropdown.
+<mark style="color:red;">**Duration:**</mark> <mark style="color:red;"></mark><mark style="color:red;">Update</mark>&#x20;
 
-A dialog box appears with a search field:
+**Objective:** Navigate the order recently placed and get up to speed about what it requires.
 
-1. **Type** `lydia` in the search field
-2. Look for **"Lydia Chen"** in the results
-3. **Click "Lydia Chen"** to select her
-4. The **"Impersonate user"** button at the bottom becomes active (turns blue/enabled)
+***
 
-![](.gitbook/assets/MYRIAD-OMS/s-impersonate-lydia-ready.png)
+**Scene:** You are **Sam Anderson**, a member of the Myriad Order Operations team. Your role is to review incoming test orders, verify the information provided, and ensure each order is ready to move through the fulfillment process. An order has just been submitted through the Myriad Provider Portal by Dr. Jennifer Park for patient Dorothy Martinez. Your task is to locate the order in ServiceNow, review its details, and understand the information your team uses to process and fulfill provider requests.
 
-5. **Click "Impersonate user"** to confirm
+***
 
-The page reloads. You are now operating as Dr. Lydia Chen. The avatar in the top-right now reflects her profile.
+Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspace**. You will see:
 
-> **Note:** All records, lists, and permissions now reflect Lydia's role. To return to your own login at any time: **Avatar → End impersonation**.
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 1.31.58 PM (1).png" alt=""><figcaption></figcaption></figure>
 
----
+* An **order header** displaying key details such as the order number, patient, order type, state, priority, and current status.
+* A set of **related tabs** that organize the work required to fulfill the order:
+  * **Line Items** represent the products or services that were ordered.
+  * **Order Tasks** contain the individual fulfillment activities required to complete the order. These tasks are automatically generated based on the fulfillment workflow configured for the selected product offering.
+  * **Specimens** track the samples required for the test, including their collection and processing status. These records are also created automatically based on the selected product offering.
+  * **MRD Monitoring Series** groups the patient's scheduled monitoring events into a single series, allowing your team to track recurring MRD testing over time. The cadence and monitoring schedule are generated from the product configuration.
+* An **Order Overview** panel on the left with fulfillment details, important dates, and links to the order timeline and orchestration, helping you understand where the order is in its lifecycle.
+* A **collaboration panel** on the right where your team can communicate and document progress:
+  * **Work Notes** are visible only to internal users and are used to document progress, hand off work, troubleshoot issues, and communicate with other fulfillment team members.
+  * **Comments** can be shared with external users, such as healthcare providers, when updates or additional information need to be communicated.
+  * The **Activity** stream provides a chronological history of changes, updates, and communications related to the order.
+* A **Customer Order Summary** panel that uses AI to generate a concise overview of the order. The summary highlights key information—such as the patient, ordering provider, product offering, monitoring cadence, fulfillment status, and upcoming specimen collection dates—so you can quickly understand the order before diving into the individual records.
 
-### Step 6: Navigate to the Customer Orders List
+1. Click the **Customer order summary button** to see a concise summary of this order.
 
-Look at the **dark left sidebar** and **click the hamburger icon** (☰ — the three horizontal lines, second icon from top).
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 1.44.23 PM.png" alt=""><figcaption></figcaption></figure>
 
-A flyout panel slides out showing **Default lists** with record categories. Look for:
+{% hint style="success" %}
+#### Congratulations, you have reviewed the submitted order!
+{% endhint %}
 
-**Default lists → Customer Orders → All**
+***
 
-**Click "All"** under Customer Orders.
+## Exercise 3: Orientation to the Order Tasks
 
-The main area now shows a table of Customer Orders with columns:
-**Number | Account | Contract type | Contact | Consumer | Order type | State**
+**Persona:** Sam Anderson
 
-![](.gitbook/assets/MYRIAD-OMS/s-orders-list-page1.png)
+<mark style="color:red;">**Duration:**</mark> <mark style="color:red;"></mark><mark style="color:red;">Update</mark>&#x20;
 
-> **Note:** This is the orders queue — 41 orders total. Each row is one order. You can click any column header to sort. The search/filter bar above the list lets you narrow results.
+**Objective:** Navigate the order recently placed and get up to speed about what it requires.
 
----
+***
 
-### Step 7: Locate ORD0002157
+### Overview
 
-In the Customer Orders list, look for the row with Number **ORD0002157**.
+**Order Tasks** represent the operational work required to fulfill an order. Each task corresponds to a specific step in your workflow and is **automatically generated** based on the Product Offering selected during order entry.
 
-> **Tip:** If you don't see it immediately, use the search bar above the list — type `ORD0002157` and press **Enter**.
+Tasks are **assigned to the appropriate operational teams**, include **planned execution dates**, and **provide visibility** into the progress of the order from intake through result delivery.
 
-> **Where did this order come from?** ORD0002157 was not entered manually into ServiceNow. Dr. Lydia Chen placed it in **Epic** — Huntsman Cancer Institute's electronic health record system. Epic transmitted the order automatically to Myriad's ServiceNow OMS as a FHIR R4 ServiceRequest message. ServiceNow received it, created this Customer Order record, and queued it for intake — all within seconds, with no one at Myriad lifting a finger. This is the Epic → ServiceNow integration in action. See [Epic Integration Background](epic-integration.md) for the full picture.
+**Click the "Order Tasks" tab** next "Line items" on the order.
 
-**Click the blue "ORD0002157" link** in the Number column.
+A list of order tasks appears on the screen:
 
-The record opens in a new tab. The tab bar now shows: **List | ORD0002157**
+![](<.gitbook/assets/Screenshot 2026-07-07 at 1.50.24 PM.png>)
 
----
+### **What to notice:**
 
-### Step 8: Explore the Split-Pane Record View
+#### **Assignment Groups**
 
-The order opens in a **split-pane layout**:
+* Notice that each task is assigned to the appropriate operational team, such as:
+* Order Intake & Authorization
+* Lab Operations
+* Order Support Services
+* Order Oversight
 
-- **Left pane (Form):** Fields and details — Number, Short description, State, Priority, Account, and tabs (Catalog, Line items, Involved Parties, Contacts)
-- **Right pane:** Work notes | Comments tabs at top, then the **Activity stream** below showing all changes and notes on this record
+This ensures work is automatically routed to the correct team throughout the order lifecycle.
 
-![](.gitbook/assets/MYRIAD-OMS/s-ord0002156-record.png)
+#### **Workflow Progression**
 
-> **Note:** The screenshot shows a reference order (ORD0002156) in the same layout. Your ORD0002157 view will be identical in structure.
+* Observe how the order moves through each stage of fulfillment.
+* Activities include:
+  * Order Validation
+  * Insurance Verification
+  * Baseline Collection Scheduling
+  * Specimen Collection
+  * Specimen Receipt & QC Validation
+  * Laboratory Testing & Analysis
+  * Result Review & Release
 
----
+For longitudinal monitoring products, additional specimen collections and testing cycles are automatically generated as part of the same order.
 
-### Step 9: Review the Key Order Fields
+#### **Operational Visibility**
 
-In the left form pane, locate these fields:
+Each task contains operational information, including:
 
-| Field | Value | What It Means |
-|---|---|---|
-| **Number** | ORD0002157 | Unique order ID — use this to find the record later |
-| **Short description** | MyRisk 25-Gene Panel — BRCA1 family history | The test ordered — 25-gene hereditary cancer panel |
-| **Account** | Myriad Genetics | The laboratory processing this order |
-| **Order type** | Product | Classification in the order system |
-| **State** | Draft | Not yet active — pending review and intake |
-| **Priority** | 2 - High | How urgently this order needs attention |
+* Assignment Group
+* Status
+* Planned Start Date
+* Planned End Date
+* Actual Start Date
+* Actual End Date
 
----
+This information provides visibility into workload, task ownership, and overall order progress.
 
-### Step 10: View the Activity Stream
+{% hint style="info" %}
+The Order Tasks displayed are dynamically generated based on the Product Offering associated with the order. Different tests can produce different workflows. For example, a hereditary cancer test may require a single collection and testing cycle, while an MRD monitoring program may generate multiple scheduled collections and recurring laboratory activities over time.
 
-On the **right pane**, click the **Activity** section header to expand it (if not already open).
+Overall, Order Tasks provide a configurable, end-to-end operational workflow that coordinates every activity required to fulfill a laboratory order while routing work to the appropriate teams and providing complete visibility throughout the testing lifecycle.
+{% endhint %}
 
-The Activity stream shows a timestamp log of every change and note added to this order. Even at this early stage, you can see the creation event — who created it, when, and what fields were set.
+{% hint style="success" %}
+**Congratulations, you have reviewed the order tasks successfully!**
+{% endhint %}
 
-> **Note:** As the order progresses through intake → eligibility → processing → results, each step is logged here. This is how Myriad operations teams stay informed without sending emails.
+***
 
----
+## Exercise 4: Orientation to Specimens
 
-### Step 11: End Impersonation
+**Persona:** Sam Anderson
 
-You have reviewed ORD0002157 from Dr. Lydia Chen's perspective.
+<mark style="color:red;">**Duration:**</mark> <mark style="color:red;"></mark><mark style="color:red;">Update</mark>&#x20;
 
-**Click the avatar icon → "End impersonation"** to return to the admin session.
+**Objective:** Navigate the order recently placed and get up to speed about what it requires.
 
----
+***
 
-### ✅ Exercise 1 Checkpoint
+### Overview
 
-You have successfully:
-- Navigated the CSM/FSM Configurable Workspace
-- Used the impersonation feature to take a provider's perspective
-- Located a new order (ORD0002157) in the Customer Orders list
-- Examined the split-pane record view with form fields and Activity stream
+**Specimens represent the individual biological samples** collected for laboratory testing. As part of the configurable workflow driven by the selected **Product Offering**, the platform automatically generates the appropriate specimen records needed to fulfill the order. Each specimen is created as its own record and **tracks the complete lifecycle of a sample**—from scheduled collection through receipt, processing, testing, and result generation.
 
-**What happens next:** ORD0002157 is now in the intake queue. Lisa Morgan's oversight role is to monitor all open orders and escalate the most critical ones — that's Exercise 2.
+For longitudinal monitoring programs like MRD, **multiple specimen records can be generated as part of a single order**, providing complete traceability for every collection event throughout the patient's testing journey.
 
----
+**Click the "Specimens" tab** next to "Order Tasks" on the order.
+
+![](<.gitbook/assets/Screenshot 2026-07-07 at 2.07.33 PM.png>)
+
+### What to Notice
+
+#### Specimen Records
+
+Each specimen is managed as its own record, allowing the laboratory to independently track every sample collected throughout the patient's testing journey.
+
+In this example, a specimen has been created for:
+
+* Baseline Collection
+* Monitoring Draw 1
+* Monitoring Draw 2
+* Monitoring Draw 3
+
+#### Longitudinal Monitoring
+
+Notice that each specimen is associated with the same **MRD Monitoring Series**, linking all collections together while maintaining a separate record for each individual sample.
+
+This provides complete visibility into a patient's longitudinal testing history.
+
+#### Specimen Lifecycle
+
+Each specimen record captures key milestones throughout its lifecycle, including:
+
+* Scheduled Collection Date
+* Collection Date
+* Received Date
+* Result Status _(or other lifecycle milestones as configured)_
+
+These milestones allow laboratory staff to monitor where each specimen is within the testing process and quickly identify delayed or outstanding samples.
+
+#### Traceability
+
+Because every specimen is its own record, laboratories can maintain complete chain-of-custody and processing visibility for every collected sample.
+
+This supports operational tracking, quality assurance, and historical reporting across both one-time and longitudinal testing programs.
+
+{% hint style="success" %}
+**Congratulations, you have successfully reviewed the specimens associated with this order!**
+{% endhint %}
+
+***
+
+## Exercise 4: Orientation to MRD Monitoring Series
+
+**Persona:** Sam Anderson
+
+<mark style="color:red;">**Duration:**</mark> <mark style="color:red;"></mark><mark style="color:red;">Update</mark>&#x20;
+
+**Objective:** Navigate the order recently placed and get up to speed about what it requires.
+
+***
+
+#### Overview
+
+**MRD Monitoring Series** records are created for Product Offerings that support longitudinal monitoring. Unlike one-time tests, longitudinal monitoring programs require multiple specimen collections over an extended period to monitor disease progression or treatment response.
+
+As part of the configurable workflow defined by the selected Product Offering, the platform automatically creates an MRD Monitoring Series to track and manage planned specimen collections.
+
+**Click the "MRD Monitoring Series" tab** next to "Specimens" on the order.
+
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 2.21.11 PM.png" alt=""><figcaption></figcaption></figure>
+
+***
+
+### What to Notice
+
+#### Longitudinal Monitoring
+
+Unlike one-time tests, MRD monitoring programs consist of multiple planned specimen collections over time.
+
+The MRD Monitoring Series provides a single record that organizes and tracks the patient's entire monitoring journey.
+
+***
+
+#### Collection Schedule
+
+Notice that the monitoring series captures the planned collection dates for each scheduled draw, including:
+
+* Baseline Collection
+* Draw 1
+* Draw 2
+* Draw 3
+
+This provides laboratory staff with a centralized view of upcoming and completed collection events.
+
+{% hint style="success" %}
+**Congratulations, you have successfully reviewed the monitoring series associated with this order!**
+{% endhint %}
+
+***
+
+## Exercise 5: Managing Order Fulfillment
+
+**Persona:** Sam Anderson
+
+<mark style="color:red;">**Duration:**</mark> <mark style="color:red;"></mark><mark style="color:red;">Update</mark>&#x20;
+
+**Objective:** Monitor the progress of an active laboratory order, identify workflow bottlenecks, and use the available tools to investigate delays and keep the order moving.
+
+It has been several weeks since Dorothy Martinez's MRD monitoring program began. During your morning operational review, you notice that Dorothy's order has stopped progressing through the laboratory workflow. A delay in processing could impact the patient's scheduled monitoring timeline. Your job is to investigate the order, determine where the bottleneck exists, and use the platform to coordinate the next steps needed to move the order forward.
+
+
+
+#### Step 1: Open the Order Task
+
+1. Select the "**Order Tasks"** tab
+2. **Click the blue hyperlink** of the first order task.
+
+***
+
+#### Step 2: Review the Task Details
+
+Review the information available on the task record.
+
+| Field                                     | Value            | What It Means                                                            |
+| ----------------------------------------- | ---------------- | ------------------------------------------------------------------------ |
+| **Consumer**                              | Dorothy Martinez | This identifies the patient associated with the task.                    |
+| **Order line item**                       | ORDLXXXXXXX      | This identifies the order and Product Offering that generated this task. |
+| **State**                                 | Draft            | Priority helps your teams determine the urgency of the work.             |
+| **Priority**                              | Product          | Classification in the order system                                       |
+| **Planned Start Date / Planned End Date** | Date             | The scheduled timeline for task completion.                              |
+| **Actual Start Date / Actual End Date**   | Date             | The actual timeline for task completion.                                 |
+
+***
+
+#### Step 3: Request a Status Update
+
+1. Locate the **Work notes** tab in the Activity Stream.
+2.  Enter the following message:
+
+    ```
+    @john.jason Can you please provide a status update?
+    ```
+3. Save or post the work note.
+
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 2.46.22 PM.png" alt=""><figcaption></figcaption></figure>
+
+**What to Notice**
+
+* Mentioning a user with **@username** notifies that team member directly within the platform.
+* Work Notes provide an internal collaboration space that keeps all communication tied to the task, creating a complete audit trail.
+
+***
+
+### Step 2: Start a Sidebar Discussion
+
+For more immediate collaboration, you decide to start a conversation with John.
+
+1. In the right-side utility pane, click the **People** icon.
+2. Select **+** to create a new Sidebar Discussion.
+3. In the **Participants** field, search for and select **John Jason**.
+4.  In the message box, enter:
+
+    ```
+    Please review and complete this task.
+    ```
+5. Click **Start Discussion**.
+
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 2.47.42 PM.png" alt=""><figcaption></figcaption></figure>
+
+**What to Notice**
+
+* Sidebar Discussions create real-time, in-platform conversations without leaving the task.
+* These discussions allow teams to quickly collaborate while maintaining context around the work being performed.
+
+***
+
+### Step 3: Escalate the Task
+
+Despite reaching out to John, the task is still not progressing. You decide to formally escalate it.
+
+1. Locate the **Escalation Level** field.
+2. Change the value to **Medium**.
+3. Click **Save** in the upper-right corner of the record.
+
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 2.48.37 PM.png" alt=""><figcaption></figcaption></figure>
+
+**What to Notice**
+
+* After saving, the task is automatically reassigned based on the configured escalation workflow.
+* Additional work notes and system updates are recorded in the Activity Stream to document the escalation.
+
+***
+
+### Step 4: Escalate Further
+
+The task continues to remain unresolved, requiring additional attention.
+
+1. Change the **Escalation Level** to **High**.
+2. Save the record again.
+
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 2.49.24 PM.png" alt=""><figcaption></figcaption></figure>
+
+**What to Notice**
+
+* The task priority is automatically increased to reflect the higher level of urgency.
+* Additional notifications are generated for managers and other stakeholders.
+* The Activity Stream records each automated action taken by the workflow.
+
+{% hint style="info" %}
+The escalation process shown in this exercise is fully configurable and can be tailored to your operational procedures.
+
+Depending on the workflow configured, escalating a task can automatically trigger actions such as:
+
+* Reassigning the task to another assignment group or individual.
+* Increasing the task priority.
+* Sending email notifications.
+* Posting messages to collaboration platforms such as Microsoft Teams or Slack through integrations.
+* Creating follow-up tasks or approvals.
+* Triggering additional workflows or automations.
+
+This flexibility enables you to design escalation paths that align with your own operational policies and service level agreements, ensuring delayed work is surfaced and addressed appropriately.
+{% endhint %}
+
+***
+
+## ✅ Exercise 1 Checkpoint
+
+{% hint style="success" %}
+**Congratulations, you have successfully completed scenario 1!**
+{% endhint %}
+

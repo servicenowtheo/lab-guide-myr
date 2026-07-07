@@ -1,117 +1,181 @@
-# Scenario 2: Submit, Process, and Manage a Precise Tumor + MyRisk Order
+## Exercise 1: Explore a New Genomic Test Order
 
-### **Exercise 1: Placing the order**
+**Persona:** Dr. Lydia Chen — Ordering Oncologist
+**Duration:** ~10 minutes
+**Objective:** Navigate the CSM/FSM Configurable Workspace, impersonate Dr. Lydia Chen, locate a genomic test order in the Customer Orders list, open the record, and understand the key order fields.
 
-**Persona:** Dr. Jennifer Park — Ordering Oncologist&#x20;
+---
 
-**Duration:** \~10 minutes&#x20;
+**Scene:** Dr. Lydia Chen recently placed a MyRisk 25-Gene Hereditary Cancer Panel order for a patient with a BRCA1 family history. The order has just arrived in the Myriad Genetics OMS system. Your job is to view it from her perspective and confirm the order details.
 
-**Objective:** Navigate the Myriad Provider Portal, and submit an order from Myriad's product offerings.
+---
 
-***
+### Step 1: Open the Configurable Workspace
 
-**Scene:** You are Dr. Jennifer Park, an ordering oncologist preparing care for your patient, Dorothy Martinez. The patient visit has just concluded, and you're ready to order Precise Tumor and MyRisk testing for Dorothy Martinez. Log in to the Myriad Provider Portal, locate the appropriate product, and complete the order submission accurately and efficiently.
+Navigate to the Configurable Workspace using the URL provided by your instructor. You will see:
+- A **dark-colored left sidebar** running top-to-bottom with a few small icons
+- A large main area showing a greeting and metrics dashboard
+- A **top navigation bar** across the very top of the screen
 
-***
+![](.gitbook/assets/MYRIAD-OMS/s-ws-home.png)
 
-## Step 1: Open the Myriad Provider Portal
+> **Note:** This is the CSM/FSM Configurable Workspace — designed for agents and reps who work records day-to-day. The modern panel-based layout is different from the classic ServiceNow back-end interface.
 
-Navigate to the provider portal by appending /**myriad-provider** to the end of your instance URL. You will see:
+---
 
-![](<.gitbook/assets/Screenshot 2026-07-07 at 1.04.36 PM.png>)
+### Step 2: Orient Yourself — The Left Sidebar
 
-***
+The **dark left sidebar** has three icons from top to bottom:
 
-## Step 2: Place the Order
+| Icon | Looks Like | What It Does |
+|---|---|---|
+| **Home** | A small house | Returns you to the Workspace landing page |
+| **Lists** | Three horizontal lines (☰) | Opens the full list of record categories |
+| **Cases** | A briefcase/folder | Quick shortcut to the Cases list |
 
-1. Select **+Submit Order in** the top navigation.
-2. Select your patient, **Dorothy Martinez** from the patient dropdown.&#x20;
-3. Select **Jennifer Park** from the ordering provider dropdown.
-4. Select the **MyRisk** and **Precise Tumor** tests.
+> **Tip:** Hovering over any sidebar icon shows a tooltip with its name.
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 3.30.13 PM.png" alt=""><figcaption></figcaption></figure>
+---
 
-{% hint style="info" %}
-**Note:** The tests displayed in the Provider Portal represent your organization's product offerings. These offerings are managed through the ServiceNow Product Catalog, allowing you to control which tests providers can order. When a provider submits an order, a fulfillment workflow is automatically initiated in ServiceNow.
-{% endhint %}
+### Step 3: Orient Yourself — The Top Navigation Bar
 
-5. Click **Submit Order** and wait for the confirmation screen to load. In the confirmation message, select the **order hyperlink (ORDXXXXXXX).**&#x20;
+The top navigation bar contains from left to right:
+1. **All** — Shows all available menus and modules
+2. **Favorites** — Bookmark frequently-used records or lists
+3. **History** — Recently visited records and pages
+4. **Workspaces** — Switch to a different workspace
+5. **Admin** — Administrative options
+6. **"Search or ask Now Assist"** — Global search bar
+7. **Avatar icon** — Circular photo at the **far top-right corner** — your user menu
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 3.32.00 PM.png" alt=""><figcaption></figcaption></figure>
+---
 
-{% hint style="success" %}
-#### **Congratulations, you've just placed your an order! We're now going to take a look at it from the perspective of the Myriad operations team.**&#x20;
-{% endhint %}
+### Step 4: Open the Avatar Menu
 
-***
+Locate the **avatar** — the circular photo icon at the **top-right corner** of the screen.
 
-## **Exercise 2: Managing a Multi-Test Order**
+**Click the avatar.**
 
-**Persona:** Sam Anderson
+A dropdown menu appears with several options including:
+- Profile
+- **Impersonate user**
+- Preferences
+- Log out
 
-<mark style="color:red;">**Duration:**</mark> <mark style="color:red;"></mark><mark style="color:red;">Update</mark>&#x20;
+![](.gitbook/assets/MYRIAD-OMS/s-avatar-menu.png)
 
-**Objective:** **Objective:** Explore how ServiceNow manages multiple Product Offerings within a single customer order and automatically generates independent fulfillment workflows for each.
+> **Note:** "Impersonate user" lets you view the system as another person — no password needed. This is how we'll switch perspective to Dr. Lydia Chen.
 
-***
+---
 
-#### Step 1: Review the Line Items
+### Step 5: Impersonate Dr. Lydia Chen
 
-Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspace**.
+**Click "Impersonate user"** in the avatar dropdown.
 
-* Open the **Line Items** **tab**
-* Notice that this order contains **two line items**:
-  * Precise Tumor
-  * MyRisk Hereditary Cancer Test
-* Observe that each Line Item represents an independently fulfilled Product Offering within the same customer order.
+A dialog box appears with a search field:
 
-**What to Notice**
+1. **Type** `lydia` in the search field
+2. Look for **"Lydia Chen"** in the results
+3. **Click "Lydia Chen"** to select her
+4. The **"Impersonate user"** button at the bottom becomes active (turns blue/enabled)
 
-Although the provider submitted a single order, each Product Offering follows its own configurable fulfillment workflow, allowing different tests to have unique operational requirements while remaining part of the same patient order.
+![](.gitbook/assets/MYRIAD-OMS/s-impersonate-lydia-ready.png)
 
-***
+5. **Click "Impersonate user"** to confirm
 
-#### Step 2: Compare the Fulfillment Workflows
+The page reloads. You are now operating as Dr. Lydia Chen. The avatar in the top-right now reflects her profile.
 
-* Select the **Order Tasks** related list.
-* Group the list by **Order Line Item**.
-* Expand each group to review the tasks generated for each Product Offering.
+> **Note:** All records, lists, and permissions now reflect Lydia's role. To return to your own login at any time: **Avatar → End impersonation**.
 
-**What to Notice**
+---
 
-* Each Product Offering has its own set of Order Tasks.
-* The tasks differ because they are generated from the configurable workflow associated with each Product Offering.
-* This allows laboratories to configure different operational processes for different tests without requiring separate customer orders.
+### Step 6: Navigate to the Customer Orders List
 
-***
+Look at the **dark left sidebar** and **click the hamburger icon** (☰ — the three horizontal lines, second icon from top).
 
-#### Step 3: Compare the Specimens
+A flyout panel slides out showing **Default lists** with record categories. Look for:
 
-* Select the **Specimens** related list.
-* Review the specimens generated for each Product Offering.
+**Default lists → Customer Orders → All**
 
-**What to Notice**
+**Click "All"** under Customer Orders.
 
-* Each Product Offering generates the specimen records required to complete its workflow.
-* The number and type of specimens are determined by the Product Offering configuration.
+The main area now shows a table of Customer Orders with columns:
+**Number | Account | Contract type | Contact | Consumer | Order type | State**
 
-***
+![](.gitbook/assets/MYRIAD-OMS/s-orders-list-page1.png)
 
-#### Step 4: Review the MRD Monitoring Series
+> **Note:** This is the orders queue — 41 orders total. Each row is one order. You can click any column header to sort. The search/filter bar above the list lets you narrow results.
 
-* Select the **MRD Monitoring Series** related list.
+---
 
-**What to Notice**
+### Step 7: Locate ORD0002157
 
-* No **MRD Monitoring Series** records have been generated for this order.
-* MRD Monitoring Series records are created only for Product Offerings configured for longitudinal monitoring.
-* Since neither Product Offering in this order requires recurring specimen collections, no monitoring series is created.
+In the Customer Orders list, look for the row with Number **ORD0002157**.
 
-***
+> **Tip:** If you don't see it immediately, use the search bar above the list — type `ORD0002157` and press **Enter**.
 
-## ✅ Exercise 2 Checkpoint
+> **Where did this order come from?** ORD0002157 was not entered manually into ServiceNow. Dr. Lydia Chen placed it in **Epic** — Huntsman Cancer Institute's electronic health record system. Epic transmitted the order automatically to Myriad's ServiceNow OMS as a FHIR R4 ServiceRequest message. ServiceNow received it, created this Customer Order record, and queued it for intake — all within seconds, with no one at Myriad lifting a finger. This is the Epic → ServiceNow integration in action. See [Epic Integration Background](epic-integration.md) for the full picture.
 
-{% hint style="success" %}
-**Congratulations, you have successfully completed scenario 1!**
-{% endhint %}
+**Click the blue "ORD0002157" link** in the Number column.
 
+The record opens in a new tab. The tab bar now shows: **List | ORD0002157**
+
+---
+
+### Step 8: Explore the Split-Pane Record View
+
+The order opens in a **split-pane layout**:
+
+- **Left pane (Form):** Fields and details — Number, Short description, State, Priority, Account, and tabs (Catalog, Line items, Involved Parties, Contacts)
+- **Right pane:** Work notes | Comments tabs at top, then the **Activity stream** below showing all changes and notes on this record
+
+![](.gitbook/assets/MYRIAD-OMS/s-ord0002156-record.png)
+
+> **Note:** The screenshot shows a reference order (ORD0002156) in the same layout. Your ORD0002157 view will be identical in structure.
+
+---
+
+### Step 9: Review the Key Order Fields
+
+In the left form pane, locate these fields:
+
+| Field | Value | What It Means |
+|---|---|---|
+| **Number** | ORD0002157 | Unique order ID — use this to find the record later |
+| **Short description** | MyRisk 25-Gene Panel — BRCA1 family history | The test ordered — 25-gene hereditary cancer panel |
+| **Account** | Myriad Genetics | The laboratory processing this order |
+| **Order type** | Product | Classification in the order system |
+| **State** | Draft | Not yet active — pending review and intake |
+| **Priority** | 2 - High | How urgently this order needs attention |
+
+---
+
+### Step 10: View the Activity Stream
+
+On the **right pane**, click the **Activity** section header to expand it (if not already open).
+
+The Activity stream shows a timestamp log of every change and note added to this order. Even at this early stage, you can see the creation event — who created it, when, and what fields were set.
+
+> **Note:** As the order progresses through intake → eligibility → processing → results, each step is logged here. This is how Myriad operations teams stay informed without sending emails.
+
+---
+
+### Step 11: End Impersonation
+
+You have reviewed ORD0002157 from Dr. Lydia Chen's perspective.
+
+**Click the avatar icon → "End impersonation"** to return to the admin session.
+
+---
+
+### ✅ Exercise 1 Checkpoint
+
+You have successfully:
+- Navigated the CSM/FSM Configurable Workspace
+- Used the impersonation feature to take a provider's perspective
+- Located a new order (ORD0002157) in the Customer Orders list
+- Examined the split-pane record view with form fields and Activity stream
+
+**What happens next:** ORD0002157 is now in the intake queue. Lisa Morgan's oversight role is to monitor all open orders and escalate the most critical ones — that's Exercise 2.
+
+---
