@@ -39,7 +39,9 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 1.12.47 PM.png" alt=""><figcaption></figcaption></figure>
 
-> **Note:** The tests displayed in the Provider Portal represent your organization's product offerings. These offerings are managed through the ServiceNow Product Catalog, allowing you to control which tests providers can order. When a provider submits an order, a fulfillment workflow is automatically initiated in ServiceNow.
+{% hint style="info" %}
+**Note:** The tests displayed in the Provider Portal represent your organization's product offerings. These offerings are managed through the ServiceNow Product Catalog, allowing you to control which tests providers can order. When a provider submits an order, a fulfillment workflow is automatically initiated in ServiceNow.
+{% endhint %}
 
 5. Click **Submit Order** and wait for the confirmation screen to load. In the confirmation message, select the **order hyperlink (ORDXXXXXXX).**&#x20;
 
@@ -47,9 +49,13 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 
 #### Congratulations, you've just placed your first order! We're now going to take a look at it from the perspective of the Myriad operations team.&#x20;
 
+{% hint style="success" %}
+#### **Congratulations, you've just placed your first order! We're now going to take a look at it from the perspective of the Myriad operations team.**&#x20;
+{% endhint %}
+
 ***
 
-### **Exercise 2: Orientation to the Order**
+## **Exercise 2: Orientation to the Order**
 
 **Persona:** Sam Anderson
 
@@ -84,32 +90,80 @@ Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspa
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 1.44.23 PM.png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="success" %}
 #### Congratulations, you have reviewed the submitted order!
+{% endhint %}
 
 ***
 
-## Step 5: Impersonate Dr. Lydia Chen
+## Exercise 3: Orientation to the Order Tasks
 
-**Click "Impersonate user"** in the avatar dropdown.
+**Order Tasks** represent the operational work required to fulfill an order. Each task corresponds to a specific step in your workflow and is **automatically generated** based on the Product Offering selected during order entry.
 
-A dialog box appears with a search field:
+Tasks are **assigned to the appropriate operational teams**, include **planned execution dates**, and **provide visibility** into the progress of the order from intake through result delivery.
 
-1. **Type** `lydia` in the search field
-2. Look for **"Lydia Chen"** in the results
-3. **Click "Lydia Chen"** to select her
-4. The **"Impersonate user"** button at the bottom becomes active (turns blue/enabled)
+**Click the "Order Tasks" tab** next "Line items" on the order.
 
-![](.gitbook/assets/MYRIAD-OMS/s-impersonate-lydia-ready.png)
+A list of order tasks appears on the screen:
 
-5. **Click "Impersonate user"** to confirm
-
-The page reloads. You are now operating as Dr. Lydia Chen. The avatar in the top-right now reflects her profile.
-
-> **Note:** All records, lists, and permissions now reflect Lydia's role. To return to your own login at any time: **Avatar → End impersonation**.
+![](<.gitbook/assets/Screenshot 2026-07-07 at 1.50.24 PM.png>)
 
 ***
 
-## Step 6: Navigate to the Customer Orders List
+**Scroll through the tasks** and observe how the order progresses from validation through testing and result release.
+
+**What to notice:**
+
+**Assignment Groups**
+
+* Notice that each task is assigned to the appropriate operational team, such as:
+* Order Intake & Authorization
+* Lab Operations
+* Order Support Services
+* Order Oversight
+
+This ensures work is automatically routed to the correct team throughout the order lifecycle.
+
+**Workflow Progression**
+
+* Observe how the order moves through each stage of fulfillment.
+* Activities include:
+  * Order Validation
+  * Insurance Verification
+  * Baseline Collection Scheduling
+  * Specimen Collection
+  * Specimen Receipt & QC Validation
+  * Laboratory Testing & Analysis
+  * Result Review & Release
+
+For longitudinal monitoring products, additional specimen collections and testing cycles are automatically generated as part of the same order.
+
+**Operational Visibility**
+
+Each task contains operational information, including:
+
+* Assignment Group
+* Status
+* Planned Start Date
+* Planned End Date
+* Actual Start Date
+* Actual End Date
+
+This information provides visibility into workload, task ownership, and overall order progress.
+
+{% hint style="info" %}
+The Order Tasks displayed are dynamically generated based on the Product Offering associated with the order. Different tests can produce different workflows. For example, a hereditary cancer test may require a single collection and testing cycle, while an MRD monitoring program may generate multiple scheduled collections and recurring laboratory activities over time.
+
+Overall, Order Tasks provide a configurable, end-to-end operational workflow that coordinates every activity required to fulfill a laboratory order while routing work to the appropriate teams and providing complete visibility throughout the testing lifecycle.
+{% endhint %}
+
+{% hint style="success" %}
+**Congratulations, you have reviewed the order tasks successfully!**
+{% endhint %}
+
+***
+
+## Exercise 4: Orientation to Specimens
 
 Look at the **dark left sidebar** and **click the hamburger icon** (☰ — the three horizontal lines, second icon from top).
 
@@ -121,7 +175,7 @@ A flyout panel slides out showing **Default lists** with record categories. Look
 
 The main area now shows a table of Customer Orders with columns: **Number | Account | Contract type | Contact | Consumer | Order type | State**
 
-![](.gitbook/assets/MYRIAD-OMS/s-orders-list-page1.png)
+![](<.gitbook/assets/Screenshot 2026-07-07 at 2.07.33 PM.png>)
 
 > **Note:** This is the orders queue — 41 orders total. Each row is one order. You can click any column header to sort. The search/filter bar above the list lets you narrow results.
 
