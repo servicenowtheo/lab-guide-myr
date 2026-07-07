@@ -1,181 +1,211 @@
-## Exercise 1: Explore a New Genomic Test Order
+# Scenario 3: Submit, Process, and Manage a Precise Tumor + MyRisk + MRD Order
 
-**Persona:** Dr. Lydia Chen — Ordering Oncologist
-**Duration:** ~10 minutes
-**Objective:** Navigate the CSM/FSM Configurable Workspace, impersonate Dr. Lydia Chen, locate a genomic test order in the Customer Orders list, open the record, and understand the key order fields.
+## **Exercise 1: Placing the order**
 
----
+**Persona:** Dr. Jennifer Park — Ordering Oncologist
 
-**Scene:** Dr. Lydia Chen recently placed a MyRisk 25-Gene Hereditary Cancer Panel order for a patient with a BRCA1 family history. The order has just arrived in the Myriad Genetics OMS system. Your job is to view it from her perspective and confirm the order details.
+**Duration:** \~10 minutes
 
----
+**Objective:** Navigate the Myriad Provider Portal, and submit an order from Myriad's product offerings.
 
-### Step 1: Open the Configurable Workspace
+***
 
-Navigate to the Configurable Workspace using the URL provided by your instructor. You will see:
-- A **dark-colored left sidebar** running top-to-bottom with a few small icons
-- A large main area showing a greeting and metrics dashboard
-- A **top navigation bar** across the very top of the screen
+**Scene:** You are Dr. Jennifer Park, an ordering oncologist preparing care for your patient, Dorothy Martinez. The patient visit has just concluded, and you're ready to order Precise Tumor and MyRisk testing for Dorothy Martinez. Log in to the Myriad Provider Portal, locate the appropriate product, and complete the order submission accurately and efficiently.
 
-![](.gitbook/assets/MYRIAD-OMS/s-ws-home.png)
+***
 
-> **Note:** This is the CSM/FSM Configurable Workspace — designed for agents and reps who work records day-to-day. The modern panel-based layout is different from the classic ServiceNow back-end interface.
+### Step 1: Open the Myriad Provider Portal
 
----
+Navigate to the provider portal by appending /**myriad-provider** to the end of your instance URL. You will see:
 
-### Step 2: Orient Yourself — The Left Sidebar
+![](<.gitbook/assets/Screenshot 2026-07-07 at 1.04.36 PM.png>)
 
-The **dark left sidebar** has three icons from top to bottom:
+***
 
-| Icon | Looks Like | What It Does |
-|---|---|---|
-| **Home** | A small house | Returns you to the Workspace landing page |
-| **Lists** | Three horizontal lines (☰) | Opens the full list of record categories |
-| **Cases** | A briefcase/folder | Quick shortcut to the Cases list |
+### Step 2: Place the Order
 
-> **Tip:** Hovering over any sidebar icon shows a tooltip with its name.
+1. Select **+Submit Order in** the top navigation.
+2. Select your patient, **Dorothy Martinez** from the patient dropdown.
+3. Select **Jennifer Park** from the ordering provider dropdown.
+4. Select the **MyRisk** and **Precise Tumor** tests.
 
----
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 3.30.13 PM.png" alt=""><figcaption></figcaption></figure>
 
-### Step 3: Orient Yourself — The Top Navigation Bar
+{% hint style="info" %}
+**Note:** The tests displayed in the Provider Portal represent your organization's product offerings. These offerings are managed through the ServiceNow Product Catalog, allowing you to control which tests providers can order. When a provider submits an order, a fulfillment workflow is automatically initiated in ServiceNow.
+{% endhint %}
 
-The top navigation bar contains from left to right:
-1. **All** — Shows all available menus and modules
-2. **Favorites** — Bookmark frequently-used records or lists
-3. **History** — Recently visited records and pages
-4. **Workspaces** — Switch to a different workspace
-5. **Admin** — Administrative options
-6. **"Search or ask Now Assist"** — Global search bar
-7. **Avatar icon** — Circular photo at the **far top-right corner** — your user menu
+5. Click **Submit Order** and wait for the confirmation screen to load. In the confirmation message, select the **order hyperlink (ORDXXXXXXX).**
 
----
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 3.32.00 PM.png" alt=""><figcaption></figcaption></figure>
 
-### Step 4: Open the Avatar Menu
+{% hint style="success" %}
+#### **Congratulations, you've just placed your an order! We're now going to take a look at it from the perspective of the Myriad operations team.**
+{% endhint %}
 
-Locate the **avatar** — the circular photo icon at the **top-right corner** of the screen.
+***
 
-**Click the avatar.**
+## **Exercise 2: Managing a Multi-Test Order**
 
-A dropdown menu appears with several options including:
-- Profile
-- **Impersonate user**
-- Preferences
-- Log out
+**Persona:** Sam Anderson
 
-![](.gitbook/assets/MYRIAD-OMS/s-avatar-menu.png)
+<mark style="color:red;">**Duration:**</mark> <mark style="color:red;">Update</mark>
 
-> **Note:** "Impersonate user" lets you view the system as another person — no password needed. This is how we'll switch perspective to Dr. Lydia Chen.
+**Objective:** Explore how ServiceNow manages multiple Product Offerings within a single customer order and automatically generates independent fulfillment workflows for each.
 
----
+***
 
-### Step 5: Impersonate Dr. Lydia Chen
+#### Step 1: Review the Line Items
 
-**Click "Impersonate user"** in the avatar dropdown.
+Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspace**.
 
-A dialog box appears with a search field:
+* Open the **Line Items** **tab**
+* Notice that this order contains **two line items**:
+  * Precise Tumor
+  * MyRisk Hereditary Cancer Test
+* Observe that each Line Item represents an independently fulfilled Product Offering within the same customer order.
 
-1. **Type** `lydia` in the search field
-2. Look for **"Lydia Chen"** in the results
-3. **Click "Lydia Chen"** to select her
-4. The **"Impersonate user"** button at the bottom becomes active (turns blue/enabled)
+**What to Notice**
 
-![](.gitbook/assets/MYRIAD-OMS/s-impersonate-lydia-ready.png)
+Although the provider submitted a single order, each Product Offering follows its own configurable fulfillment workflow, allowing different tests to have unique operational requirements while remaining part of the same patient order.
 
-5. **Click "Impersonate user"** to confirm
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.12.51 PM.png" alt=""><figcaption></figcaption></figure>
 
-The page reloads. You are now operating as Dr. Lydia Chen. The avatar in the top-right now reflects her profile.
+***
 
-> **Note:** All records, lists, and permissions now reflect Lydia's role. To return to your own login at any time: **Avatar → End impersonation**.
+#### Step 2: Compare the Fulfillment Workflows
 
----
+1. Select the **'Order Tasks'** tab next to Line items.
+2. Hover over the **'Order line item'** column and select the three dots at the right of the column.
+3. Click the blue hyperlink that says **'Group by Order line item'**
 
-### Step 6: Navigate to the Customer Orders List
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.15.28 PM.png" alt=""><figcaption></figcaption></figure>
 
-Look at the **dark left sidebar** and **click the hamburger icon** (☰ — the three horizontal lines, second icon from top).
+**What to Notice**
 
-A flyout panel slides out showing **Default lists** with record categories. Look for:
+* Each order line item (which represents the tests ordered) has its own set of Order Tasks.
+* The tasks differ because they are generated from the configurable workflow associated with each Product Offering.
+* This allows you to configure different operational processes for different tests without requiring separate customer orders.
 
-**Default lists → Customer Orders → All**
+***
 
-**Click "All"** under Customer Orders.
+#### Step 3: Compare the Specimens
 
-The main area now shows a table of Customer Orders with columns:
-**Number | Account | Contract type | Contact | Consumer | Order type | State**
+1. Select the **'Specimens'** **tab.**
+2. Review the specimens generated for each Product Offering.
 
-![](.gitbook/assets/MYRIAD-OMS/s-orders-list-page1.png)
+**What to Notice**
 
-> **Note:** This is the orders queue — 41 orders total. Each row is one order. You can click any column header to sort. The search/filter bar above the list lets you narrow results.
+* Each Product Offering generates the specimen records required to complete its workflow.
+* The number and type of specimens are determined by the Product Offering configuration.
 
----
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.18.21 PM.png" alt=""><figcaption></figcaption></figure>
 
-### Step 7: Locate ORD0002157
+3. Open the specimen record by clicking the **blue hyperlink** in the **'Display Name'** column.
+4. Review all of the available information about this specimen record. Definitions and purposes for each of the fields you see are described below.
 
-In the Customer Orders list, look for the row with Number **ORD0002157**.
+| **Field**                 | **Example Value**                    | **What It Means**                                                                                                                                                                 |
+| ------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Status**                | Pending Collection                   | Indicates where the specimen is within its lifecycle, from collection through laboratory processing and result reporting. This provides an at-a-glance view of specimen progress. |
+| **Specimen Type**         | MyRisk Sample                        | Identifies the type of biological sample required for the selected Product Offering, helping ensure the correct specimen is collected and processed.                              |
+| **Test Type**             | MyRisk                               | Identifies the laboratory test associated with this specimen, allowing laboratories to support multiple testing workflows within the same platform.                               |
+| **Result Status**         | None                                 | Indicates whether testing results have been generated, reviewed, or finalized for this specimen.                                                                                  |
+| **Result Date**           | Date                                 | Records when results became available, supporting turnaround time reporting and downstream clinical workflows.                                                                    |
+| **Sequence**              | Baseline                             | Identifies where this specimen falls within the testing program. For longitudinal monitoring products, this may represent Baseline, Draw 1, Draw 2, and so on.                    |
+| **Scheduled Date**        | 2026-07-07                           | The planned specimen collection date generated by the configurable workflow for the Product Offering.                                                                             |
+| **Collection Date**       | Date                                 | Records when the specimen was actually collected from the patient, enabling comparison between planned and actual collection timelines.                                           |
+| **Received Date**         | Date                                 | Indicates when the laboratory received the specimen, providing visibility into specimen logistics and laboratory intake.                                                          |
+| **Patient**               | Dorothy Martinez                     | Identifies the patient associated with the specimen, ensuring traceability throughout the testing process.                                                                        |
+| **Accession Number**      | Laboratory Identifier                | The unique laboratory identifier assigned to the specimen after receipt, supporting chain of custody and specimen traceability throughout laboratory operations.                  |
+| **Display Name**          | MYRISK - Dorothy Martinez - Baseline | A human-readable identifier that makes it easy for laboratory staff to quickly recognize the specimen.                                                                            |
+| **Order Line Item**       | ORDL0001066                          | Identifies the specific Product Offering that generated this specimen, linking the specimen back to the appropriate laboratory workflow.                                          |
+| **Order**                 | ORD0001183                           | Identifies the customer order that the specimen belongs to, allowing multiple specimens to be tracked under a single order when appropriate.                                      |
+| **MRD Monitoring Series** | _(Blank)_                            | Links the specimen to a longitudinal monitoring program when applicable. This field remains blank for one-time tests that do not require recurring specimen collections.          |
 
-> **Tip:** If you don't see it immediately, use the search bar above the list — type `ORD0002157` and press **Enter**.
+{% hint style="info" %}
+Specimen records are fully configurable to match your operational processes. You can define the statuses, metadata, lifecycle stages, and business rules that best support your workflow. Because specimens remain linked to the patient and order, every collection event maintains complete traceability throughout the testing lifecycle.
+{% endhint %}
 
-> **Where did this order come from?** ORD0002157 was not entered manually into ServiceNow. Dr. Lydia Chen placed it in **Epic** — Huntsman Cancer Institute's electronic health record system. Epic transmitted the order automatically to Myriad's ServiceNow OMS as a FHIR R4 ServiceRequest message. ServiceNow received it, created this Customer Order record, and queued it for intake — all within seconds, with no one at Myriad lifting a finger. This is the Epic → ServiceNow integration in action. See [Epic Integration Background](epic-integration.md) for the full picture.
+{% hint style="success" %}
+**Congratulations, you have successfully managed a multi-test order!**
+{% endhint %}
 
-**Click the blue "ORD0002157" link** in the Number column.
+***
 
-The record opens in a new tab. The tab bar now shows: **List | ORD0002157**
+## Exercise 3: Kick Off a Sample Recollection
 
----
+Dorothy Martinez's specimen has been collected and received by the laboratory.
 
-### Step 8: Explore the Split-Pane Record View
+During quality control (QC), however, the laboratory determines that the specimen does not meet the required standards for testing.
 
-The order opens in a **split-pane layout**:
+Rather than allowing the order to remain blocked while laboratory staff manually coordinate the next steps, the platform can automatically initiate the specimen recollection process.
 
-- **Left pane (Form):** Fields and details — Number, Short description, State, Priority, Account, and tabs (Catalog, Line items, Involved Parties, Contacts)
-- **Right pane:** Work notes | Comments tabs at top, then the **Activity stream** below showing all changes and notes on this record
+### Step 1: Record the QC Failure
 
-![](.gitbook/assets/MYRIAD-OMS/s-ord0002156-record.png)
+1. On the same specimen record, locate the **Status** field.
+2. Change the status to **QC Failed – Redraw Request Submitted**.
+3. Click **Save** in the top right corner.
 
-> **Note:** The screenshot shows a reference order (ORD0002156) in the same layout. Your ORD0002157 view will be identical in structure.
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.40.31 PM.png" alt=""><figcaption></figcaption></figure>
 
----
+#### What to Notice
 
-### Step 9: Review the Key Order Fields
+Saving the record automatically triggers the configured recollection workflow.
 
-In the left form pane, locate these fields:
+Notice that:
 
-| Field | Value | What It Means |
-|---|---|---|
-| **Number** | ORD0002157 | Unique order ID — use this to find the record later |
-| **Short description** | MyRisk 25-Gene Panel — BRCA1 family history | The test ordered — 25-gene hereditary cancer panel |
-| **Account** | Myriad Genetics | The laboratory processing this order |
-| **Order type** | Product | Classification in the order system |
-| **State** | Draft | Not yet active — pending review and intake |
-| **Priority** | 2 - High | How urgently this order needs attention |
+* The **Activity** stream records that the patient and ordering provider have been notified of the redraw request.
+* A new specimen record has been automatically created for the recollection.
 
----
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.40.59 PM.png" alt=""><figcaption></figcaption></figure>
 
-### Step 10: View the Activity Stream
+***
 
-On the **right pane**, click the **Activity** section header to expand it (if not already open).
+### Step 2: Review the Replacement Specimen
 
-The Activity stream shows a timestamp log of every change and note added to this order. Even at this early stage, you can see the creation event — who created it, when, and what fields were set.
+1. In the **Activity** stream, locate the work note indicating that a new specimen has been created.
+2. **Click the blue hyperlink** that was automatically posted when you hit save to open the newly created specimen record.
 
-> **Note:** As the order progresses through intake → eligibility → processing → results, each step is logged here. This is how Myriad operations teams stay informed without sending emails.
+#### What to Notice
 
----
+The replacement specimen has already been associated with:
 
-### Step 11: End Impersonation
+* Dorothy Martinez
+* The original customer order
+* The appropriate Order Line Item
 
-You have reviewed ORD0002157 from Dr. Lydia Chen's perspective.
+The new specimen now becomes the active sample that will continue through the collection and testing process, while the failed specimen remains part of the patient's laboratory history.
 
-**Click the avatar icon → "End impersonation"** to return to the admin session.
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.41.40 PM.png" alt=""><figcaption></figcaption></figure>
 
----
+***
 
-### ✅ Exercise 1 Checkpoint
+### Step 3: Verify the Customer Order is Updated
 
-You have successfully:
-- Navigated the CSM/FSM Configurable Workspace
-- Used the impersonation feature to take a provider's perspective
-- Located a new order (ORD0002157) in the Customer Orders list
-- Examined the split-pane record view with form fields and Activity stream
+1. On the replacement specimen record, locate the **Order** field.
+2. Select the **Information (i)** icon on the order field.
+3. Click **Open Record** in the popout.
+4. You are now looking at the order that was placed.
+5. Select the **Specimens** related list.
 
-**What happens next:** ORD0002157 is now in the intake queue. Lisa Morgan's oversight role is to monitor all open orders and escalate the most critical ones — that's Exercise 2.
+#### What to Notice
 
----
+Notice that the specimen count has increased from **2** to **3**.
+
+The **original failed specimen has been retained for traceability**, while the **replacement specimen has been automatically associated** with the existing order. This allows the laboratory to continue fulfillment without creating a new customer order or losing the historical record of the failed specimen.
+
+<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.42.46 PM.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+The specimen recollection process shown in this exercise is fully configurable and can be tailored to your organization's operations.
+
+Rather than requiring teams to manually coordinate a failed specimen, you can define the workflow that should occur when a specimen enters a specific status, such as QC Failed – Redraw Request Submitted, or generally when it needs to follow a specific flow.
+{% endhint %}
+
+***
+
+## ✅ Scenario 2 Checkpoint
+
+{% hint style="success" %}
+**Congratulations, you have successfully completed scenario 2!**
+{% endhint %}
