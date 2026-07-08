@@ -1,5 +1,7 @@
 # Scenario 6: Tech Bonus Scenario
 
+## **Exercise 1: Learning and Building in Flow Designer**
+
 **Persona:** Myriad Platform Developer
 
 **Duration:** \~20 minutes
@@ -435,3 +437,18 @@ The workflow you've created demonstrates a common design pattern used throughout
 Because each action is independently configurable, organizations can tailor the fulfillment process for every Product Offering without modifying the underlying application. As new tests are introduced or operational processes evolve, workflows can be updated by adding, removing, or modifying actions to reflect the desired business process.
 {% endhint %}
 
+## Exercise 2: Challenge! Build Your Own Flow
+
+### **Scenario**
+
+Your lab operations team has identified an opportunity to automate one of their most common manual processes.
+
+When a specimen fails quality control (QC), laboratory staff currently spend valuable time coordinating the recollection process. This includes creating a replacement specimen record, notifying both the patient and ordering provider that another sample is required, and initiating fulfillment of a new collection kit.
+
+Rather than relying on these manual steps, your team has asked you to automate the entire process using Flow Designer.
+
+Your goal is to build a workflow that automatically responds when a specimen enters a QC Failed status by:
+
+* Creating a new specimen record associated with the original patient, order, and order line item.
+* Creating a new Order Task to initiate shipment of a replacement collection kit.
+* Sending notifications to both the patient and the ordering provider informing them that a new specimen collection is required.
