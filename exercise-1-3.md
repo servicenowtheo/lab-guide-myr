@@ -1,245 +1,270 @@
 # Scenario 4: Managing the Patient Experience
 
-## **Exercise 1: Placing the order**
+### Exercise 1
 
-**Persona:** Dr. Jennifer Park — Ordering Oncologist
+**Persona:** Sam Anderson — Myriad Operations Team\
+**Duration:** \~10 minutes\
+**Objective:** Review the patient record to understand how ServiceNow brings together patient demographics, insurance details, clinical context, orders, specimens, tasks, interactions, and related care activity into a single operational view.
 
-**Duration:** \~10 minutes
+#### Scenario
 
-**Objective:** Navigate the Myriad Provider Portal, and submit an order from Myriad's product offerings.
+After placing and managing several orders for Dorothy Martinez, you now want to step back and review Dorothy’s full patient profile.
 
-***
-
-**Scene:** You are Dr. Jennifer Park, an ordering oncologist preparing care for your patient, Dorothy Martinez. The patient visit has just concluded, and you're ready to order Precise Tumor, MyRisk, and MRD testing for Dorothy Martinez. Log in to the Myriad Provider Portal, locate the appropriate product, and complete the order submission accurately and efficiently.
-
-***
-
-### Step 1: Open the Myriad Provider Portal
-
-Navigate to the provider portal by appending /**myriad-provider** to the end of your instance URL. You will see:
-
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 1.04.36 PM.png" alt=""><figcaption></figcaption></figure>
+Rather than looking at one order, one specimen, or one task at a time, the patient record gives your team a broader view of the patient’s relationship with Myriad. This helps operations teams understand what has been ordered, what work is still in progress, what clinical or insurance context may be relevant, and what recent interactions have occurred.
 
 ***
 
-### Step 2: Place the Order
+### Step 1: Review the Patient Header
 
-1. Select **+Submit Order in** the top navigation.
-2. Select your patient, **Dorothy Martinez** from the patient dropdown.
-3. Select **Jennifer Park** from the ordering provider dropdown.
-4. Select the **MyRisk** and **Precise Tumor** tests.
+Open the patient record for **Dorothy Martinez**.
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 6.47.18 PM.png" alt=""><figcaption></figcaption></figure>
+At the top of the screen, notice the patient name and the related tabs available across the record.
+
+The patient header gives you quick confirmation that you are working on the correct patient before reviewing orders, specimens, or support activity.
+
+***
+
+### Step 2: Review the Patient Profile Panel
+
+On the left side of the page, review the patient profile card.
+
+This section includes key demographic and contact information, such as:
+
+* Patient name
+* Date of birth and age
+* Work phone
+* Home phone
+* Email address
+* Home address
+* Language preference
+* Race / ethnicity, if captured
+
+This information helps teams confirm patient identity, contact the patient when needed, and support outreach or follow-up workflows.
+
+***
+
+### Step 3: Review Insurance Details
+
+Below the patient profile, review the **Insurance Details** section.
+
+This section includes information such as:
+
+* Member number
+* Group number
+* Effective from / effective to dates
+* Subscriber
+* RxBIN, RxPCN, and RxGroup, if applicable
+
+This gives teams quick access to coverage information that may be needed for authorization, billing, benefit investigation, or follow-up with the provider.
+
+***
+
+### Step 4: Review Household Members
+
+Review the **Household Members** section.
+
+This area can be used to track related individuals or responsible parties when relevant, such as caregivers, parents, guardians, spouses, or other household relationships.
+
+This is especially useful when communication, consent, or responsibility may involve someone other than the patient.
+
+***
+
+### Step 5: Review the Patient Dashboard
+
+In the center of the page, review the dashboard-style information available on the patient overview.
+
+Notice the summary cards for:
+
+* **Conditions**
+* **Medications**
+* **Allergies**
+* **Immunizations**
+
+These cards provide quick clinical context that may be relevant when reviewing orders, patient history, or operational follow-up, and can be configured to display what matters most to your teams.
+
+***
+
+### Step 6: Review Cases, Claims, and Interactions
+
+Review the dashboard widgets for:
+
+* **Cases Overview**
+* **Claims Overview**
+* **Recent Interactions**
+
+These areas help teams understand recent support activity and operational history related to the patient.
+
+For example, the **Recent Interactions** list may show prior calls, web chats, or provider/patient inquiries, such as questions about turnaround time or upcoming visits.
+
+***
+
+### Step 7: Review Appointments, Programs, and Prescriptions
+
+Continue reviewing the remaining dashboard sections, including:
+
+* **Appointments**
+* **Enrolled Programs**
+* **Prescriptions**
+
+These sections provide additional patient context and can be configured based on the information most relevant to your organization’s workflows.
+
+***
+
+### Step 8: Review the Related Tabs
+
+Across the top of the patient record, review the available related tabs.
+
+These tabs organize the patient’s related records, including:
+
+* **Customer Orders** — all orders associated with the patient.
+* **Order Line Items** — the specific tests ordered for the patient.
+* **Order Tasks** — fulfillment tasks related to the patient’s orders.
+* **Specimens** — specimens collected or scheduled for the patient.
+* **MRD Monitoring Series** — longitudinal monitoring series associated with the patient.
+* **Member Plans** — insurance or coverage-related records.
+* **Appointments** — scheduled patient appointments.
+* **Pre-authorization Requests** — authorization activity tied to the patient.
+* **Conditions** — relevant clinical conditions.
+* **Procedures** — procedures associated with the patient.
+* **Addresses** — patient address information.
+* **Household Members** — related individuals or responsible parties.
+* **More** — additional related lists configured for the patient view.
+
+### What to Notice
+
+The patient record provides a single, consolidated view across clinical, operational, financial, and fulfillment information.
+
+Rather than navigating separately across orders, tasks, specimens, interactions, and authorization records, teams can begin from the patient and access the full context needed to manage the patient’s testing journey.
 
 {% hint style="info" %}
-**Note:** The tests displayed in the Provider Portal represent your organization's product offerings. These offerings are managed through the ServiceNow Product Catalog, allowing you to control which tests providers can order. When a provider submits an order, a fulfillment workflow is automatically initiated in ServiceNow.
+### Information: Configurable Patient 360 View
+
+The patient view is configurable and can be tailored to the needs of different teams.
+
+You can decide which fields, related lists, dashboards, metrics, and actions appear on the patient record. This allows different users to access the information most relevant to their role while maintaining a shared, connected view of the patient across the platform.
 {% endhint %}
 
-5. Click **Submit Order** and wait for the confirmation screen to load. In the confirmation message, select the **order hyperlink (ORDXXXXXXX).**
-
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 6.47.45 PM.png" alt=""><figcaption></figcaption></figure>
-
-{% hint style="success" %}
-#### **Congratulations, you've just placed your complex combo order! We're now going to take a look at it from the perspective of the Myriad operations team.**
-{% endhint %}
-
-***
-
-## **Exercise 2: Managing a Multi-Test Order**
-
-**Persona:** Sam Anderson
-
-<mark style="color:red;">**Duration:**</mark> <mark style="color:red;">Update</mark>
-
-**Objective:** Explore how ServiceNow manages combo testing within a single customer order and automatically generates independent fulfillment workflows for each.
-
-***
-
-#### Step 1: Review the Line Items
-
-Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspace**.
-
-* Open the **Line Items** **tab**
-* Notice that this order contains **three line items**:
-  * Precise Tumor
-  * MyRisk Hereditary Cancer Test
-  * MRD: Baseline & Monitoring Cadence Management
-* Observe that each Line Item represents an independently fulfilled Product Offering within the same customer order.
-
-**What to Notice**
-
-Although the provider submitted a single order, each Product Offering follows its own configurable fulfillment workflow, allowing different tests to have unique operational requirements while remaining part of the same patient order.
 
 
+### Step 9: Generate the Myriad Patient Brief
 
-***
+At the top right of the patient record, click **Myriad Patient Brief**.
 
-#### Step 2: Compare the Fulfillment Workflows
+This launches a summarization skill that generates a concise overview of the patient using information from the patient record and related activity.
 
-1. Select the **'Order Tasks'** tab next to Line items.
-2. Hover over the **'Order line item'** column and select the three dots at the right of the column.
-3. Click the blue hyperlink that says **'Group by Order line item'**
+#### What to Notice
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.15.28 PM.png" alt=""><figcaption></figcaption></figure>
+The patient brief can help users quickly understand key patient context without manually reviewing every related tab or record. This is especially useful when preparing for follow-up, reviewing open work, or getting up to speed on a patient’s history. The **Myriad Patient Brief** uses a **Now Assist Skill** to generate a concise, AI-powered summary of the patient's current state.
 
-**What to Notice**
+Notice that the summary automatically consolidates information from across the patient's record, including:
 
-* Each order line item (which represents the tests ordered) has its own set of Order Tasks.
-* The tasks differ because they are generated from the configurable workflow associated with each Product Offering.
-* This allows you to configure different operational processes for different tests without requiring separate customer orders.
+* Critical alerts and escalations requiring attention.
+* Active insurance plans and upcoming expirations.
+* Pre-authorization requests and approval status.
+* A high-level patient snapshot.
+* Active customer orders.
+* Current specimen status and laboratory results.
+* MRD monitoring information and longitudinal testing activity.
 
-***
-
-#### Step 3: Compare the Specimens
-
-1. Select the **'Specimens'** **tab.**
-2. Review the specimens generated for each Product Offering.
-
-**What to Notice**
-
-* Each Product Offering generates the specimen records required to complete its workflow.
-* The number and type of specimens are determined by the Product Offering configuration.
-
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 6.51.54 PM.png" alt=""><figcaption></figcaption></figure>
-
-3. Open the specimen record by clicking the **blue hyperlink** in the **'Display Name'** column.
-4. You just received an update that the baseline specimen has gone through testing and has relieved a result status of Negative.&#x20;
-5. Update the **Status** field to **QC Passed.**
-6. Update the **Result Status** to **Negative**.
-7. Set the **Result Date** to **today's date.**&#x20;
-8. Save the record.
-
-**What to Notice**
-
-* On **Save** of the record, ServiceNow automatically generated a **Specimen Report,** using your document template and pulling in relevant information from the specimen record. Notice that a comment was added to the activity stream sharing this update, and that a document has been made available in **Attachments** on the right side pane of the screen.
-
-#### Step 3: Review the Result Report
-
-1. Select the document that was generated **under Attachments.**&#x20;
-2. Open and review the document that was generated.&#x20;
-
-**What to Notice**
-
-*   The document pulls in information directly from the speciment record. Notice that the fields on the document that correspond with fields on the record:
-
-    * Specimen
-    * Specimen Type
-    * Test Type
-    * Patient
-    * Order
-    * Ordering Provider
-    * Result
-
-    ![](<.gitbook/assets/Screenshot 2026-07-07 at 7.01.26 PM.png>)
+This allows users to quickly understand the patient's current situation and identify priority work without manually navigating through multiple records.
 
 {% hint style="info" %}
-Document generation is a configurable platform capability that enables you to automatically create reports and other business documents throughout the order lifecycle. Rather than manually generating documentation, you can define when documents should be created, such as when a specimen reaches a particular status, a result is finalized, or an approval is completed.
+#### &#x20;Information: Now Assist Skills
 
-Once generated, documents can automatically follow the workflow you define, for example:
+**Now Assist Skills** are configurable AI capabilities that help users work more efficiently by automatically analyzing platform data and generating intelligent outputs directly within the flow of work.
 
-* Attaching the document to the appropriate record.
-* Delivering the document to ordering providers or patients.
+Skills can be embedded throughout the platform to summarize information, answer questions, draft content, recommend next steps, or automate repetitive tasks.
+
+Out of the box examples include:
+
+* **Record Summarization** – Generate concise summaries of patients, orders, cases, or other records.
+* **Activity Summarization** – Summarize lengthy activity streams, work notes, comments, or conversations.
+* **Knowledge Generation** – Draft knowledge articles from resolved work or existing documentation.
+* **Resolution Notes** – Automatically generate closure notes from completed work.
+* **Email Generation** – Draft contextual emails to providers, patients, or internal teams.
+* **Suggested Actions** – Recommend the next best action based on the current record and organizational processes.
+
+Because Now Assist Skills are configurable, organizations can determine **where** they appear, **which data sources** they use, and **what type of information** they generate. This enables AI experiences that align with each organization's workflows while keeping users within a single platform. You can even create custom skills like this one.
 {% endhint %}
 
-{% hint style="success" %}
-**Congratulations, you have successfully managed a multi-test order!**
-{% endhint %}
+#### Exercise 2: Manage an Expiring Pre-Authorization
+
+#### Scenario
+
+While reviewing Dorothy Martinez's **Myriad Patient Brief** summary, you noticed that one of her pre-authorizations is approaching its expiration date.
+
+To avoid delays in testing or interruptions in care, your team proactively begins the renewal process before the authorization expires. Rather than waiting until an order is blocked, ServiceNow gives your team visibility into expiring authorizations and provides a centralized place to manage renewal requests.
 
 ***
 
-## Exercise 3: Completing and Releasing an Order
+### Step 1: Review Existing Pre-Authorization Requests
 
-### Step 1: Record the updated status
+From the patient record, select the **Pre-authorization Requests** tab.
 
-1. Close out the current **Specimen** page you have open by clicking **x** at it's tab at the top of the record.
-2. Time has passed, and now all of the specimens have been processed by the lab.&#x20;
-3. To bulk update the result status, in the **Specimens tab** on the order, scroll all the way right on the list to the **Result Status** column.
-4. On your keyboard, hold **command** and at the same time click all of the empty **Result Status** fields for each specimen.
+Review the existing authorization records associated with Dorothy Martinez.
 
-<figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 7.15.35 PM.png" alt=""><figcaption></figcaption></figure>
-
-5. Once all are highlighted, double click into any of the fields, set the **Result Status** to **Negative** and click OK.
-6. Notice that all of the **Result Status** fields have been updated.
-
-***
-
-### Step 2: Approve the record for release
-
-1. On the top right of the order, click the **ellipses button** and then click **order details.**
-
-***
-
-#### Step 3: Generate the Order Result Report
-
-1. In the upper-right corner of the Customer Order, click the **ellipsis (...)** button.
-2. Select **Order Details**.
-3. Review the information on the Customer Order record.
+Open one of the existing pre-authorization records.
 
 #### What to Notice
 
-Locate the **State** field.
+Review the information captured on the record.
 
-The **State** tracks the overall lifecycle of the customer orde from initial submission through laboratory processing, clinical review, results generation, and final delivery.&#x20;
+This information provides your team with the context needed to manage the authorization lifecycle and communicate with providers and payers.
 
 ***
 
-#### Step 2: Generate the Order Results
+### Step 2: Create a Renewal Request
 
-1. Change the **State** field to **Results Generated**.
-2. Click **Update** in the lower-right corner of the record.
+Close the record and navigate **Pre-authorization Requests** tab.
+
+Select **New**.
+
+Fill in the following fields and hit **Save.**
+
+| Field                       | Example Value                                                          | Purpose                                                                                                     |
+| --------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| **Primary Pre-auth Number** | PA-2026-90001                                                          | The primary authorization number assigned by the payer. This uniquely identifies the authorization request. |
+| **Medication Prescription** | Select the associated prescription (if applicable)                     | Associates the authorization with the medication or service requiring approval.                             |
+| **Status**                  | **Draft**                                                              | Indicates the authorization has been created and is ready to begin your organization's approval workflow.   |
+| **Notes**                   | _Renewal request submitted prior to current authorization expiration._ | Documents any additional context for internal teams reviewing the request.                                  |
+| **Valid From**              | Today's Date                                                           | Indicates when the authorization becomes effective once approved.                                           |
+| **Valid Until**             | 90 days from today (or appropriate date)                               | Defines when the authorization expires so renewal workflows can be triggered proactively.                   |
+
+***
 
 #### What to Notice
 
-Updating the order status automatically triggers the configured results generation workflow.
+The new pre-authorization request has been created and is now ready to begin your organization's authorization workflow.
 
-Notice that:
+Depending on your configured business process, saving the request may automatically:
 
-* A work note is added to the **Activity** stream indicating that the order report has been generated.
-* A consolidated results document is created and attached to the Customer Order in **Attachments**.
-* Depending on your organization's workflow, additional downstream actions can also be triggered.
+* Notify the ordering provider that updated authorization information is needed.
+* Create follow-up tasks for payer or authorization specialists.
+* Route the request for internal review.
+* Generate reminder notifications before the authorization expires.
+* Track authorization status throughout its lifecycle.
+* Associate the authorization with related orders and patient records.
 
-{% hint style="warning" %}
-If you do not immediately see the generated document, refresh the page.
+{% hint style="info" %}
+#### Information: Configurable Pre-Authorization Workflows
+
+Pre-authorization management is fully configurable and can be tailored to your  operational requirements.
+
+You can define workflows that automatically initiate when a pre-authorization is created, updated, approved, denied, or approaching expiration.
+
+These workflows can include:
+
+* Provider, payer, or patient notifications.
+* Task creation and assignment.
+* Approval or review processes.
+* Escalations for expiring authorizations.
+* Integration with payer systems or third-party authorization platforms.
+* Status updates to related orders or laboratory workflows.
+
+By managing pre-authorizations alongside patient records and laboratory orders, ServiceNow provides a centralized view of both clinical and operational information, helping reduce delays while keeping fulfillment teams informed throughout the testing lifecycle.
 {% endhint %}
 
-***
-
-#### Step 3: Review the Generated Report
-
-1. Open the generated report from the **Attachments** section by clicking the report.
-2. Review the contents of the document.
-
-#### What to Notice
-
-The report is automatically populated using information stored throughout the platform.
-
-Notice that it includes information from across the order, including:
-
-* Customer Order information
-* Patient
-* Ordering Provider
-* Product Offerings included in the order
-* Specimen collection information
-* Individual specimen results
-* Overall order status
-
-Rather than manually compiling information from multiple records, the document is generated dynamically using data from the Customer Order and its related records.
-
-***
-
-### Step 4: Setting You Up for Scenario 4
-
-1. On the left side of your screen, notice the **dark left sidebar.** It has three icons from top to bottom:
-
-| Icon  | Looks Like                 | What It Does                                    |
-| ----- | -------------------------- | ----------------------------------------------- |
-| Home  | A small house              | Returns you to the Workspace landing page       |
-| Lists | Three horizontal lines (☰) | Opens the full list of record categories        |
-| Inbox | An inbox/folder            | An inbox where tasks are routed to you for work |
-
-2. Click the lists icon.
-3. In the default lists section, find **Patients** under **Healthcare data.** If it is easier for you, you can also command +F 'patient'.
-4. Click **patients**. Notice the list of all patient records. Select the patient record for Dorothy Martinez by clicking her **blue hyperlink PATXXXXXXXX number**.<br>
+####
 
 ## ✅ Scenario 3 Checkpoint
 
