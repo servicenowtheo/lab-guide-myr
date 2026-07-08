@@ -109,7 +109,7 @@ Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspa
 
 Tasks are **assigned to the appropriate operational teams**, include **planned execution dates**, and **provide visibility** into the progress of the order from intake through result delivery.
 
-**Click the "Order Tasks" tab** next "Line items" on the order.
+**Click the "Order Tasks" tab** next to "Line items" on the order.
 
 A list of order tasks appears on the screen:
 
@@ -292,7 +292,7 @@ It has been several weeks since Dorothy Martinez's MRD monitoring program began.
 #### Step 1: Open the Order Task
 
 1. Select the "**Order Tasks"** tab
-2. **Click the blue hyperlink** of the first order task.
+2. **Click the blue hyperlink** **(OMTASKXXXXXXXXX)** of the first order task .
 
 ***
 
@@ -300,21 +300,21 @@ It has been several weeks since Dorothy Martinez's MRD monitoring program began.
 
 Review the information available on the task record.
 
-| Field                                     | Value            | What It Means                                                            |
-| ----------------------------------------- | ---------------- | ------------------------------------------------------------------------ |
-| **Consumer**                              | Dorothy Martinez | This identifies the patient associated with the task.                    |
-| **Order line item**                       | ORDLXXXXXXX      | This identifies the order and Product Offering that generated this task. |
-| **State**                                 | Draft            | Priority helps your teams determine the urgency of the work.             |
-| **Priority**                              | Product          | Classification in the order system                                       |
-| **Planned Start Date / Planned End Date** | Date             | The scheduled timeline for task completion.                              |
-| **Actual Start Date / Actual End Date**   | Date             | The actual timeline for task completion.                                 |
+| Field                                     | Value            | What It Means                                                               |
+| ----------------------------------------- | ---------------- | --------------------------------------------------------------------------- |
+| **Consumer**                              | Dorothy Martinez | This identifies the patient associated with the task.                       |
+| **Order line item**                       | ORDLXXXXXXX      | This identifies the order and Product Offering that generated this task.    |
+| **State**                                 | Draft            | State helps your teams determine the progression of the task to completion. |
+| **Priority**                              | Product          | This helps your team determine the urgency of the task.                     |
+| **Planned Start Date / Planned End Date** | Date             | The scheduled timeline for task completion.                                 |
+| **Actual Start Date / Actual End Date**   | Date             | The actual timeline for task completion.                                    |
 
 ***
 
 #### Step 3: Request a Status Update
 
 1. Locate the **Work notes** tab in the Activity Stream.
-2.  Enter the following message:
+2.  Enter the following message. You will need to type @john.jason in order to search and tag the user.
 
     ```
     @john.jason Can you please provide a status update?
@@ -334,7 +334,7 @@ Review the information available on the task record.
 
 For more immediate collaboration, you decide to start a conversation with John.
 
-1. In the right-side utility pane, click the **People** icon.
+1. In the right-side panel on your record, click the **People** icon.
 2. Select **+** to create a new Sidebar Discussion.
 3. In the **Participants** field, search for and select **John Jason**.
 4.  In the message box, enter:
