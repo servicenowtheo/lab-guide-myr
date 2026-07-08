@@ -63,7 +63,7 @@ Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspa
 * Notice that this order contains **two line items**:
   * Precise Tumor
   * MyRisk Hereditary Cancer Test
-* Observe that each Line Item represents an independently fulfilled Product Offering within the same customer order.
+* Observe that each Line Item represents an independently fulfilled test within the same customer order.
 
 **What to Notice**
 
@@ -170,7 +170,7 @@ Notice that:
 ### Step 2: Review the Replacement Specimen
 
 1. In the **Activity** stream, locate the work note indicating that a new specimen has been created.
-2. **Click the blue hyperlink** that was automatically posted when you hit save to open the newly created specimen record.
+2. **Click the blue hyperlink** that was automatically posted when you hit save to open the newly created specimen record. It will say "Specimen did not pass QC. Patient and provider have been notified and a new specimen is being tracked for the patient."
 
 #### What to Notice
 
