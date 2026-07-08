@@ -1,181 +1,437 @@
-## Exercise 1: Explore a New Genomic Test Order
+# Scenario 6: Tech Bonus Scenario
 
-**Persona:** Dr. Lydia Chen — Ordering Oncologist
-**Duration:** ~10 minutes
-**Objective:** Navigate the CSM/FSM Configurable Workspace, impersonate Dr. Lydia Chen, locate a genomic test order in the Customer Orders list, open the record, and understand the key order fields.
+**Persona:** Myriad Platform Developer
 
----
+**Duration:** \~20 minutes
 
-**Scene:** Dr. Lydia Chen recently placed a MyRisk 25-Gene Hereditary Cancer Panel order for a patient with a BRCA1 family history. The order has just arrived in the Myriad Genetics OMS system. Your job is to view it from her perspective and confirm the order details.
+**Objective:** Learn how ServiceNow's Flow Designer is used to build configurable fulfillment workflows that automatically orchestrate laboratory operations based on the Product Offering ordered.
 
----
+***
 
-### Step 1: Open the Configurable Workspace
+### Scenario
 
-Navigate to the Configurable Workspace using the URL provided by your instructor. You will see:
-- A **dark-colored left sidebar** running top-to-bottom with a few small icons
-- A large main area showing a greeting and metrics dashboard
-- A **top navigation bar** across the very top of the screen
+Throughout this lab, you've seen ServiceNow automatically generate Order Tasks, create Specimen records, initiate specimen recollections, generate reports, and notify users as orders progressed through the fulfillment lifecycle.
 
-![](.gitbook/assets/MYRIAD-OMS/s-ws-home.png)
+Rather than being hard-coded into the application, these business processes can be driven by configurable flows in **Flow Designer**.
 
-> **Note:** This is the CSM/FSM Configurable Workspace — designed for agents and reps who work records day-to-day. The modern panel-based layout is different from the classic ServiceNow back-end interface.
+In this exercise, you'll build the foundation of a fulfillment workflow that automatically begins whenever a provider orders a specific Product Offering. Along the way, you'll learn the core building blocks of Flow Designer and how they can be combined to automate virtually any laboratory business process.
 
----
+***
 
-### Step 2: Orient Yourself — The Left Sidebar
+### Step 1: Create a New Flow
 
-The **dark left sidebar** has three icons from top to bottom:
+Navigate to **Flow Designer**.
 
-| Icon | Looks Like | What It Does |
-|---|---|---|
-| **Home** | A small house | Returns you to the Workspace landing page |
-| **Lists** | Three horizontal lines (☰) | Opens the full list of record categories |
-| **Cases** | A briefcase/folder | Quick shortcut to the Cases list |
+Select **New**.
 
-> **Tip:** Hovering over any sidebar icon shows a tooltip with its name.
+Complete the following information:
 
----
+* **Flow Name:** `EndoPredict Dx Fulfillment`
+* **Application:** Global
+* **Description:** Fulfillment workflow for the EndoPredict Dx Product Offering.
 
-### Step 3: Orient Yourself — The Top Navigation Bar
+Select **Build Flow**.
 
-The top navigation bar contains from left to right:
-1. **All** — Shows all available menus and modules
-2. **Favorites** — Bookmark frequently-used records or lists
-3. **History** — Recently visited records and pages
-4. **Workspaces** — Switch to a different workspace
-5. **Admin** — Administrative options
-6. **"Search or ask Now Assist"** — Global search bar
-7. **Avatar icon** — Circular photo at the **far top-right corner** — your user menu
+{% hint style="info" %}
+#### 💡 Information: What is a Flow?
 
----
+A **Flow** is an automated business process that performs work when a defined event occurs.
 
-### Step 4: Open the Avatar Menu
+Rather than requiring users to manually perform repetitive operational tasks, flows execute those activities automatically according to the business rules you define.
 
-Locate the **avatar** — the circular photo icon at the **top-right corner** of the screen.
+A flow is made up of three primary components:
 
-**Click the avatar.**
+* **Triggers** determine **when** the flow should start.
+* **Logic** determines **how** the flow should make decisions as it executes.
+* **Actions** determine **what** work the flow performs.
 
-A dropdown menu appears with several options including:
-- Profile
-- **Impersonate user**
-- Preferences
-- Log out
+Throughout this lab, every automated process you've interacted with, from generating Order Tasks and Specimens to creating reports and initiating recollection workflows—has been driven by flows similar to the one you're about to build.
+{% endhint %}
 
-![](.gitbook/assets/MYRIAD-OMS/s-avatar-menu.png)
+***
 
-> **Note:** "Impersonate user" lets you view the system as another person — no password needed. This is how we'll switch perspective to Dr. Lydia Chen.
+### Step 2: Configure the Trigger
 
----
+Every flow begins with a **Trigger**.
 
-### Step 5: Impersonate Dr. Lydia Chen
+Select **Add Trigger**.
 
-**Click "Impersonate user"** in the avatar dropdown.
+Notice that several trigger types are available.
 
-A dialog box appears with a search field:
+Take a moment to review the available options before selecting one.
 
-1. **Type** `lydia` in the search field
-2. Look for **"Lydia Chen"** in the results
-3. **Click "Lydia Chen"** to select her
-4. The **"Impersonate user"** button at the bottom becomes active (turns blue/enabled)
+| Trigger Type    | Purpose                                                   | Example                                                                                               |
+| --------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Record**      | Starts when a record is created or updated.               | A provider submits a new order or a specimen status changes.                                          |
+| **Scheduled**   | Starts at a defined date or recurring interval.           | Send daily aging reports or check for overdue specimens every morning.                                |
+| **Application** | Starts when another application or platform event occurs. | An inbound email is received, an API call is made, or another ServiceNow application raises an event. |
 
-![](.gitbook/assets/MYRIAD-OMS/s-impersonate-lydia-ready.png)
+{% hint style="info" %}
+#### 💡 Information: Understanding Triggers
 
-5. **Click "Impersonate user"** to confirm
+A trigger defines the event that starts a workflow.
 
-The page reloads. You are now operating as Dr. Lydia Chen. The avatar in the top-right now reflects her profile.
+Flow Designer supports multiple trigger types depending on the business process you want to automate.
 
-> **Note:** All records, lists, and permissions now reflect Lydia's role. To return to your own login at any time: **Avatar → End impersonation**.
+For fulfillment workflows, a common trigger is a **Record Trigger**, since laboratory work is typically initiated by changes to records within the platform.
+{% endhint %}
 
----
+***
 
-### Step 6: Navigate to the Customer Orders List
+### Step 3: Configure the Record Trigger
 
-Look at the **dark left sidebar** and **click the hamburger icon** (☰ — the three horizontal lines, second icon from top).
+Select:
 
-A flyout panel slides out showing **Default lists** with record categories. Look for:
+* **Record**
+* **Created**
 
-**Default lists → Customer Orders → All**
+For the **Table**, search for and select:
 
-**Click "All"** under Customer Orders.
+**Order Line Item (sn\_ind\_tmt\_orm\_order\_line)**
 
-The main area now shows a table of Customer Orders with columns:
-**Number | Account | Contract type | Contact | Consumer | Order type | State**
+{% hint style="info" %}
+#### 💡 Information: Why Trigger from the Order Line Item?
 
-![](.gitbook/assets/MYRIAD-OMS/s-orders-list-page1.png)
+In this exercise, the workflow is triggered from the **Order Line Item.**
 
-> **Note:** This is the orders queue — 41 orders total. Each row is one order. You can click any column header to sort. The search/filter bar above the list lets you narrow results.
+This distinction is important because each Order Line Item represents an individual **Product Offering** selected by the provider.
 
----
+A single Customer Order may contain one Product Offering or many.
 
-### Step 7: Locate ORD0002157
+For example, throughout this lab you've seen providers submit orders containing:
 
-In the Customer Orders list, look for the row with Number **ORD0002157**.
+* MRD Monitoring
+* MyRisk
+* Precise Tumor
 
-> **Tip:** If you don't see it immediately, use the search bar above the list — type `ORD0002157` and press **Enter**.
+Each of these tests has different operational requirements.
 
-> **Where did this order come from?** ORD0002157 was not entered manually into ServiceNow. Dr. Lydia Chen placed it in **Epic** — Huntsman Cancer Institute's electronic health record system. Epic transmitted the order automatically to Myriad's ServiceNow OMS as a FHIR R4 ServiceRequest message. ServiceNow received it, created this Customer Order record, and queued it for intake — all within seconds, with no one at Myriad lifting a finger. This is the Epic → ServiceNow integration in action. See [Epic Integration Background](epic-integration.md) for the full picture.
+By triggering the workflow from the Order Line Item, ServiceNow can treat each Product Offering independently, allowing each test to generate its own:
 
-**Click the blue "ORD0002157" link** in the Number column.
+* Order Tasks
+* Specimens
+* Approvals
+* Notifications
+* Business logic
 
-The record opens in a new tab. The tab bar now shows: **List | ORD0002157**
+while still remaining associated with the same Customer Order.
 
----
+This modular design allows laboratories to add new Product Offerings without redesigning their existing fulfillment processes.
+{% endhint %}
 
-### Step 8: Explore the Split-Pane Record View
+***
 
-The order opens in a **split-pane layout**:
+### Step 4: Add Trigger Conditions
 
-- **Left pane (Form):** Fields and details — Number, Short description, State, Priority, Account, and tabs (Catalog, Line items, Involved Parties, Contacts)
-- **Right pane:** Work notes | Comments tabs at top, then the **Activity stream** below showing all changes and notes on this record
+Configure the following condition:
 
-![](.gitbook/assets/MYRIAD-OMS/s-ord0002156-record.png)
+**Product Offering** **is** **EndoPredict Dx**
 
-> **Note:** The screenshot shows a reference order (ORD0002156) in the same layout. Your ORD0002157 view will be identical in structure.
+Select **Done**.
 
----
+{% hint style="info" %}
+#### 💡 Information: Why Use Trigger Conditions?
 
-### Step 9: Review the Key Order Fields
+Not every Order Line Item should follow the same workflow.
 
-In the left form pane, locate these fields:
+Conditions allow you to determine **which records should start this flow**.
 
-| Field | Value | What It Means |
-|---|---|---|
-| **Number** | ORD0002157 | Unique order ID — use this to find the record later |
-| **Short description** | MyRisk 25-Gene Panel — BRCA1 family history | The test ordered — 25-gene hereditary cancer panel |
-| **Account** | Myriad Genetics | The laboratory processing this order |
-| **Order type** | Product | Classification in the order system |
-| **State** | Draft | Not yet active — pending review and intake |
-| **Priority** | 2 - High | How urgently this order needs attention |
+In this example, the workflow will only execute when an Order Line Item is created for the **EndoPredict Dx** Product Offering.
 
----
+If another Product Offering is ordered, such as MyRisk or MRD Monitoring, a different workflow could be triggered instead.
 
-### Step 10: View the Activity Stream
+This approach keeps fulfillment processes modular and easy to maintain.
+{% endhint %}
 
-On the **right pane**, click the **Activity** section header to expand it (if not already open).
+***
 
-The Activity stream shows a timestamp log of every change and note added to this order. Even at this early stage, you can see the creation event — who created it, when, and what fields were set.
+### Step 5: Explore Available Actions
 
-> **Note:** As the order progresses through intake → eligibility → processing → results, each step is logged here. This is how Myriad operations teams stay informed without sending emails.
+With the trigger configured, the flow now knows **when** it should run.
 
----
+The next step is defining **what should happen** once the flow begins.
 
-### Step 11: End Impersonation
+Select **Action**.
 
-You have reviewed ORD0002157 from Dr. Lydia Chen's perspective.
+Before selecting an action, take a few moments to browse the available actions provided by the platform.
 
-**Click the avatar icon → "End impersonation"** to return to the admin session.
+{% hint style="info" %}
+#### 💡 Information: Actions, Flow Logic, and Subflows
 
----
+Flow Designer provides three primary building blocks that are used to create workflows:
 
-### ✅ Exercise 1 Checkpoint
+**Actions** perform work.
 
-You have successfully:
-- Navigated the CSM/FSM Configurable Workspace
-- Used the impersonation feature to take a provider's perspective
-- Located a new order (ORD0002157) in the Customer Orders list
-- Examined the split-pane record view with form fields and Activity stream
+Examples include:
 
-**What happens next:** ORD0002157 is now in the intake queue. Lisa Morgan's oversight role is to monitor all open orders and escalate the most critical ones — that's Exercise 2.
+* Creating or updating records.
+* Sending emails or notifications.
+* Requesting approvals.
 
----
+**Flow Logic** controls the path the workflow follows.
+
+Examples include:
+
+* If / Else decisions.
+* Wait conditions.
+* Loops.
+* Parallel branches.
+* Error handling.
+
+**Subflows** are reusable workflows.
+
+Rather than rebuilding common automation multiple times, organizations can package frequently used business processes into reusable components that can be called from any flow.
+
+For example, a "Generate Specimen Records" subflow could be reused across multiple Product Offerings.
+{% endhint %}
+
+
+
+***
+
+### Step 6: Explore Available Actions and Spokes
+
+Take a few moments to review the available actions that come out of the box.
+
+Search for **the Slack spoke.**
+
+{% hint style="info" %}
+#### 💡 Information: What is a Spoke?
+
+The actions available in Flow Designer aren't limited to ServiceNow.
+
+Many are provided through **Integration Spokes** delivered out of the box with ServiceNow, which extend Flow Designer with prebuilt capabilities for external systems.
+
+A Spoke is a packaged integration that exposes common operations as reusable Flow Designer actions.
+
+Rather than writing custom API integrations, developers can simply drag these actions into a workflow.
+
+For example, the Slack Spoke allows you to:
+
+* Create conversations.
+* Send messages.
+* Upload files.
+* Retrieve users and channels.
+
+The same concept applies to hundreds of other enterprise applications, allowing workflows to orchestrate work across systems.
+{% endhint %}
+
+### Step 7: Create the First Order Task
+
+Now that you've defined **when** the flow should run, it's time to define **what** should happen.
+
+In this example, you'll automatically create an **Order Task** whenever a new **EndoPredict Dx Order Line Item** is created.
+
+Select **Action**.
+
+Search for and select **Create Record**.
+
+{% hint style="info" %}
+#### 💡 Information: Create Record
+
+The **Create Record** action allows a flow to automatically create records in any table within the ServiceNow platform.
+
+This is one of the most commonly used actions in Flow Designer and is frequently used to automate fulfillment processes such as:
+
+* Creating Order Tasks.
+* Creating Specimen records.
+* Creating Cases.
+* Creating Approvals.
+* Creating Work Orders.
+* Creating custom records.
+
+Rather than requiring users to manually create these records, the flow can generate them automatically whenever the defined trigger conditions are met.
+{% endhint %}
+
+
+
+***
+
+### Step 8: Select the Table
+
+For the **Table** field, select:
+
+**Order Task** (`sn_ind_tmt_orm_order_task`)
+
+The action is now configured to create a new Order Task each time the flow executes.
+
+***
+
+### Step 9: Associate the Task to the Customer Order
+
+Next, you'll associate the newly created Order Task with the Customer Order that initiated the workflow.
+
+Select **Add Field Values**.
+
+Add the **Customer Order** field.
+
+Rather than entering a static value, you'll populate this field dynamically using data from the trigger.
+
+Select the **wand** icon.
+
+{% hint style="info" %}
+#### 💡 Information: Using Data Pills
+
+The **wand** icon allows you to insert dynamic values into your flow.
+
+Rather than hardcoding information, Flow Designer allows you to reference data that already exists within the flow. These dynamic references are commonly called **data pills**.
+
+Data pills can reference:
+
+* The record that triggered the flow.
+* Records created earlier in the flow.
+* Variables.
+* Outputs from previous actions.
+* Information returned from integrations.
+
+One of Flow Designer's most powerful capabilities is the ability to **walk across related records**, allowing you to retrieve information from referenced records without writing code.
+{% endhint %}
+
+
+
+Expand by clicking:
+
+**Trigger → Record Created**
+
+Expand by clicking the arrow next to:
+
+**Order Line Item Record**
+
+Select:
+
+**Order**
+
+The Customer Order field will now be populated with the order associated with the triggering Order Line Item.
+
+{% hint style="info" %}
+#### 💡 Information: Walking Across Relationships
+
+Notice that you didn't need to query the database or write a script to locate the Customer Order.
+
+Because the Order Line Item already contains a reference to its parent Customer Order, Flow Designer allows you to "walk" that relationship and retrieve the referenced record.
+
+This capability can be used throughout Flow Designer to access related records, making it easy to build sophisticated workflows without writing custom code.
+{% endhint %}
+
+***
+
+### Step 10: Associate the Task to the Order Line Item
+
+Next, add another field value.
+
+Select:
+
+**Order Line Item**
+
+Again, select the **wand** icon.
+
+Navigate to:
+
+**Trigger → Record Created → Order Line Item Record**
+
+Select **Order Line Item Record**.
+
+The Order Task will now be directly associated with the Order Line Item that triggered the flow.
+
+This relationship allows each Product Offering to maintain its own fulfillment tasks while remaining connected to the broader Customer Order.
+
+***
+
+### Step 11: Populate Additional Fields
+
+Continue configuring the Order Task by populating any additional fields required by your organization's fulfillment process.
+
+For example, you may wish to configure:
+
+* **Assignment Group** — Determines which team is responsible for completing the task.
+* **Priority** — Defines the urgency of the work.
+* **State** — Sets the initial task status.
+* **Short Description** — Provides a meaningful description for users completing the task.
+
+{% hint style="info" %}
+#### 💡 Information: Configuring Record Creation
+
+Every field configured within the **Create Record** action becomes part of the record when it is created.
+
+Field values can be:
+
+* Static values (for example, assigning every EndoPredict validation task to the Molecular Diagnostics team).
+* Dynamic values using data pills.
+* Outputs from previous actions.
+* Results returned from integrations or API calls.
+* Calculated values generated during the flow.
+
+Because these values are configurable, organizations can tailor each Product Offering's fulfillment process without writing custom application logic.
+{% endhint %}
+
+#### Step 12: Automatically Create a Specimen Record
+
+Next, you'll extend the fulfillment workflow by automatically creating a **Specimen** record whenever an EndoPredict Dx Order Line Item is created.
+
+Select the **+** icon beneath your first action.
+
+Select **Action**.
+
+Search for and select **Create Record**.
+
+***
+
+#### Step 13: Select the Specimen Table
+
+For the **Table** field, select:
+
+**Specimen** (`u_myriad_specimen`)
+
+Just as you did when creating the Order Task, you'll now populate the fields that should be set when the specimen is created.
+
+***
+
+#### Step 14: Associate the Specimen with the Order Line Item
+
+Add the **Order Line Item** field.
+
+Select the **wand** icon.
+
+Navigate to:
+
+**Trigger → Record Created → Order Line Item Record**
+
+Select **Order Line Item Record**.
+
+This associates the specimen with the specific Product Offering that initiated the workflow.
+
+***
+
+#### Step 15: Associate the Patient
+
+Next, add the **Patient** field.
+
+Select the **wand** icon.
+
+Navigate to:
+
+**Trigger → Record Created → Order Line Item Record → Consumer**
+
+Because the patient (consumer) is referenced on the Order Line Item, Flow Designer allows you to **dot-walk** across that relationship and automatically populate the Patient field on the new specimen.
+
+***
+
+#### Step 16: Populate Additional Fields
+
+Continue configuring the specimen by populating any additional fields that should be set when it is created.
+
+These values may be populated using:
+
+* Static values.
+* Data pills from the triggering Order Line Item.
+* Values returned from previous flow actions.
+* Calculated values or business logic.
+
+{% hint style="info" %}
+#### 💡 Information: Building Product-Specific Workflows
+
+The workflow you've created demonstrates a common design pattern used throughout laboratory operations. A single Product Offering can automatically initiate multiple downstream activities—including creating Order Tasks, Specimen records, approvals, notifications, or other operational records—as soon as it is ordered.
+
+Because each action is independently configurable, organizations can tailor the fulfillment process for every Product Offering without modifying the underlying application. As new tests are introduced or operational processes evolve, workflows can be updated by adding, removing, or modifying actions to reflect the desired business process.
+{% endhint %}
+
