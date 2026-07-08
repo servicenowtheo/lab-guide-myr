@@ -64,7 +64,7 @@ Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspa
   * Precise Tumor
   * MyRisk Hereditary Cancer Test
   * MRD: Baseline & Monitoring Cadence Management
-* Observe that each Line Item represents an independently fulfilled Product Offering within the same customer order.
+* Observe that each Line Item represents an independently fulfilled test within the same customer order.
 
 **What to Notice**
 
@@ -103,7 +103,7 @@ Although the provider submitted a single order, each Product Offering follows it
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 6.51.54 PM.png" alt=""><figcaption></figcaption></figure>
 
 3. Open the specimen record by clicking the **blue hyperlink** in the **'Display Name'** column.
-4. You just received an update that the baseline specimen has gone through testing and has relieved a result status of Negative.&#x20;
+4. You just received an update that the baseline specimen has gone through testing and has received a result status of Negative.&#x20;
 5. Update the **Status** field to **QC Passed.**
 6. Update the **Result Status** to **Negative**.
 7. Set the **Result Date** to **today's date.**&#x20;
@@ -115,12 +115,12 @@ Although the provider submitted a single order, each Product Offering follows it
 
 #### Step 3: Review the Result Report
 
-1. Select the document that was generated **under Attachments.**&#x20;
+1. Select the document that was generated **under Attachments** in the right side panel, represented by a small papeclip ico&#x6E;**.**&#x20;
 2. Open and review the document that was generated.&#x20;
 
 **What to Notice**
 
-*   The document pulls in information directly from the speciment record. Notice that the fields on the document that correspond with fields on the record:
+*   The document pulls in information directly from the specimen record. Notice that the fields on the document that correspond with fields on the record:
 
     * Specimen
     * Specimen Type
@@ -161,15 +161,11 @@ Once generated, documents can automatically follow the workflow you define, for 
 5. Once all are highlighted, double click into any of the fields, set the **Result Status** to **Negative** and click OK.
 6. Notice that all of the **Result Status** fields have been updated.
 
-***
 
-### Step 2: Approve the record for release
-
-1. On the top right of the order, click the **ellipses button** and then click **order details.**
 
 ***
 
-#### Step 3: Generate the Order Result Report
+#### Step 2: Generate the Order Result Report
 
 1. In the upper-right corner of the Customer Order, click the **ellipsis (...)** button.
 2. Select **Order Details**.
@@ -206,7 +202,7 @@ If you do not immediately see the generated document, refresh the page.
 
 #### Step 3: Review the Generated Report
 
-1. Open the generated report from the **Attachments** section by clicking the report.
+1. Open the generated report from the **Attachments** section in the right side panel by clicking the report.
 2. Review the contents of the document.
 
 #### What to Notice
