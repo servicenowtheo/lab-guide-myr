@@ -4,8 +4,6 @@
 
 **Persona:** Dr. Jennifer Park — Ordering Oncologist&#x20;
 
-**Duration:** \~10 minutes&#x20;
-
 **Objective:** Navigate the Myriad Provider Portal, and submit an order from Myriad's product offerings.
 
 ***
@@ -14,20 +12,16 @@
 
 ***
 
-### Step 1: Open the Myriad Provider Portal
-
-Navigate to the provider portal by appending /**myriad-provider** to the end of your instance URL. You will see:
+1. Navigate to the provider portal by appending /**myriad-provider** to the end of your instance URL. You will see:
 
 ![](<.gitbook/assets/Screenshot 2026-07-07 at 1.04.36 PM.png>)
 
 ***
 
-### Step 2: Place the Order
-
-1. Select **+Submit Order in** the top navigation.
-2. Select your patient, **Dorothy Martinez** from the patient dropdown.&#x20;
-3. Select **Jennifer Park** from the ordering provider dropdown.
-4. Select the **MyRisk** and **Precise Tumor** tests.
+2. Select **+Submit Order in** the top navigation.
+3. Select your patient, **Dorothy Martinez** from the patient dropdown.&#x20;
+4. Select **Jennifer Park** from the ordering provider dropdown.
+5. Select the **MyRisk** and **Precise Tumor** tests.
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 3.30.13 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -35,7 +29,7 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 **Note:** The tests displayed in the Provider Portal represent your organization's product offerings. These offerings are managed through the ServiceNow Product Catalog, allowing you to control which tests providers can order. When a provider submits an order, a fulfillment workflow is automatically initiated in ServiceNow.
 {% endhint %}
 
-5. Click **Submit Order** and wait for the confirmation screen to load. In the confirmation message, select the **order hyperlink (ORDXXXXXXX).**&#x20;
+6. Click **Submit Order** and wait for the confirmation screen to load. In the confirmation message, select the **order hyperlink (ORDXXXXXXX).**&#x20;
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 3.32.00 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -49,21 +43,22 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 
 **Persona:** Sam Anderson
 
-<mark style="color:red;">**Duration:**</mark> <mark style="color:red;"></mark><mark style="color:red;">Update</mark>&#x20;
-
 **Objective:** Explore how ServiceNow manages multiple Product Offerings within a single customer order and automatically generates independent fulfillment workflows for each.
 
 ***
 
-#### Step 1: Review the Line Items
+**Scene:** The provider has submitted a single order for Dorothy Martinez that includes two different laboratory tests. Although they were ordered together, each Product Offering has its own fulfillment requirements. As the Laboratory Operations Coordinator, your responsibility is to review how the platform organizes the order, generates independent workflows for each test, and maintains complete visibility across the entire fulfillment process.
 
-Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspace**.
+***
 
-* Open the **Line Items** **tab**
-* Notice that this order contains **two line items**:
-  * Precise Tumor
-  * MyRisk Hereditary Cancer Test
-* Observe that each Line Item represents an independently fulfilled test within the same customer order.
+1. Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspace**.
+2. Open the **Line Items** **tab**
+3. Notice that this order contains **two line items**:
+
+* Precise Tumor
+* MyRisk Hereditary Cancer Test
+
+4. Observe that each Line Item represents an independently fulfilled test within the same customer order.
 
 **What to Notice**
 
@@ -71,13 +66,11 @@ Although the provider submitted a single order, each Product Offering follows it
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.12.51 PM.png" alt=""><figcaption></figcaption></figure>
 
-***
 
-#### Step 2: Compare the Fulfillment Workflows
 
-1. Select the **'Order Tasks'** tab next to Line items.
-2. Hover over the **'Order line item'** column and select the three dots at the right of the column.
-3. Click the blue hyperlink that says **'Group by Order line item'**
+5. Select the **'Order Tasks'** tab next to Line items.
+6. Hover over the **'Order line item'** column and select the three dots at the right of the column.
+7. Click the blue hyperlink that says **'Group by Order line item'**
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.15.28 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -87,12 +80,10 @@ Although the provider submitted a single order, each Product Offering follows it
 * The tasks differ because they are generated from the configurable workflow associated with each Product Offering.
 * This allows you to configure different operational processes for different tests without requiring separate customer orders.
 
-***
 
-#### Step 3: Compare the Specimens
 
-1. Select the **'Specimens'** **tab.**&#x20;
-2. Review the specimens generated for each Product Offering.
+8. Select the **'Specimens'** **tab.**&#x20;
+9. Review the specimens generated for each Product Offering.
 
 **What to Notice**
 
@@ -101,8 +92,8 @@ Although the provider submitted a single order, each Product Offering follows it
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.18.21 PM.png" alt=""><figcaption></figcaption></figure>
 
-3. Open the specimen record by clicking the **blue hyperlink** in the **'Display Name'** column.
-4. Review all of the available information about this specimen record. Definitions and purposes for each of the fields you see are described below.
+10. Open the specimen record by clicking the **blue hyperlink** in the **'Display Name'** column.
+11. Review all of the available information about this specimen record. Definitions and purposes for each of the fields you see are described below.
 
 
 
@@ -140,13 +131,17 @@ Specimen records are fully configurable to match your operational processes. You
 
 ## Exercise 3: Kick Off a Sample Recollection
 
-Dorothy Martinez's specimen has been collected and received by the laboratory.&#x20;
+**Persona:** Sam Anderson
 
-During quality control (QC), however, the laboratory determines that the specimen does not meet the required standards for testing.
+**Objective:** Trigger a configurable specimen recollection workflow by recording a quality control (QC) failure, then observe how the platform automatically creates a replacement specimen, updates the existing order, and maintains complete traceability throughout the testing process.s.
 
-Rather than allowing the order to remain blocked while laboratory staff manually coordinate the next steps, the platform can automatically initiate the specimen recollection process.
+***
 
-### Step 1: Record the QC Failure
+**Scene:** Dorothy Martinez's specimen has been collected and received by the laboratory. During routine quality control, the specimen is determined to be unsuitable for testing and must be recollected.
+
+As the Laboratory Operations Coordinator, your responsibility is to record the QC failure and initiate the appropriate next steps. Rather than manually coordinating the redraw, you'll see how the platform automatically launches a configurable recollection workflow—creating a replacement specimen, notifying the appropriate stakeholders, and updating the existing order while preserving the complete history of the failed specimen.
+
+***
 
 1. On the same specimen record, locate the **Status** field.
 2. Change the status to **QC Failed – Redraw Request Submitted**.
@@ -156,49 +151,39 @@ Rather than allowing the order to remain blocked while laboratory staff manually
 
 #### What to Notice
 
-Saving the record automatically triggers the configured recollection workflow.
-
-Notice that:
-
+* Saving the record **automatically triggers the configured recollection workflow**.
 * The **Activity** stream records that the patient and ordering provider have been notified of the redraw request.
-* A new specimen record has been automatically created for the recollection.
+* A **new specimen record has been automatically created** for the recollection.
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.40.59 PM.png" alt=""><figcaption></figcaption></figure>
 
 ***
 
-### Step 2: Review the Replacement Specimen
-
-1. In the **Activity** stream, locate the work note indicating that a new specimen has been created.
-2. **Click the blue hyperlink** that was automatically posted when you hit save to open the newly created specimen record. It will say "Specimen did not pass QC. Patient and provider have been notified and a new specimen is being tracked for the patient."
+4. In the **Activity** stream, locate the work note indicating that a new specimen has been created.
+5. **Click the blue hyperlink** that was automatically posted when you hit save to open the newly created specimen record. It will say "Specimen did not pass QC. Patient and provider have been notified and a new specimen is being tracked for the patient."
 
 #### What to Notice
 
-The replacement specimen has already been associated with:
-
-* Dorothy Martinez
-* The original customer order
-* The appropriate Order Line Item
-
-The new specimen now becomes the active sample that will continue through the collection and testing process, while the failed specimen remains part of the patient's laboratory history.
+* The replacement specimen has already been associated with:
+  * Dorothy Martinez
+  * The original customer order
+  * The appropriate Order Line Item
+  * The new specimen now becomes the active sample that will continue through the collection and testing process, while the failed specimen remains part of the patient's laboratory history.
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.41.40 PM.png" alt=""><figcaption></figcaption></figure>
 
 ***
 
-### Step 3: Verify the Customer Order is Updated
-
-1. On the replacement specimen record, locate the **Order** field.
-2. Select the **Information (i)** icon on the order field.
-3. Click **Open Record** in the popout.
-4. You are now looking at the order that was placed.
-5. Select the **Specimens** related list.
+6. On the replacement specimen record, locate the **Order** field.
+7. Select the **Information (i)** icon on the order field.
+8. Click **Open Record** in the popout.
+9. You are now looking at the order that was placed.
+10. Select the **Specimens** related list.
 
 #### What to Notice
 
-Notice that the specimen count has increased from **2** to **3**.
-
-The **original failed specimen has been retained for traceability**, while the **replacement specimen has been automatically associated** with the existing order. This allows the laboratory to continue fulfillment without creating a new customer order or losing the historical record of the failed specimen.
+* Notice that the specimen count has increased from **2** to **3**.
+* The **original failed specimen has been retained for traceability**, while the **replacement specimen has been automatically associated** with the existing order. This allows the laboratory to continue fulfillment without creating a new customer order or losing the historical record of the failed specimen.
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.42.46 PM.png" alt=""><figcaption></figcaption></figure>
 

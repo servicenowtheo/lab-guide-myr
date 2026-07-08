@@ -1,10 +1,12 @@
 # Scenario 4: Managing the Patient Experience
 
-### Exercise 1
+## Exercise 1: Reviewing the Patient's History
 
-**Persona:** Sam Anderson — Myriad Operations Team\
-**Duration:** \~10 minutes\
+**Persona:** Sam Anderson — Myriad Operations Team
+
 **Objective:** Review the patient record to understand how ServiceNow brings together patient demographics, insurance details, clinical context, orders, specimens, tasks, interactions, and related care activity into a single operational view.
+
+***
 
 #### Scenario
 
@@ -14,21 +16,10 @@ Rather than looking at one order, one specimen, or one task at a time, the patie
 
 ***
 
-### Step 1: Review the Patient Header
-
-Open the patient record for **Dorothy Martinez**.
-
-At the top of the screen, notice the patient name and the related tabs available across the record.
-
-The patient header gives you quick confirmation that you are working on the correct patient before reviewing orders, specimens, or support activity.
-
-***
-
-### Step 2: Review the Patient Profile Panel
-
-On the left side of the page, review the patient profile card.
-
-This section includes key demographic and contact information, such as:
+1. Open the patient record for **Dorothy Martinez**.
+2. At the top of the screen, notice the patient name and the related tabs available across the record.
+3. The **patient header** gives you quick confirmation that you are working on the correct patient before reviewing orders, specimens, or support activity.
+4. On the left side of the page, review the **patient profile card**. This section includes key demographic and contact information, such as:
 
 * Patient name
 * Date of birth and age
@@ -41,13 +32,7 @@ This section includes key demographic and contact information, such as:
 
 This information helps teams confirm patient identity, contact the patient when needed, and support outreach or follow-up workflows.
 
-***
-
-### Step 3: Review Insurance Details
-
-Below the patient profile, review the **Insurance Details** section.
-
-This section includes information such as:
+5. Below the patient profile, review the **Insurance Details** section.This section includes information such as:
 
 * Member number
 * Group number
@@ -57,23 +42,8 @@ This section includes information such as:
 
 This gives teams quick access to coverage information that may be needed for authorization, billing, benefit investigation, or follow-up with the provider.
 
-***
-
-### Step 4: Review Household Members
-
-Review the **Household Members** section.
-
-This area can be used to track related individuals or responsible parties when relevant, such as caregivers, parents, guardians, spouses, or other household relationships.
-
-This is especially useful when communication, consent, or responsibility may involve someone other than the patient.
-
-***
-
-### Step 5: Review the Patient Dashboard
-
-In the center of the page, review the dashboard-style information available on the patient overview.
-
-Notice the summary cards for:
+6. Review the **Household Members** section. This area can be used to track related individuals or responsible parties when relevant, such as caregivers, parents, guardians, spouses, or other household relationships. This is especially useful when communication, consent, or responsibility may involve someone other than the patient.
+7. In the center of the page, review the dashboard-style information available on the patient overview. Notice the summary cards for:
 
 * **Conditions**
 * **Medications**
@@ -82,25 +52,15 @@ Notice the summary cards for:
 
 These cards provide quick clinical context that may be relevant when reviewing orders, patient history, or operational follow-up, and can be configured to display what matters most to your teams.
 
-***
-
-### Step 6: Review Cases, Claims, and Interactions
-
-Review the dashboard widgets for:
+8. Review the dashboard widgets for:
 
 * **Cases Overview**
 * **Claims Overview**
 * **Recent Interactions**
 
-These areas help teams understand recent support activity and operational history related to the patient.
+These areas help teams understand recent support activity and operational history related to the patient. For example, the **Recent Interactions** list may show prior calls, web chats, or provider/patient inquiries, such as questions about turnaround time or upcoming visits.
 
-For example, the **Recent Interactions** list may show prior calls, web chats, or provider/patient inquiries, such as questions about turnaround time or upcoming visits.
-
-***
-
-### Step 7: Review Appointments, Programs, and Prescriptions
-
-Continue reviewing the remaining dashboard sections, including:
+9. Continue reviewing the remaining dashboard sections, including:
 
 * **Appointments**
 * **Enrolled Programs**
@@ -108,11 +68,7 @@ Continue reviewing the remaining dashboard sections, including:
 
 These sections provide additional patient context and can be configured based on the information most relevant to your organization’s workflows.
 
-***
-
-### Step 8: Review the Related Tabs
-
-Across the top of the patient record, review the available related tabs.
+10. Across the top of the patient record, review the available related tabs.
 
 These tabs organize the patient’s related records, including:
 
@@ -144,13 +100,8 @@ The patient view is configurable and can be tailored to the needs of different t
 You can decide which fields, related lists, dashboards, metrics, and actions appear on the patient record. This allows different users to access the information most relevant to their role while maintaining a shared, connected view of the patient across the platform.
 {% endhint %}
 
-
-
-### Step 9: Generate the Myriad Patient Brief
-
-At the top right of the patient record, click **Myriad Patient Brief**.
-
-This launches a summarization skill that generates a concise overview of the patient using information from the patient record and related activity.
+11. At the top right of the patient record, click **Myriad Patient Brief**.
+12. This launches a summarization skill that generates a concise overview of the patient using information from the patient record and related activity.
 
 #### What to Notice
 
@@ -187,23 +138,25 @@ Out of the box examples include:
 Because Now Assist Skills are configurable, organizations can determine **where** they appear, **which data sources** they use, and **what type of information** they generate. This enables AI experiences that align with each organization's workflows while keeping users within a single platform. You can even create custom skills like this one.
 {% endhint %}
 
-#### Exercise 2: Manage an Expiring Pre-Authorization
+## Exercise 2: Manage an Expiring Pre-Authorization
 
-#### Scenario
+**Persona:** Sam Anderson
 
-While reviewing Dorothy Martinez's **Myriad Patient Brief** summary, you noticed that one of her pre-authorizations is approaching its expiration date.
-
-To avoid delays in testing or interruptions in care, your team proactively begins the renewal process before the authorization expires. Rather than waiting until an order is blocked, ServiceNow gives your team visibility into expiring authorizations and provides a centralized place to manage renewal requests.
+**Objective:** Review existing pre-authorization requests, create a renewal request, and explore how configurable workflows help proactively manage authorization renewals to prevent delays in laboratory testing and patient care.
 
 ***
 
-### Step 1: Review Existing Pre-Authorization Requests
+#### Scenario
 
-From the patient record, select the **Pre-authorization Requests** tab.
+While reviewing **Dorothy Martinez's Myriad Patient Brief**, you notice that one of her pre-authorizations is approaching its expiration date. If the authorization expires before future testing is performed, it could delay specimen processing, result reporting, or ongoing patient monitoring.
 
-Review the existing authorization records associated with Dorothy Martinez.
+Rather than waiting for the authorization to expire and disrupt the testing workflow, your team proactively begins the renewal process. In this exercise, you'll review Dorothy's existing pre-authorizations, create a renewal request, and see how ServiceNow can automatically orchestrate follow-up activities to help ensure authorizations remain current and testing continues without interruption.
 
-Open one of the existing pre-authorization records.
+***
+
+1. From the patient record, select the **Pre-authorization Requests** tab.
+2. Review the existing authorization records associated with Dorothy Martinez.
+3. Open one of the existing pre-authorization records.
 
 #### What to Notice
 
@@ -211,26 +164,17 @@ Review the information captured on the record.
 
 This information provides your team with the context needed to manage the authorization lifecycle and communicate with providers and payers.
 
-***
-
-### Step 2: Create a Renewal Request
-
-Close the record and navigate **Pre-authorization Requests** tab.
-
-Select **New**.
-
-Fill in the following fields and hit **Save.**
+1. Close the record and navigate **Pre-authorization Requests** tab.
+2. Select **New**.
+3. Fill in the following fields and hit **Save.**
 
 | Field                       | Example Value                                                          | Purpose                                                                                                     |
 | --------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | **Primary Pre-auth Number** | PA-2026-90001                                                          | The primary authorization number assigned by the payer. This uniquely identifies the authorization request. |
-| **Medication Prescription** | Select the associated prescription (if applicable)                     | Associates the authorization with the medication or service requiring approval.                             |
 | **Status**                  | **Draft**                                                              | Indicates the authorization has been created and is ready to begin your organization's approval workflow.   |
 | **Notes**                   | _Renewal request submitted prior to current authorization expiration._ | Documents any additional context for internal teams reviewing the request.                                  |
 | **Valid From**              | Today's Date                                                           | Indicates when the authorization becomes effective once approved.                                           |
 | **Valid Until**             | 90 days from today (or appropriate date)                               | Defines when the authorization expires so renewal workflows can be triggered proactively.                   |
-
-***
 
 #### What to Notice
 

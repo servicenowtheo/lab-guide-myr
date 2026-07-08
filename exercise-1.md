@@ -4,8 +4,6 @@
 
 **Persona:** Dr. Jennifer Park — Ordering Oncologist&#x20;
 
-**Duration:** \~10 minutes&#x20;
-
 **Objective:** Navigate the Myriad Provider Portal, and submit an order from Myriad's product offerings.
 
 ***
@@ -14,9 +12,7 @@
 
 ***
 
-### Step 1: Open the Myriad Provider Portal
-
-Navigate to the provider portal by appending /**myriad-provider** to the end of your instance URL. You will see:
+1. Navigate to the provider portal by appending /**myriad-provider** to the end of your instance URL. You will see:
 
 * A **top navigation bar** with options for **Dashboard**, **Submit Order**, **My Orders**, and **Specimen Tracking**
 * A **welcome banner** with a **New Test Order** button
@@ -26,14 +22,14 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 
 ![](<.gitbook/assets/Screenshot 2026-07-07 at 1.04.36 PM.png>)
 
-> **Note:** This is your Myriad Provider Portal, the streamlined experience that you designed for healthcare providers to order tests, track specimens, and manage patients. Behind the scenes, very order submitted through the portal automatically creates a corresponding order in ServiceNow for your operations team to review and fulfill.&#x20;
+> **Note:** This is your Myriad Provider Portal, the streamlined experience that you designed for healthcare providers to order tests, track specimens, and manage patients. Behind the scenes, every order submitted through the portal automatically creates a corresponding order in ServiceNow for your operations team to review and fulfill.&#x20;
 
 ***
 
-1. Select **+Submit Order in** the top navigation.
-2. Select your patient, **Dorothy Martinez** from the patient dropdown.&#x20;
-3. Select **Jennifer Park** from the ordering provider dropdown.
-4. Select a **30-day** cadence for the **MRD Monitoring** test.
+2. Select **+Submit Order in** the top navigation.
+3. Select your patient, **Dorothy Martinez** from the patient dropdown.&#x20;
+4. Select **Jennifer Park** from the ordering provider dropdown.
+5. Select a **30-day** cadence for the **MRD Monitoring** test.
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 1.12.47 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -41,7 +37,7 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 **Note:** The tests displayed in the Provider Portal represent your organization's product offerings. These offerings are managed through the ServiceNow Product Catalog, allowing you to control which tests providers can order. When a provider submits an order, a fulfillment workflow is automatically initiated in ServiceNow.
 {% endhint %}
 
-5. Click **Submit Order** and wait for the confirmation screen to load. In the confirmation message, select the **order hyperlink (ORDXXXXXXX).**&#x20;
+6. Click **Submit Order** and wait for the confirmation screen to load. In the confirmation message, select the **order hyperlink (ORDXXXXXXX).**&#x20;
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 1.16.53 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -61,8 +57,6 @@ This exercise demonstrates just one of many ways providers can submit orders. Or
 
 **Persona:** Sam Anderson
 
-<mark style="color:red;">**Duration:**</mark> <mark style="color:red;"></mark><mark style="color:red;">Update</mark>&#x20;
-
 **Objective:** Navigate the order recently placed and get up to speed about what it requires.
 
 ***
@@ -75,19 +69,26 @@ Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspa
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 1.31.58 PM (1).png" alt=""><figcaption></figcaption></figure>
 
-* An **order header** displaying key details such as the order number, patient, order type, state, priority, and current status.
-* A set of **related tabs** that organize the work required to fulfill the order:
-  * **Line Items** represent the products or services that were ordered.
-  * **Order Tasks** contain the individual fulfillment activities required to complete the order. These tasks are automatically generated based on the fulfillment workflow configured for the selected product offering.
-  * **Specimens** track the samples required for the test, including their collection and processing status. These records are also created automatically based on the selected product offering.
-  * **MRD Monitoring Series** groups the patient's scheduled monitoring events into a single series, allowing your team to track recurring MRD testing over time. The cadence and monitoring schedule are generated from the product configuration.
-* An **Order Overview** panel on the left with fulfillment details, important dates, and links to the order timeline and orchestration, helping you understand where the order is in its lifecycle.
-* A **collaboration panel** on the right where your team can communicate and document progress:
-  * **Work Notes** are visible only to internal users and are used to document progress, hand off work, troubleshoot issues, and communicate with other fulfillment team members.
-  * **Comments** can be shared with external users, such as healthcare providers, when updates or additional information need to be communicated.
-  * The **Activity** stream provides a chronological history of changes, updates, and communications related to the order.
-* A **Customer Order Summary** panel that uses AI to generate a concise overview of the order. The summary highlights key information—such as the patient, ordering provider, product offering, monitoring cadence, fulfillment status, and upcoming specimen collection dates—so you can quickly understand the order before diving into the individual records.
-* Click the **Customer order summary button** to see a concise summary of this order.
+An **order header** displaying key details such as the order number, patient, order type, state, priority, and current status.
+
+A set of **related tabs** that organize the work required to fulfill the order:
+
+* **Line Items** represent the products or services that were ordered.
+* **Order Tasks** contain the individual fulfillment activities required to complete the order. These tasks are automatically generated based on the fulfillment workflow configured for the selected product offering.
+* **Specimens** track the samples required for the test, including their collection and processing status. These records are also created automatically based on the selected product offering.
+* **MRD Monitoring Series** groups the patient's scheduled monitoring events into a single series, allowing your team to track recurring MRD testing over time. The cadence and monitoring schedule are generated from the product configuration.
+
+An **Order Overview** panel on the left with fulfillment details, important dates, and links to the order timeline and orchestration, helping you understand where the order is in its lifecycle.
+
+A **collaboration panel** on the right where your team can communicate and document progress:
+
+* **Work Notes** are visible only to internal users and are used to document progress, hand off work, troubleshoot issues, and communicate with other fulfillment team members.
+* **Comments** can be shared with external users, such as healthcare providers, when updates or additional information need to be communicated.
+* The **Activity** stream provides a chronological history of changes, updates, and communications related to the order.
+
+A **Customer Order Summary** panel that uses AI to generate a concise overview of the order. The summary highlights key information—such as the patient, ordering provider, product offering, monitoring cadence, fulfillment status, and upcoming specimen collection dates—so you can quickly understand the order before diving into the individual records.
+
+1. Click the **Customer order summary button** to see a concise summary of this order.
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 1.44.23 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -101,9 +102,11 @@ Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspa
 
 **Persona:** Sam Anderson
 
-<mark style="color:red;">**Duration:**</mark> <mark style="color:red;"></mark><mark style="color:red;">Update</mark>&#x20;
-
 **Objective:** Navigate the order recently placed and get up to speed about what it requires.
+
+***
+
+**Scene:** Now that the order has been submitted, it has entered the laboratory's fulfillment queue. Before work begins, you want to understand the activities that have been generated, who owns them, and how the platform coordinates the testing process from intake through result release.
 
 ***
 
@@ -113,15 +116,14 @@ Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspa
 
 Tasks are **assigned to the appropriate operational teams**, include **planned execution dates**, and **provide visibility** into the progress of the order from intake through result delivery.
 
-**Click the "Order Tasks" tab** next to "Line items" on the order.
-
-A list of order tasks appears on the screen:
+1. **Click the "Order Tasks" tab** next to "Line items" on the order.
+2. A list of order tasks appears on the screen:
 
 ![](<.gitbook/assets/Screenshot 2026-07-07 at 1.50.24 PM.png>)
 
 ### **What to notice**
 
-#### **Assignment Groups**
+1. **Assignment Groups**
 
 * Notice that each task is assigned to the appropriate operational team, such as:
 * Order Intake & Authorization
@@ -131,7 +133,7 @@ A list of order tasks appears on the screen:
 
 This ensures work is automatically routed to the correct team throughout the order lifecycle.
 
-#### **Workflow Progression**
+2. **Workflow Progression**
 
 * Observe how the order moves through each stage of fulfillment.
 * Activities include:
@@ -145,7 +147,7 @@ This ensures work is automatically routed to the correct team throughout the ord
 
 For longitudinal monitoring products, additional specimen collections and testing cycles are automatically generated as part of the same order.
 
-#### **Operational Visibility**
+3. **Operational Visibility**
 
 Each task contains operational information, including:
 
@@ -174,9 +176,11 @@ Overall, Order Tasks provide a configurable, end-to-end operational workflow tha
 
 **Persona:** Sam Anderson
 
-<mark style="color:red;">**Duration:**</mark> <mark style="color:red;"></mark><mark style="color:red;">Update</mark>&#x20;
-
 **Objective:** Navigate the order recently placed and get up to speed about what it requires.
+
+***
+
+**Scene:** Dorothy's baseline specimen has been scheduled, and future monitoring collections have already been planned. To ensure every sample is processed and tested correctly, the platform creates a separate specimen record for each collection event. In this exercise, you'll explore how specimen records provide end-to-end visibility throughout the testing lifecycle.
 
 ***
 
@@ -186,13 +190,13 @@ Overall, Order Tasks provide a configurable, end-to-end operational workflow tha
 
 For longitudinal monitoring programs like MRD, **multiple specimen records can be generated as part of a single order**, providing complete traceability for every collection event throughout the patient's testing journey.
 
-**Click the "Specimens" tab** next to "Order Tasks" on the order.
+1. **Click the "Specimens" tab** next to "Order Tasks" on the order.
 
 ![](<.gitbook/assets/Screenshot 2026-07-07 at 2.07.33 PM.png>)
 
 ### What to Notice
 
-#### Specimen Records
+1. **Specimen Records**
 
 Each specimen is managed as its own record, allowing the laboratory to independently track every sample collected throughout the patient's testing journey.
 
@@ -203,13 +207,13 @@ In this example, a specimen has been created for:
 * Monitoring Draw 2
 * Monitoring Draw 3
 
-#### Longitudinal Monitoring
+2. **Longitudinal Monitoring**
 
 Notice that each specimen is associated with the same **MRD Monitoring Series**, linking all collections together while maintaining a separate record for each individual sample.
 
 This provides complete visibility into a patient's longitudinal testing history.
 
-#### Specimen Lifecycle
+3. **Specimen Lifecycle**
 
 Each specimen record captures key milestones throughout its lifecycle, including:
 
@@ -220,7 +224,7 @@ Each specimen record captures key milestones throughout its lifecycle, including
 
 These milestones allow laboratory staff to monitor where each specimen is within the testing process and quickly identify delayed or outstanding samples.
 
-#### Traceability
+3. **Traceability**
 
 Because every specimen is its own record, laboratories can maintain complete chain-of-custody and processing visibility for every collected sample.
 
@@ -236,19 +240,21 @@ This supports operational tracking, quality assurance, and historical reporting 
 
 **Persona:** Sam Anderson
 
-<mark style="color:red;">**Duration:**</mark> <mark style="color:red;"></mark><mark style="color:red;">Update</mark>&#x20;
-
 **Objective:** Navigate the order recently placed and get up to speed about what it requires.
 
 ***
 
-#### Overview
+**Scene:** Unlike one-time tests, MRD monitoring requires multiple specimen collections over time. To coordinate these recurring events, the platform automatically creates an MRD Monitoring Series, providing a centralized view of the patient's monitoring schedule and testing timeline. As a coordinator, you're interested to take a look at how things are tracking.
+
+***
+
+### Overview
 
 **MRD Monitoring Series** records are created for Product Offerings that support longitudinal monitoring. Unlike one-time tests, longitudinal monitoring programs require multiple specimen collections over an extended period to monitor disease progression or treatment response.
 
 As part of the configurable workflow defined by the selected Product Offering, the platform automatically creates an MRD Monitoring Series to track and manage planned specimen collections.
 
-**Click the "MRD Monitoring Series" tab** next to "Specimens" on the order.
+1. **Click the "MRD Monitoring Series" tab** next to "Specimens" on the order.
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 2.21.11 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -256,15 +262,13 @@ As part of the configurable workflow defined by the selected Product Offering, t
 
 ### What to Notice
 
-#### Longitudinal Monitoring
+**1. Longitudinal Monitoring**
 
 Unlike one-time tests, MRD monitoring programs consist of multiple planned specimen collections over time.
 
 The MRD Monitoring Series provides a single record that organizes and tracks the patient's entire monitoring journey.
 
-***
-
-#### Collection Schedule
+**2. Collection Schedule**
 
 Notice that the monitoring series captures the planned collection dates for each scheduled draw, including:
 
@@ -285,24 +289,17 @@ This provides laboratory staff with a centralized view of upcoming and completed
 
 **Persona:** Sam Anderson
 
-<mark style="color:red;">**Duration:**</mark> <mark style="color:red;"></mark><mark style="color:red;">Update</mark>&#x20;
-
 **Objective:** Monitor the progress of an active laboratory order, identify workflow bottlenecks, and use the available tools to investigate delays and keep the order moving.
-
-It has been several weeks since Dorothy Martinez's MRD monitoring program began. During your morning operational review, you notice that Dorothy's order has stopped progressing through the laboratory workflow. A delay in processing could impact the patient's scheduled monitoring timeline. Your job is to investigate the order, determine where the bottleneck exists, and use the platform to coordinate the next steps needed to move the order forward.
-
-
-
-#### Step 1: Open the Order Task
-
-1. Select the "**Order Tasks"** tab
-2. **Click the blue hyperlink** **(OMTASKXXXXXXXXX)** of the first order task .
 
 ***
 
-#### Step 2: Review the Task Details
+**Scene:** It has been several weeks since Dorothy Martinez's MRD monitoring program began. During your morning operational review, you notice that Dorothy's order has stopped progressing through the laboratory workflow. A delay in processing could impact the patient's scheduled monitoring timeline. Your job is to investigate the order, determine where the bottleneck exists, and use the platform to coordinate the next steps needed to move the order forward.
 
-Review the information available on the task record.
+***
+
+1. Select the "**Order Tasks"** tab
+2. **Click the blue hyperlink** **(OMTASKXXXXXXXXX)** of the first order task .
+3. Review the information available on the task record.
 
 | Field                                     | Value            | What It Means                                                               |
 | ----------------------------------------- | ---------------- | --------------------------------------------------------------------------- |
@@ -315,15 +312,13 @@ Review the information available on the task record.
 
 ***
 
-#### Step 3: Request a Status Update
-
-1. Locate the **Work notes** tab in the Activity Stream.
-2.  Enter the following message. You will need to type @john.jason in order to search and tag the user.
+4. Noticing the lack of progress, you would like to request a status update. Locate the **Work notes** tab in the Activity Stream.
+5.  Enter the following message. You will need to type @john.jason in order to search and tag the user.
 
     ```
     @john.jason Can you please provide a status update?
     ```
-3. Save or post the work note.
+6. Save or post the work note.
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 2.46.22 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -334,19 +329,15 @@ Review the information available on the task record.
 
 ***
 
-### Step 2: Start a Sidebar Discussion
-
-For more immediate collaboration, you decide to start a conversation with John.
-
-1. In the right-side panel on your record, click the **People** icon.
-2. Select **+** to create a new Sidebar Discussion.
-3. In the **Participants** field, search for and select **John Jason**.
-4.  In the message box, enter:
+7. For more immediate collaboration, you decide to start a conversation with John. In the right-side panel on your record, click the **People** icon.
+8. Select **+** to create a new Sidebar Discussion.
+9. In the **Participants** field, search for and select **John Jason**.
+10. In the message box, enter:
 
     ```
     Please review and complete this task.
     ```
-5. Click **Start Discussion**.
+11. Click **Start Discussion**.
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 2.47.42 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -357,13 +348,9 @@ For more immediate collaboration, you decide to start a conversation with John.
 
 ***
 
-### Step 3: Escalate the Task
-
-Despite reaching out to John, the task is still not progressing. You decide to formally escalate it.
-
-1. Locate the **Escalation Level** field.
-2. Change the value to **Medium**.
-3. Click **Save** in the upper-right corner of the record.
+12. Despite reaching out to John, the task is still not progressing. You decide to formally escalate it. Locate the **Escalation Level** field.
+13. Change the value to **Medium**.
+14. Click **Save** in the upper-right corner of the record.
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 2.48.37 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -374,12 +361,8 @@ Despite reaching out to John, the task is still not progressing. You decide to f
 
 ***
 
-### Step 4: Escalate Further
-
-The task continues to remain unresolved, requiring additional attention.
-
-1. Change the **Escalation Level** to **High**.
-2. Save the record again.
+15. The task continues to remain unresolved, requiring additional attention. Change the **Escalation Level** to **High**.
+16. Save the record again.
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 2.49.24 PM.png" alt=""><figcaption></figcaption></figure>
 

@@ -4,8 +4,6 @@
 
 **Persona:** Myriad Platform Developer
 
-**Duration:** \~20 minutes
-
 **Objective:** Learn how ServiceNow's Flow Designer is used to build configurable fulfillment workflows that automatically orchestrate laboratory operations based on the Product Offering ordered.
 
 ***
@@ -20,19 +18,15 @@ In this exercise, you'll build the foundation of a fulfillment workflow that aut
 
 ***
 
-### Step 1: Create a New Flow
-
-Navigate to **Flow Designer**.
-
-Select **New**.
-
-Complete the following information:
+1. Navigate to All > **Flow Designer**.
+2. Select **New**.
+3. Complete the following information:
 
 * **Flow Name:** `EndoPredict Dx Fulfillment`
 * **Application:** Global
 * **Description:** Fulfillment workflow for the EndoPredict Dx Product Offering.
 
-Select **Build Flow**.
+4. Select **Build Flow**.
 
 {% hint style="info" %}
 #### 💡 Information: What is a Flow?
@@ -50,17 +44,11 @@ A flow is made up of three primary components:
 Throughout this lab, every automated process you've interacted with, from generating Order Tasks and Specimens to creating reports and initiating recollection workflows—has been driven by flows similar to the one you're about to build.
 {% endhint %}
 
-***
-
-### Step 2: Configure the Trigger
-
-Every flow begins with a **Trigger**.
-
-Select **Add Trigger**.
-
-Notice that several trigger types are available.
-
-Take a moment to review the available options before selecting one.
+5. Configure the Trigger
+6. Every flow begins with a **Trigger**.
+7. Select **Add Trigger**.
+8. Notice that several trigger types are available.
+9. Take a moment to review the available options before selecting one.
 
 | Trigger Type    | Purpose                                                   | Example                                                                                               |
 | --------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -78,18 +66,8 @@ Flow Designer supports multiple trigger types depending on the business process 
 For fulfillment workflows, a common trigger is a **Record Trigger**, since laboratory work is typically initiated by changes to records within the platform.
 {% endhint %}
 
-***
-
-### Step 3: Configure the Record Trigger
-
-Select:
-
-* **Record**
-* **Created**
-
-For the **Table**, search for and select:
-
-**Order Line Item (sn\_ind\_tmt\_orm\_order\_line)**
+10. Select: **Record Created**
+11. For the **Table**, search for and select: **Order Line Item (sn\_ind\_tmt\_orm\_order\_line)**
 
 {% hint style="info" %}
 #### 💡 Information: Why Trigger from the Order Line Item?
@@ -121,15 +99,10 @@ while still remaining associated with the same Customer Order.
 This modular design allows laboratories to add new Product Offerings without redesigning their existing fulfillment processes.
 {% endhint %}
 
-***
+12\. Add Trigger Conditions
 
-### Step 4: Add Trigger Conditions
-
-Configure the following condition:
-
-**Product Offering** **is** **EndoPredict Dx**
-
-Select **Done**.
+13. Configure the following condition: **Product Offering** **is** **EndoPredict Dx**
+14. Select **Done**.
 
 {% hint style="info" %}
 #### 💡 Information: Why Use Trigger Conditions?
@@ -145,17 +118,9 @@ If another Product Offering is ordered, such as MyRisk or MRD Monitoring, a diff
 This approach keeps fulfillment processes modular and easy to maintain.
 {% endhint %}
 
-***
-
-### Step 5: Explore Available Actions
-
-With the trigger configured, the flow now knows **when** it should run.
-
-The next step is defining **what should happen** once the flow begins.
-
-Select **Action**.
-
-Before selecting an action, take a few moments to browse the available actions provided by the platform.
+15. With the trigger configured, the flow now knows **when** it should run. The next step is defining **what should happen** once the flow begins.
+16. Select **Action**.
+17. Before selecting an action, take a few moments to browse the available actions provided by the platform.
 
 {% hint style="info" %}
 #### 💡 Information: Actions, Flow Logic, and Subflows
@@ -189,13 +154,7 @@ For example, a "Generate Specimen Records" subflow could be reused across multip
 
 
 
-***
-
-### Step 6: Explore Available Actions and Spokes
-
-Take a few moments to review the available actions that come out of the box.
-
-Search for **the Slack spoke.**
+18. Search for **the Slack spoke.**
 
 {% hint style="info" %}
 #### 💡 Information: What is a Spoke?
@@ -218,15 +177,10 @@ For example, the Slack Spoke allows you to:
 The same concept applies to hundreds of other enterprise applications, allowing workflows to orchestrate work across systems.
 {% endhint %}
 
-### Step 7: Create the First Order Task
-
-Now that you've defined **when** the flow should run, it's time to define **what** should happen.
-
-In this example, you'll automatically create an **Order Task** whenever a new **EndoPredict Dx Order Line Item** is created.
-
-Select **Action**.
-
-Search for and select **Create Record**.
+19. Now that you've defined **when** the flow should run, it's time to define **what** should happen.
+20. In this example, you'll automatically create an **Order Task** whenever a new **EndoPredict Dx Order Line Item** is created.
+21. Select **Action**.
+22. Search for and select **Create Record**.
 
 {% hint style="info" %}
 #### 💡 Information: Create Record
@@ -245,31 +199,13 @@ This is one of the most commonly used actions in Flow Designer and is frequently
 Rather than requiring users to manually create these records, the flow can generate them automatically whenever the defined trigger conditions are met.
 {% endhint %}
 
-
-
-***
-
-### Step 8: Select the Table
-
-For the **Table** field, select:
-
-**Order Task** (`sn_ind_tmt_orm_order_task`)
-
-The action is now configured to create a new Order Task each time the flow executes.
-
-***
-
-### Step 9: Associate the Task to the Customer Order
-
-Next, you'll associate the newly created Order Task with the Customer Order that initiated the workflow.
-
-Select **Add Field Values**.
-
-Add the **Customer Order** field.
-
-Rather than entering a static value, you'll populate this field dynamically using data from the trigger.
-
-Select the **wand** icon.
+23. For the **Table** field, select: **Order Task** (`sn_ind_tmt_orm_order_task`)
+24. The action is now configured to create a new Order Task each time the flow executes.
+25. Next, you'll associate the newly created Order Task with the Customer Order that initiated the workflow.
+26. Select **Add Field Values**.
+27. Add the **Customer Order** field.
+28. Rather than entering a static value, you'll populate this field dynamically using data from the trigger.
+29. Select the **wand** icon.
 
 {% hint style="info" %}
 #### 💡 Information: Using Data Pills
@@ -289,21 +225,10 @@ Data pills can reference:
 One of Flow Designer's most powerful capabilities is the ability to **walk across related records**, allowing you to retrieve information from referenced records without writing code.
 {% endhint %}
 
-
-
-Expand by clicking:
-
-**Trigger → Record Created**
-
-Expand by clicking the arrow next to:
-
-**Order Line Item Record**
-
-Select:
-
-**Order**
-
-The Customer Order field will now be populated with the order associated with the triggering Order Line Item.
+30. Expand by clicking: **Trigger → Record Created**
+31. Expand by clicking the arrow next to: **Order Line Item Record**
+32. Select: **Order**
+33. The Customer Order field will now be populated with the order associated with the triggering Order Line Item.
 
 {% hint style="info" %}
 #### 💡 Information: Walking Across Relationships
@@ -315,35 +240,15 @@ Because the Order Line Item already contains a reference to its parent Customer 
 This capability can be used throughout Flow Designer to access related records, making it easy to build sophisticated workflows without writing custom code.
 {% endhint %}
 
-***
-
-### Step 10: Associate the Task to the Order Line Item
-
-Next, add another field value.
-
-Select:
-
-**Order Line Item**
-
-Again, select the **wand** icon.
-
-Navigate to:
-
-**Trigger → Record Created → Order Line Item Record**
-
-Select **Order Line Item Record**.
-
-The Order Task will now be directly associated with the Order Line Item that triggered the flow.
-
-This relationship allows each Product Offering to maintain its own fulfillment tasks while remaining connected to the broader Customer Order.
-
-***
-
-### Step 11: Populate Additional Fields
-
-Continue configuring the Order Task by populating any additional fields required by your organization's fulfillment process.
-
-For example, you may wish to configure:
+34. Next, add another field value.
+35. Select: **Order Line Item**
+36. Again, select the **wand** icon.
+37. Navigate to: **Trigger → Record Created → Order Line Item Record**
+38. Select **Order Line Item Record**.
+39. The Order Task will now be directly associated with the Order Line Item that triggered the flow.
+40. This relationship allows each Product Offering to maintain its own fulfillment tasks while remaining connected to the broader Customer Order.
+41. Continue configuring the Order Task by populating any additional fields required by your organization's fulfillment process.
+42. For example, you may wish to configure:
 
 * **Assignment Group** — Determines which team is responsible for completing the task.
 * **Priority** — Defines the urgency of the work.
@@ -366,63 +271,23 @@ Field values can be:
 Because these values are configurable, organizations can tailor each Product Offering's fulfillment process without writing custom application logic.
 {% endhint %}
 
-#### Step 12: Automatically Create a Specimen Record
-
-Next, you'll extend the fulfillment workflow by automatically creating a **Specimen** record whenever an EndoPredict Dx Order Line Item is created.
-
-Select the **+** icon beneath your first action.
-
-Select **Action**.
-
-Search for and select **Create Record**.
-
-***
-
-#### Step 13: Select the Specimen Table
-
-For the **Table** field, select:
-
-**Specimen** (`u_myriad_specimen`)
-
-Just as you did when creating the Order Task, you'll now populate the fields that should be set when the specimen is created.
-
-***
-
-#### Step 14: Associate the Specimen with the Order Line Item
-
-Add the **Order Line Item** field.
-
-Select the **wand** icon.
-
-Navigate to:
-
-**Trigger → Record Created → Order Line Item Record**
-
-Select **Order Line Item Record**.
-
-This associates the specimen with the specific Product Offering that initiated the workflow.
-
-***
-
-#### Step 15: Associate the Patient
-
-Next, add the **Patient** field.
-
-Select the **wand** icon.
-
-Navigate to:
-
-**Trigger → Record Created → Order Line Item Record → Consumer**
-
-Because the patient (consumer) is referenced on the Order Line Item, Flow Designer allows you to **dot-walk** across that relationship and automatically populate the Patient field on the new specimen.
-
-***
-
-#### Step 16: Populate Additional Fields
-
-Continue configuring the specimen by populating any additional fields that should be set when it is created.
-
-These values may be populated using:
+43. Next, you'll extend the fulfillment workflow by automatically creating a **Specimen** record whenever an EndoPredict Dx Order Line Item is created.
+44. Select the **+** icon beneath your first action.
+45. Select **Action**.
+46. Search for and select **Create Record**.
+47. For the **Table** field, select: **Specimen** (`u_myriad_specimen`)
+48. Just as you did when creating the Order Task, you'll now populate the fields that should be set when the specimen is created.
+49. Add the **Order Line Item** field.
+50. Select the **wand** icon.
+51. Navigate to: **Trigger → Record Created → Order Line Item Record**
+52. Select **Order Line Item Record**.
+53. This associates the specimen with the specific Product Offering that initiated the workflow
+54. Next, add the **Patient** field.
+55. Select the **wand** icon.
+56. Navigate to: **Trigger → Record Created → Order Line Item Record → Consumer**
+57. Because the patient (consumer) is referenced on the Order Line Item, Flow Designer allows you to **dot-walk** across that relationship and automatically populate the Patient field on the new specimen.
+58. Continue configuring the specimen by populating any additional fields that should be set when it is created.
+59. These values may be populated using:
 
 * Static values.
 * Data pills from the triggering Order Line Item.

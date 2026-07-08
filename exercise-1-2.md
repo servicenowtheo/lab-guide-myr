@@ -4,8 +4,6 @@
 
 **Persona:** Dr. Jennifer Park — Ordering Oncologist
 
-**Duration:** \~10 minutes
-
 **Objective:** Navigate the Myriad Provider Portal, and submit an order from Myriad's product offerings.
 
 ***
@@ -14,20 +12,14 @@
 
 ***
 
-### Step 1: Open the Myriad Provider Portal
-
-Navigate to the provider portal by appending /**myriad-provider** to the end of your instance URL. You will see:
+1. Navigate to the provider portal by appending /**myriad-provider** to the end of your instance URL. You will see:
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 1.04.36 PM.png" alt=""><figcaption></figcaption></figure>
 
-***
-
-### Step 2: Place the Order
-
-1. Select **+Submit Order in** the top navigation.
-2. Select your patient, **Dorothy Martinez** from the patient dropdown.
-3. Select **Jennifer Park** from the ordering provider dropdown.
-4. Select the **MyRisk** and **Precise Tumor** tests.
+2. Select **+Submit Order in** the top navigation.
+3. Select your patient, **Dorothy Martinez** from the patient dropdown.
+4. Select **Jennifer Park** from the ordering provider dropdown.
+5. Select the **MyRisk** and **Precise Tumor** tests.
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 6.47.18 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -49,36 +41,36 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 
 **Persona:** Sam Anderson
 
-<mark style="color:red;">**Duration:**</mark> <mark style="color:red;">Update</mark>
-
-**Objective:** Explore how ServiceNow manages combo testing within a single customer order and automatically generates independent fulfillment workflows for each.
+**Objective:** Explore how ServiceNow manages multiple Product Offerings within a single customer order, automatically generates independent fulfillment workflows for each test, and automates result documentation as specimens progress through the testing lifecycle.
 
 ***
 
-#### Step 1: Review the Line Items
+**Scene:** Dorothy Martinez's order contains three Product Offerings that are progressing independently through the laboratory workflow:
 
-Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspace**.
+* Precise Tumor
+* MyRisk Hereditary Cancer Test
+* MRD: Baseline & Monitoring Cadence Management
 
-* Open the **Line Items** **tab**
-* Notice that this order contains **three line items**:
-  * Precise Tumor
-  * MyRisk Hereditary Cancer Test
-  * MRD: Baseline & Monitoring Cadence Management
+The baseline specimen for the MRD monitoring program has now completed laboratory testing and is ready for review. As the Laboratory Operations Coordinator, you'll update the specimen with its testing outcome and observe how the platform automatically generates the appropriate result documentation while maintaining complete traceability to the patient, specimen, and order.
+
+***
+
+1. Upon clicking the ORD hyperlink, the order will **open in the ServiceNow workspace**.
+2. Open the **Line Items** **tab**
+3. Notice that this order contains **three line items**:
+
+* Precise Tumor
+* MyRisk Hereditary Cancer Test
+* MRD: Baseline & Monitoring Cadence Management
 * Observe that each Line Item represents an independently fulfilled test within the same customer order.
 
 **What to Notice**
 
 Although the provider submitted a single order, each Product Offering follows its own configurable fulfillment workflow, allowing different tests to have unique operational requirements while remaining part of the same patient order.
 
-
-
-***
-
-#### Step 2: Compare the Fulfillment Workflows
-
-1. Select the **'Order Tasks'** tab next to Line items.
-2. Hover over the **'Order line item'** column and select the three dots at the right of the column.
-3. Click the blue hyperlink that says **'Group by Order line item'**
+4. Select the **'Order Tasks'** tab next to Line items.
+5. Hover over the **'Order line item'** column and select the three dots at the right of the column.
+6. Click the blue hyperlink that says **'Group by Order line item'**
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 5.15.28 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -88,12 +80,8 @@ Although the provider submitted a single order, each Product Offering follows it
 * The tasks differ because they are generated from the configurable workflow associated with each Product Offering.
 * This allows you to configure different operational processes for different tests without requiring separate customer orders.
 
-***
-
-#### Step 3: Compare the Specimens
-
-1. Select the **'Specimens'** **tab.**
-2. Review the specimens generated for each Product Offering.
+7. Select the **'Specimens'** **tab.**
+8. Review the specimens generated for each Product Offering.
 
 **What to Notice**
 
@@ -102,21 +90,21 @@ Although the provider submitted a single order, each Product Offering follows it
 
 <figure><img src=".gitbook/assets/Screenshot 2026-07-07 at 6.51.54 PM.png" alt=""><figcaption></figcaption></figure>
 
-3. Open the specimen record by clicking the **blue hyperlink** in the **'Display Name'** column.
-4. You just received an update that the baseline specimen has gone through testing and has received a result status of Negative.&#x20;
-5. Update the **Status** field to **QC Passed.**
-6. Update the **Result Status** to **Negative**.
-7. Set the **Result Date** to **today's date.**&#x20;
-8. Save the record.
+9. Open the specimen record by clicking the **blue hyperlink** in the **'Display Name'** column.
+10. You have received notification that Dorothy Martinez's baseline specimen has completed laboratory testing and the result has been determined to be **Negative.**
+11. Update the **Status** field to **QC Passed.**
+12. Update the **Result Status** to **Negative**.
+13. Set the **Result Date** to **today's date.**&#x20;
+14. Save the record.
 
 **What to Notice**
 
 * On **Save** of the record, ServiceNow automatically generated a **Specimen Report,** using your document template and pulling in relevant information from the specimen record. Notice that a comment was added to the activity stream sharing this update, and that a document has been made available in **Attachments** on the right side pane of the screen.
 
-#### Step 3: Review the Result Report
 
-1. Select the document that was generated **under Attachments** in the right side panel, represented by a small papeclip ico&#x6E;**.**&#x20;
-2. Open and review the document that was generated.&#x20;
+
+15. Select the document that was generated **under Attachments** in the right side panel, represented by a small paperclip ico&#x6E;**.**&#x20;
+16. Open and review the document that was generated.&#x20;
 
 **What to Notice**
 
@@ -149,7 +137,15 @@ Once generated, documents can automatically follow the workflow you define, for 
 
 ## Exercise 3: Completing and Releasing an Order
 
-### Step 1: Record the updated status
+**Persona:** Sam Anderson
+
+**Objective:** Finalize specimen results, trigger automated order result generation, and explore how ServiceNow consolidates information from across the order into a comprehensive laboratory report.
+
+***
+
+**Scene:** Time has passed, and all specimens associated with Dorothy Martinez's order have completed laboratory testing. The individual specimen results have been reviewed and finalized, and the laboratory is now ready to generate the patient's consolidated order results. As the Laboratory Operations Coordinator, you'll finalize the remaining specimen results, trigger the order results generation process, and review the automatically generated report that brings together information from across the patient, order, and specimen records.
+
+***
 
 1. Close out the current **Specimen** page you have open by clicking **x** at it's tab at the top of the record.
 2. Time has passed, and now all of the specimens have been processed by the lab.&#x20;
@@ -160,29 +156,19 @@ Once generated, documents can automatically follow the workflow you define, for 
 
 5. Once all are highlighted, double click into any of the fields, set the **Result Status** to **Negative** and click OK.
 6. Notice that all of the **Result Status** fields have been updated.
-
-
-
-***
-
-#### Step 2: Generate the Order Result Report
-
-1. In the upper-right corner of the Customer Order, click the **ellipsis (...)** button.
-2. Select **Order Details**.
-3. Review the information on the Customer Order record.
+7. In the upper-right corner of the Customer Order, click the **ellipsis (...)** button.
+8. Select **Order Details**.
+9. Review the information on the Customer Order record.
 
 #### What to Notice
 
-Locate the **State** field.
+* Locate the **State** field.
+* The **State** tracks the overall lifecycle of the customer order from initial submission through laboratory processing, clinical review, results generation, and final delivery.&#x20;
 
-The **State** tracks the overall lifecycle of the customer orde from initial submission through laboratory processing, clinical review, results generation, and final delivery.&#x20;
 
-***
 
-#### Step 2: Generate the Order Results
-
-1. Change the **State** field to **Results Generated**.
-2. Click **Update** in the lower-right corner of the record.
+10. Change the **State** field to **Results Generated**.
+11. Click **Update** in the lower-right corner of the record.
 
 #### What to Notice
 
@@ -192,18 +178,14 @@ Notice that:
 
 * A work note is added to the **Activity** stream indicating that the order report has been generated.
 * A consolidated results document is created and attached to the Customer Order in **Attachments**.
-* Depending on your organization's workflow, additional downstream actions can also be triggered.
+* Depending on your desired workflow, additional downstream actions can also be triggered.
 
 {% hint style="warning" %}
 If you do not immediately see the generated document, refresh the page.
 {% endhint %}
 
-***
-
-#### Step 3: Review the Generated Report
-
-1. Open the generated report from the **Attachments** section in the right side panel by clicking the report.
-2. Review the contents of the document.
+12. Open the generated report from the **Attachments** section in the right side panel by clicking the report.
+13. Review the contents of the document.
 
 #### What to Notice
 
@@ -223,7 +205,7 @@ Rather than manually compiling information from multiple records, the document i
 
 ***
 
-### Step 4: Setting You Up for Scenario 4
+## Exercise 4: Setting You Up for Scenario 4
 
 1. On the left side of your screen, notice the **dark left sidebar.** It has three icons from top to bottom:
 

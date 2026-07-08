@@ -2,8 +2,6 @@
 
 **Persona:** Sam Anderson — Laboratory Operations Coordinator
 
-**Duration:** \~10 minutes
-
 **Objective:** Explore the Myriad Order Workspace and understand how laboratory teams manage work, monitor order pipelines, and receive assigned work through role-based workspaces.
 
 ***
@@ -16,9 +14,7 @@ In this exercise, you'll explore the Myriad Order Workspace and learn how Servic
 
 ***
 
-### Step 1: Open the Myriad Order Workspace
-
-Navigate to the **Myriad Order Workspace** home page by clicking the **home icon in the dark-colored left sidebar.**
+1. Navigate to the **Myriad Order Workspace** home page by clicking the **home icon in the dark-colored left sidebar.**
 
 #### What to Notice
 
@@ -37,13 +33,7 @@ For example, an ordering provider, laboratory technician, quality analyst, dispa
 This ensures every user sees the information most relevant to their responsibilities while working from the same underlying platform and data model.
 {% endhint %}
 
-
-
-***
-
-### Step 2: Review the Order Pipeline
-
-Review the pipeline cards displayed across the top of the workspace.
+2. Review the pipeline cards displayed across the top of the workspace.
 
 #### What to Notice
 
@@ -51,11 +41,10 @@ The pipeline provides an operational snapshot of orders currently progressing th
 
 These metrics can be fully configured to reflect the milestones and KPIs most important to your organization.
 
-***
 
-### Step 3: Review Task Lists
 
-Scroll through the task lists available on the workspace.
+3. Review Task Lists
+4. Scroll through the task lists available on the workspace.
 
 #### What to Notice
 
@@ -66,13 +55,8 @@ Notice the distinction between:
 
 These lists update dynamically as work is assigned, completed, or reassigned throughout the day.
 
-***
-
-### Step 4: Review the AWA Inbox
-
-Expand the **Inbox** panel located **in the dark-colored left sidebar.**
-
-Change your status to **Available**.
+5. Expand the **Inbox** panel located **in the dark-colored left sidebar.**
+6. Change your status to **Available**.
 
 #### What to Notice
 
@@ -94,5 +78,3 @@ Organizations can route work using criteria such as:
 
 Once routed, users can accept work directly from their inbox, helping ensure tasks are distributed consistently while balancing workloads across laboratory teams
 {% endhint %}
-
-###
