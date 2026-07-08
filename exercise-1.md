@@ -48,7 +48,11 @@ Navigate to the provider portal by appending /**myriad-provider** to the end of 
 
 
 {% hint style="success" %}
-#### **Congratulations, you've just placed your first order! We're now going to take a look at it from the perspective of the Myriad operations team.**&#x20;
+#### **Congratulations, you've just placed your first order!**&#x20;
+
+This exercise demonstrates just one of many ways providers can submit orders. Orders may also be submitted through other intake channels such as integrations, EHRs, APIs, or manual entry. For the provider though, with just a few clicks, the platform automatically initiates the configurable fulfillment workflow behind the scenes.
+
+**We're now going to take a look at it from the perspective of the Myriad operations team.**&#x20;
 {% endhint %}
 
 ***
