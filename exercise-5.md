@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Exercise 5: Analytics & AI Insights
 
 **Persona:** John Kim — Supervisor / Analytics Lead **Duration:** \~15 minutes

@@ -1,8 +1,12 @@
-# MYRIAD-OMS
+---
+hidden: true
+---
+
+# Lab Overview
 
 **From Test Order to Clinical Insight — ServiceNow as Your Oncology Order Management System**
 
----
+***
 
 ## Where Do These Orders Come From?
 
@@ -12,7 +16,7 @@
 >
 > For a deeper look at how the Epic → ServiceNow integration works, see [Epic Integration Background](epic-integration.md).
 
----
+***
 
 ## Introduction and Objectives
 
@@ -29,7 +33,7 @@ In this lab, you will experience ServiceNow as the operational backbone for Myri
 5. Explore AI-powered analytics dashboards to understand order volume, turnaround, and team performance.
 6. Trace a complete order lifecycle — from submission to results — in a single end-to-end challenge scenario.
 
----
+***
 
 ## Lab Personas
 
@@ -39,15 +43,15 @@ This lab uses five personas — one per exercise. You will impersonate each user
 >
 > **Credentials:** Log in as `admin` with the password provided by your facilitator. All impersonation is done from the admin session — you do not need separate logins for each persona.
 
-| Persona | Role | What You'll Do |
-|---------|------|----------------|
-| **Dr. Lydia Chen** | Ordering Oncologist — Huntsman Cancer Institute | Submit a new hereditary cancer order for patient Rachel Kim |
-| **Lisa Morgan** | Order Oversight Manager | Review the order pipeline, identify attention flags, investigate Dorothy Martinez's order history |
-| **Sarah Rice** | Order Intake Specialist | Work through the task queue for Patricia Williams' stalled EndoPredict order |
-| **Julie Castillo** | Order Support Services | Manage open CSM cases tied to ORD0002156 — consent, insurance appeals, sample logistics |
-| **John Kim** | Supervisor / Analytics Lead | Review operational dashboards, order volume trends, and team performance metrics |
+| Persona            | Role                                            | What You'll Do                                                                                    |
+| ------------------ | ----------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| **Dr. Lydia Chen** | Ordering Oncologist — Huntsman Cancer Institute | Submit a new hereditary cancer order for patient Rachel Kim                                       |
+| **Lisa Morgan**    | Order Oversight Manager                         | Review the order pipeline, identify attention flags, investigate Dorothy Martinez's order history |
+| **Sarah Rice**     | Order Intake Specialist                         | Work through the task queue for Patricia Williams' stalled EndoPredict order                      |
+| **Julie Castillo** | Order Support Services                          | Manage open CSM cases tied to ORD0002156 — consent, insurance appeals, sample logistics           |
+| **John Kim**       | Supervisor / Analytics Lead                     | Review operational dashboards, order volume trends, and team performance metrics                  |
 
----
+***
 
 ## Getting Started
 
@@ -59,36 +63,36 @@ Your lab instance is pre-loaded with Myriad Genetics patient data, orders, tasks
 4. Confirm you see the Workspace home page — a dark sidebar on the left, "Hello, System Administrator" greeting, and the Myriad Genetics branding.
 5. You're ready to go — jump to Exercise 1!
 
----
+***
 
 ## Lab Agenda — 90 Minutes
 
-| Time | Section | Description |
-|------|---------|-------------|
+| Time        | Section               | Description                                                                   |
+| ----------- | --------------------- | ----------------------------------------------------------------------------- |
 | 0:00 – 0:10 | **Welcome & Context** | Facilitator walks through the Myriad Genetics scenario and the OMS challenge. |
-| 0:10 – 0:20 | **Exercise 1** | Submit a new genetic test order as Dr. Lydia Chen. |
-| 0:20 – 0:35 | **Exercise 2** | Order pipeline oversight — Lisa Morgan's view of the queue. |
-| 0:35 – 0:50 | **Exercise 3** | Order intake task resolution — Sarah Rice works the stalled order. |
-| 0:50 – 1:05 | **Exercise 4** | Order support services — Julie Castillo handles CSM cases. |
-| 1:05 – 1:20 | **Exercise 5** | Analytics & AI insights — John Kim reviews dashboards. |
-| 1:20 – 1:30 | **Challenge** | End-to-end: trace a complete order lifecycle from submission to results. |
+| 0:10 – 0:20 | **Exercise 1**        | Submit a new genetic test order as Dr. Lydia Chen.                            |
+| 0:20 – 0:35 | **Exercise 2**        | Order pipeline oversight — Lisa Morgan's view of the queue.                   |
+| 0:35 – 0:50 | **Exercise 3**        | Order intake task resolution — Sarah Rice works the stalled order.            |
+| 0:50 – 1:05 | **Exercise 4**        | Order support services — Julie Castillo handles CSM cases.                    |
+| 1:05 – 1:20 | **Exercise 5**        | Analytics & AI insights — John Kim reviews dashboards.                        |
+| 1:20 – 1:30 | **Challenge**         | End-to-end: trace a complete order lifecycle from submission to results.      |
 
 > **Need help?** Raise your hand — a proctor will come to you. Don't spend more than 2 minutes stuck on any single step.
 
----
+***
 
 ## Story Context
 
 All exercises center on real patients from Huntsman Cancer Institute in Salt Lake City, Utah. The core story follows **Dorothy Martinez** — a 47-year-old AML patient whose genomic journey spans three active orders and two upcoming appointments. Supporting characters include **Rachel Kim** (hereditary cancer risk panel), **Patricia Williams** (breast cancer recurrence risk — the order your team will troubleshoot in Exercise 3), and seven additional patients who populate the analytics dashboards in Exercise 5.
 
-| Order | Patient | Test | Status |
-|-------|---------|------|--------|
-| ORD0002157 | Rachel Kim | MyRisk 25-Gene Hereditary Cancer Panel | New — just submitted |
-| ORD0002154 | Dorothy Martinez | MRD Baseline — AML | In lab processing |
-| ORD0002155 | Dorothy Martinez | Precise Tumor 500 | Sample received |
-| ORD0002156 | Patricia Williams | EndoPredict Dx | Stalled — 6 open exceptions |
-| ORD0002150 | Linda Patel | MyRisk 25-Gene | Awaiting information |
-| ORD0002113 | Margaret Torres | MRD Monitoring T1 | Clinical review |
-| ORD0002116 | Noah Gillen | MRD Baseline — NHL | Lab processing |
+| Order      | Patient           | Test                                   | Status                      |
+| ---------- | ----------------- | -------------------------------------- | --------------------------- |
+| ORD0002157 | Rachel Kim        | MyRisk 25-Gene Hereditary Cancer Panel | New — just submitted        |
+| ORD0002154 | Dorothy Martinez  | MRD Baseline — AML                     | In lab processing           |
+| ORD0002155 | Dorothy Martinez  | Precise Tumor 500                      | Sample received             |
+| ORD0002156 | Patricia Williams | EndoPredict Dx                         | Stalled — 6 open exceptions |
+| ORD0002150 | Linda Patel       | MyRisk 25-Gene                         | Awaiting information        |
+| ORD0002113 | Margaret Torres   | MRD Monitoring T1                      | Clinical review             |
+| ORD0002116 | Noah Gillen       | MRD Baseline — NHL                     | Lab processing              |
 
----
+***
