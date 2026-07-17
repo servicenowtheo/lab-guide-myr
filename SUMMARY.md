@@ -1,12 +1,12 @@
 # Table of contents
 
 * [Scenario 1: Submit, Process, and Manage a MRD Order](README.md)
-* [Scenario 2: Submit, Process, and Manage a Precise Tumor + MyRisk Order](exercise-1-1.md)
-* [Scenario 3: Submit, Process, and Manage a Precise Tumor + MyRisk + MRD Combo Order](exercise-1-2.md)
-* [Scenario 4: Managing the Patient Experience](exercise-1-3.md)
-* [Scenario 5: Order Workspace and Task Management](exercise-1-4.md)
-* [Scenario 6: Tech Bonus Scenario](exercise-1-5.md)
-* [Exercise 1: Submit a New Genomic Test Order](exercise-1-6.md)
+* [Scenario 2: Submit, Process, and Manage a Precise Tumor + MyRisk Order](scenario-2.md)
+* [Scenario 3: Submit, Process, and Manage a Precise Tumor + MyRisk + MRD Combo Order](scenario-3.md)
+* [Scenario 4: Managing the Patient Experience](scenario-4.md)
+* [Scenario 5: Order Workspace and Task Management](scenario-5.md)
+* [Scenario 6: Tech Bonus Scenario](scenario-6.md)
+* [Exercise 1: Submit a New Genomic Test Order](exercise-1.md)
 * [Lab Overview](<README (1).md>)
 * [Exercise 2: Order Pipeline Oversight](exercise-2.md)
 * [Exercise 3: Order Intake & Task Resolution](exercise-3.md)
